@@ -2,19 +2,19 @@
 @plugin "@tailwindcss/typography";
 
 @theme {
-  /* Brand Colors */
-  --color-primary: oklch(0.55 0.2 265);
-  --color-primary-dark: oklch(0.45 0.2 265);
-  --color-secondary: oklch(0.65 0.25 350);
+  /* Brand Colors - MailLighter blue-to-green */
+  --color-primary: oklch(0.50 0.18 250);
+  --color-primary-dark: oklch(0.42 0.18 250);
+  --color-secondary: oklch(0.55 0.15 155);
 
   /* Semantic Colors */
   --color-background: oklch(1 0 0);
-  --color-surface: oklch(0.98 0 0);
+  --color-surface: oklch(0.97 0.005 200);
   --color-text: oklch(0.15 0 0);
   --color-text-muted: oklch(0.45 0 0);
-  --color-border: oklch(0.9 0 0);
+  --color-border: oklch(0.9 0.005 200);
 
-  /* Dashboard Status Colors - Light Mode */
+  /* Status Colors */
   --color-success: oklch(0.45 0.15 145);
   --color-success-bg: oklch(0.95 0.05 145);
   --color-warning: oklch(0.46 0.15 85);
@@ -36,13 +36,12 @@
 
 /* Dark mode overrides */
 .dark {
-  --color-background: oklch(0.15 0 0);
-  --color-surface: oklch(0.2 0 0);
+  --color-background: oklch(0.15 0.01 220);
+  --color-surface: oklch(0.2 0.01 220);
   --color-text: oklch(0.95 0 0);
   --color-text-muted: oklch(0.65 0 0);
-  --color-border: oklch(0.3 0 0);
+  --color-border: oklch(0.3 0.01 220);
 
-  /* Dashboard Status Colors - Dark Mode */
   --color-success: oklch(0.65 0.15 145);
   --color-success-bg: oklch(0.25 0.05 145);
   --color-warning: oklch(0.7 0.15 85);
@@ -72,7 +71,7 @@ body {
     sans-serif;
 }
 
-/* Typography customizations to match theme */
+/* Typography */
 .prose {
   --tw-prose-body: var(--color-text);
   --tw-prose-headings: var(--color-text);
@@ -122,31 +121,27 @@ body {
   background-color: var(--color-surface);
 }
 
-/* Accessibility - Enhanced focus states */
+/* Accessibility */
 :focus-visible {
   outline: 2px solid var(--color-primary);
   outline-offset: 2px;
 }
 
-/* Remove default focus outline for mouse users, keep for keyboard */
 :focus:not(:focus-visible) {
   outline: none;
 }
 
-/* Ensure links have visible focus states */
 a:focus-visible {
   outline: 2px solid var(--color-primary);
   outline-offset: 2px;
   border-radius: var(--radius-sm);
 }
 
-/* Button focus states */
 button:focus-visible {
   outline: 2px solid var(--color-primary);
   outline-offset: 2px;
 }
 
-/* Form input focus states */
 input:focus-visible,
 textarea:focus-visible,
 select:focus-visible {
@@ -154,7 +149,6 @@ select:focus-visible {
   outline-offset: 2px;
 }
 
-/* Reduced motion preference */
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -164,4 +158,16 @@ select:focus-visible {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+}
+
+/* MailLighter gradient utility */
+.ml-gradient-text {
+  background: linear-gradient(135deg, oklch(0.50 0.18 250), oklch(0.55 0.15 155));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.ml-gradient-bg {
+  background: linear-gradient(135deg, oklch(0.50 0.18 250), oklch(0.55 0.15 155));
 }

@@ -1,0 +1,25 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:github.com)",
+      "WebSearch",
+      "WebFetch(domain:astro.build)",
+      "Bash(npm create:*)",
+      "Bash(mv red-remnant/* red-remnant/.* .)",
+      "Bash(rm -rf red-remnant)",
+      "Bash(npm install:*)",
+      "Bash(npm run:*)",
+      "Bash(npx astro:*)",
+      "Bash(ls \"C:/Users/AlexDev/Documents/GitHub/MailLighter_website/public/favicon\"* \"C:/Users/AlexDev/Documents/GitHub/MailLighter_website/public/favicon.svg\")",
+      "Bash(gh auth:*)",
+      "Bash(gh org:*)",
+      "Bash(where gh:*)",
+      "Read(//c/Program Files/GitHub CLI/**)",
+      "Read(//c/Program Files \\(x86\\)/GitHub CLI/**)",
+      "Read(//c/Users/AlexDev/Documents/GitHub/MailLighter_website/$LOCALAPPDATA/GitHub CLI/**)",
+      "Bash(winget install:*)",
+      "Bash(export PATH=\"$PATH:/c/Program Files/GitHub CLI\")",
+      "Bash(gh repo:*)"
+    ]
+  }
+}

@@ -1,0 +1,121 @@
+---
+import MarketingLayout from '@/layouts/MarketingLayout.astro';
+import PageHeader from '@sections/content/PageHeader.astro';
+import FAQSection from '@sections/content/FAQSection.astro';
+import { siteConfig } from '@/config';
+
+const categories = [
+  {
+    name: 'Général',
+    faqs: [
+      {
+        question: 'Qu\'est-ce que MailLighter ?',
+        answer:
+          'MailLighter est un plugin Outlook qui nettoie vos emails en un clic. Il supprime les pièces jointes inutiles, les images intégrées et les anciennes chaînes de réponses pour alléger vos emails et réduire votre empreinte numérique.',
+      },
+      {
+        question: 'MailLighter est-il gratuit ?',
+        answer:
+          'Consultez la marketplace Microsoft AppSource pour les dernières informations tarifaires et les plans disponibles.',
+      },
+      {
+        question: 'À qui s\'adresse MailLighter ?',
+        answer:
+          'MailLighter est conçu pour toute organisation souhaitant réduire l\'impact environnemental de ses emails : entreprises privées, collectivités, DSI, directions RSE et tout acteur engagé dans le numérique responsable.',
+      },
+    ],
+  },
+  {
+    name: 'Installation & Compatibilité',
+    faqs: [
+      {
+        question: 'Comment installer MailLighter ?',
+        answer:
+          'MailLighter est disponible sur la marketplace Microsoft AppSource. Recherchez simplement "MailLighter" et installez-le directement dans votre environnement Outlook.',
+      },
+      {
+        question: 'Quelles versions d\'Outlook sont supportées ?',
+        answer:
+          'MailLighter est compatible avec les environnements Microsoft 365, incluant Outlook bureau et Outlook web.',
+      },
+      {
+        question: 'Peut-on déployer MailLighter dans toute l\'organisation ?',
+        answer:
+          'Oui. MailLighter peut être déployé à grande échelle via le centre d\'administration Microsoft 365, facilitant le déploiement pour tous les utilisateurs.',
+      },
+      {
+        question: 'MailLighter nécessite-t-il une configuration particulière ?',
+        answer:
+          'Non. MailLighter fonctionne immédiatement sans aucune configuration. Les utilisateurs cliquent simplement sur le bouton MailLighter dans Outlook pour nettoyer leurs emails.',
+      },
+    ],
+  },
+  {
+    name: 'Fonctionnalités',
+    faqs: [
+      {
+        question: 'Que supprime MailLighter des emails ?',
+        answer:
+          'MailLighter peut supprimer les pièces jointes inutiles, les images intégrées (logos, bannières, images de signature) et les anciennes chaînes de réponses, ne conservant que les messages les plus récents du fil.',
+      },
+      {
+        question: 'Peut-on choisir ce qui est supprimé ?',
+        answer:
+          'MailLighter propose des réglages intelligents par défaut adaptés à la plupart des utilisateurs. Plus de détails sur les options de personnalisation seront disponibles prochainement.',
+      },
+      {
+        question: 'MailLighter modifie-t-il l\'email original ?',
+        answer:
+          'MailLighter nettoie le contenu de l\'email avant l\'envoi ou la réponse. L\'email original reçu reste inchangé dans votre boîte mail.',
+      },
+    ],
+  },
+  {
+    name: 'Sécurité & Confidentialité',
+    faqs: [
+      {
+        question: 'Mes données sont-elles en sécurité avec MailLighter ?',
+        answer:
+          'Oui. MailLighter traite les emails localement dans votre environnement. Aucun contenu d\'email n\'est envoyé vers des serveurs externes.',
+      },
+      {
+        question: 'MailLighter est-il conforme au RGPD ?',
+        answer:
+          'Oui. MailLighter est entièrement conforme au RGPD. Il ne collecte, ne stocke et ne transmet aucune donnée personnelle ou contenu d\'email.',
+      },
+      {
+        question: 'MailLighter impacte-t-il la sécurité de mon organisation ?',
+        answer:
+          'Non. MailLighter fonctionne dans le cadre de sécurité standard de Microsoft 365 et ne nécessite aucune permission supplémentaire au-delà de ce qui est nécessaire pour traiter le contenu des emails.',
+      },
+    ],
+  },
+  {
+    name: 'Impact & RSE',
+    faqs: [
+      {
+        question: 'Comment MailLighter aide-t-il pour le reporting RSE ?',
+        answer:
+          'MailLighter fournit une action concrète et mesurable pour votre reporting RSE / ESG. En réduisant le poids des emails dans votre organisation, vous démontrez un engagement opérationnel en faveur de la sobriété numérique.',
+      },
+      {
+        question: 'Quel est l\'impact environnemental d\'emails plus légers ?',
+        answer:
+          'Chaque email allégé signifie moins de données stockées et répliquées sur les serveurs, moins de bande passante consommée et moins d\'énergie utilisée. L\'impact individuel est modeste, mais il devient significatif à l\'échelle d\'une organisation.',
+      },
+    ],
+  },
+];
+---
+
+<MarketingLayout
+  title={`FAQ - ${siteConfig.name}`}
+  description="Questions fréquentes sur MailLighter, le plugin Outlook pour des emails plus légers et plus responsables."
+>
+  <PageHeader
+    title="Questions fréquentes"
+    subtitle="Tout ce que vous devez savoir sur MailLighter."
+  />
+
+  <FAQSection categories={categories} background="default" />
+</MarketingLayout>

@@ -2,8 +2,7 @@
 import MarketingLayout from '@/layouts/MarketingLayout.astro';
 import { siteConfig } from '@/config';
 
-const { legal, contact } = siteConfig;
-const fullAddress = `${contact.address.street}, ${contact.address.city}, ${contact.address.state} ${contact.address.zip}`;
+const { legal } = siteConfig;
 ---
 
 <MarketingLayout
@@ -158,7 +157,7 @@ const fullAddress = `${contact.address.street}, ${contact.address.city}, ${conta
         </p>
         <ul>
           <li>Email: {legal.privacyEmail}</li>
-          <li>Address: {fullAddress}</li>
+          <li>Website: maillighter.com</li>
         </ul>
       </div>
     </div>

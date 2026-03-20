@@ -2,127 +2,106 @@
 import MarketingLayout from '@/layouts/MarketingLayout.astro';
 import PageHeader from '@sections/content/PageHeader.astro';
 import FAQSection from '@sections/content/FAQSection.astro';
-import CTA from '@sections/marketing/CTA.astro';
 import { siteConfig } from '@/config';
 
-const faqCategories = [
+const categories = [
   {
     name: 'General',
     faqs: [
       {
-        question: 'What is ' + siteConfig.name + '?',
+        question: 'What is MailLighter?',
         answer:
-          siteConfig.name +
-          ' is a modern deployment platform that helps developers and teams build, deploy, and scale applications without the infrastructure headaches. We handle the complexity so you can focus on building great products.',
+          'MailLighter is an Outlook plugin that cleans your emails in one click. It removes unnecessary attachments, embedded images, and old reply chains to make your emails lighter and reduce your digital footprint.',
       },
       {
-        question: 'Who is ' + siteConfig.name + ' for?',
+        question: 'Is MailLighter free?',
         answer:
-          'We built ' +
-          siteConfig.name +
-          " for developers and teams of all sizes—from solo developers working on side projects to enterprise teams shipping production applications. If you write code and need to deploy it, we're here to help.",
+          'Please visit the Microsoft AppSource marketplace for the latest pricing information and available plans.',
       },
       {
-        question: 'What frameworks do you support?',
+        question: 'Who is MailLighter for?',
         answer:
-          'We support all major frameworks including Next.js, Astro, Remix, Nuxt, SvelteKit, and any static site generator. Our platform auto-detects your framework and configures the build process automatically.',
+          'MailLighter is designed for any organization that wants to reduce the environmental impact of its emails: private companies, public organizations, IT departments, CSR teams, and anyone committed to responsible digital practices.',
       },
     ],
   },
   {
-    name: 'Pricing & Billing',
+    name: 'Installation & Compatibility',
     faqs: [
       {
-        question: 'Is there a free tier?',
+        question: 'How do I install MailLighter?',
         answer:
-          'Yes! Our Hobby plan is completely free and includes 3 projects, 100 GB bandwidth per month, automatic HTTPS, and preview deployments. No credit card required to get started.',
+          'MailLighter is available on the Microsoft AppSource marketplace. Simply search for "MailLighter" and install it directly into your Outlook environment.',
       },
       {
-        question: 'Can I change plans later?',
+        question: 'Which versions of Outlook are supported?',
         answer:
-          "Absolutely. You can upgrade or downgrade your plan at any time. When upgrading, you'll be charged the prorated difference. When downgrading, the new rate applies at your next billing cycle.",
+          'MailLighter is compatible with Microsoft 365 environments, including Outlook desktop and Outlook on the web.',
       },
       {
-        question: 'What happens if I exceed my bandwidth limit?',
+        question: 'Can I deploy MailLighter across my entire organization?',
         answer:
-          "We'll notify you when you're approaching your limit. If you exceed it, your sites will continue to work—we'll just reach out to discuss upgrading your plan or purchasing additional bandwidth.",
+          'Yes. MailLighter can be deployed at scale through your Microsoft 365 admin center, making it easy to roll out to all users in your organization.',
       },
       {
-        question: 'Do you offer discounts for annual billing?',
+        question: 'Does MailLighter require any special configuration?',
         answer:
-          'Yes! Annual plans come with a 20% discount. You can switch to annual billing from your account settings at any time.',
-      },
-      {
-        question: "Can I get a refund if I'm not satisfied?",
-        answer:
-          "Yes, we offer a 30-day money-back guarantee on all paid plans. If you're not happy with " +
-          siteConfig.name +
-          ', contact support for a full refund.',
+          'No. MailLighter works out of the box with no configuration needed. Users simply click the MailLighter button in Outlook to clean their emails.',
       },
     ],
   },
   {
-    name: 'Technical',
+    name: 'Features',
     faqs: [
       {
-        question: 'How fast are deployments?',
+        question: 'What does MailLighter remove from emails?',
         answer:
-          'Most deployments complete in under 60 seconds. Our optimized build pipeline caches dependencies and uses incremental builds to get your changes live as fast as possible.',
+          'MailLighter can remove unnecessary attachments, embedded images (logos, banners, signature images), and old reply chains, keeping only the most recent messages in a thread.',
       },
       {
-        question: 'Do you support custom domains?',
+        question: 'Can I choose what to remove?',
         answer:
-          'Yes, you can connect unlimited custom domains to your projects. We automatically provision and renew SSL certificates for all domains at no extra cost.',
+          'MailLighter provides smart defaults that work for most users. More details about customization options will be available soon.',
       },
       {
-        question: 'Can I use environment variables?',
+        question: 'Does MailLighter modify the original email?',
         answer:
-          'Yes, you can set environment variables for each project with different values for development, preview, and production environments. All variables are encrypted at rest.',
-      },
-      {
-        question: 'What about serverless functions?',
-        answer:
-          'We support serverless functions out of the box. Deploy API routes alongside your frontend with zero configuration. Functions run on our global edge network for low latency.',
+          'MailLighter cleans the email content before sending or replying. The original received email remains unchanged in your mailbox.',
       },
     ],
   },
   {
-    name: 'Security & Compliance',
+    name: 'Security & Privacy',
     faqs: [
       {
-        question: 'Is my data secure?',
+        question: 'Is my data safe with MailLighter?',
         answer:
-          'Security is our top priority. All data is encrypted in transit and at rest. We use industry-standard security practices and undergo regular security audits.',
+          'Yes. MailLighter processes emails locally within your environment. No email content is sent to external servers.',
       },
       {
-        question: 'Do you offer SSO?',
+        question: 'Is MailLighter GDPR compliant?',
         answer:
-          'Yes, SSO with SAML is available on our Enterprise plan. We support integration with Okta, Azure AD, Google Workspace, and other identity providers.',
+          'Yes. MailLighter is fully GDPR compliant. It does not collect, store, or transmit any personal data or email content.',
       },
       {
-        question: 'Are you SOC 2 compliant?',
+        question: 'Does MailLighter impact my organization\'s security?',
         answer:
-          'Yes, we maintain SOC 2 Type II compliance. Enterprise customers can request our compliance reports and security documentation.',
+          'No. MailLighter operates within the standard Microsoft 365 security framework and does not require any additional permissions beyond what is needed to process email content.',
       },
     ],
   },
   {
-    name: 'Support',
+    name: 'Impact & CSR',
     faqs: [
       {
-        question: 'How can I get help?',
+        question: 'How does MailLighter help with CSR reporting?',
         answer:
-          'We offer multiple support channels: community Discord for quick questions, email support for all customers, and priority support with dedicated response times for Pro and Enterprise plans.',
+          'MailLighter provides a concrete, measurable action for your CSR/ESG reporting. By reducing email weight across your organization, you demonstrate operational commitment to digital sobriety.',
       },
       {
-        question: 'Do you have documentation?',
+        question: 'What is the environmental impact of lighter emails?',
         answer:
-          'Yes! Our comprehensive documentation covers everything from getting started to advanced configurations. Visit our docs section for guides, tutorials, and API references.',
-      },
-      {
-        question: 'What are your support hours?',
-        answer:
-          'Our community Discord is active 24/7. Email support is available Monday-Friday, 9am-6pm PT. Enterprise customers have access to 24/7 priority support.',
+          'Every lighter email means less data stored and replicated on servers, less bandwidth consumed, and less energy used. While the individual impact is modest, it becomes significant at organizational scale.',
       },
     ],
   },
@@ -131,22 +110,12 @@ const faqCategories = [
 
 <MarketingLayout
   title={`FAQ - ${siteConfig.name}`}
-  description={`Frequently asked questions about ${siteConfig.name}. Find answers about pricing, features, security, and more.`}
+  description="Frequently asked questions about MailLighter, the Outlook plugin for lighter, more responsible emails."
 >
   <PageHeader
     title="Frequently Asked Questions"
-    subtitle={`Everything you need to know about ${siteConfig.name}. Can't find what you're looking for?`}
-  >
-    <a href="/contact" class="text-primary hover:underline">Contact our team</a>.
-  </PageHeader>
-
-  <FAQSection categories={faqCategories} variant="accordion" background="default" />
-
-  <CTA
-    title="Still have questions?"
-    description="Can't find the answer you're looking for? Our team is here to help."
-    action={{ label: 'Contact Support', href: '/contact' }}
-    secondaryAction={{ label: 'Join Discord Community', href: siteConfig.social.discord || '#' }}
-    background="muted"
+    subtitle="Everything you need to know about MailLighter."
   />
+
+  <FAQSection categories={categories} background="default" />
 </MarketingLayout>

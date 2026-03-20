@@ -64,16 +64,12 @@ const primaryCTA = headerNav.cta.find((cta) => cta.variant === 'primary');
       <!-- Desktop Actions - Right -->
       <div class="hidden md:flex items-center gap-4">
         <ThemeToggle />
-        {
-          ghostCTAs.map((cta) => (
-            <a
-              href={cta.href}
-              class="text-text-muted hover:text-text transition-colors text-sm font-medium rounded-md px-2 py-1 focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background focus:outline-none"
-            >
-              {cta.label}
-            </a>
-          ))
-        }
+        <!-- Language Switcher -->
+        <div class="flex items-center gap-1 text-sm font-medium">
+          <a id="lang-en" href="/" class="px-2 py-1 rounded-md text-text-muted hover:text-text transition-colors">EN</a>
+          <span class="text-border">|</span>
+          <a id="lang-fr" href="/fr/" class="px-2 py-1 rounded-md text-text-muted hover:text-text transition-colors">FR</a>
+        </div>
         {
           primaryCTA && (
             <a
@@ -144,17 +140,12 @@ const primaryCTA = headerNav.cta.find((cta) => cta.variant === 'primary');
       }
       <!-- Divider -->
       <div class="border-t border-border my-2"></div>
-      <!-- CTA links -->
-      {
-        ghostCTAs.map((cta) => (
-          <a
-            href={cta.href}
-            class="block px-3 py-3 rounded-md text-text-muted hover:text-text hover:bg-background transition-colors text-base font-medium focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-inset"
-          >
-            {cta.label}
-          </a>
-        ))
-      }
+      <!-- Language Switcher (mobile) -->
+      <div class="flex items-center gap-2 px-3 py-3">
+        <a href="/" class="text-sm font-medium text-text-muted hover:text-text transition-colors">EN</a>
+        <span class="text-border">|</span>
+        <a href="/fr/" class="text-sm font-medium text-text-muted hover:text-text transition-colors">FR</a>
+      </div>
       {
         primaryCTA && (
           <a
