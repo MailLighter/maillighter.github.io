@@ -13,12 +13,25 @@
  * ```
  */
 import { siteConfig } from '@/config';
+import { navigationByLang, type Lang } from '@/config/navigation';
 import { Icon } from 'astro-icon/components';
 import type { FeatureFlags, NavigationItem } from '@/lib/types';
 
-const { features, social, contact, navigation } = siteConfig;
-const { footer } = navigation;
+const { features, social, contact } = siteConfig;
+
+// Detect language from URL path
+const pathname = Astro.url.pathname;
+const lang: Lang = pathname.startsWith('/fr') ? 'fr' : pathname.startsWith('/es') ? 'es' : 'en';
+const { footer } = navigationByLang[lang];
+
 const currentYear = new Date().getFullYear();
+
+// Localised labels
+const labels = {
+  en: { product: 'Product', solutions: 'Solutions', resources: 'Resources', company: 'Company', rights: 'All rights reserved.' },
+  fr: { product: 'Produit', solutions: 'Solutions', resources: 'Ressources', company: 'Entreprise', rights: 'Tous droits réservés.' },
+  es: { product: 'Producto', solutions: 'Soluciones', resources: 'Recursos', company: 'Empresa', rights: 'Todos los derechos reservados.' },
+}[lang];
 
 // Helper to filter items by feature flag
 const filterByFeature = (items: NavigationItem[]) =>
@@ -115,7 +128,7 @@ const legalLinks = filterByFeature(footer.legal);
       {
         productLinks.length > 0 && (
           <div>
-            <h3 class="font-semibold text-sm text-text mb-4">Product</h3>
+            <h3 class="font-semibold text-sm text-text mb-4">{labels.product}</h3>
             <ul class="space-y-3">
               {productLinks.map((link) => (
                 <li>
@@ -136,7 +149,7 @@ const legalLinks = filterByFeature(footer.legal);
       {
         solutionsLinks.length > 0 && (
           <div>
-            <h3 class="font-semibold text-sm text-text mb-4">Solutions</h3>
+            <h3 class="font-semibold text-sm text-text mb-4">{labels.solutions}</h3>
             <ul class="space-y-3">
               {solutionsLinks.map((link) => (
                 <li>
@@ -157,7 +170,7 @@ const legalLinks = filterByFeature(footer.legal);
       {
         resourcesLinks.length > 0 && (
           <div>
-            <h3 class="font-semibold text-sm text-text mb-4">Resources</h3>
+            <h3 class="font-semibold text-sm text-text mb-4">{labels.resources}</h3>
             <ul class="space-y-3">
               {resourcesLinks.map((link) => (
                 <li>
@@ -178,7 +191,7 @@ const legalLinks = filterByFeature(footer.legal);
       {
         companyLinks.length > 0 && (
           <div>
-            <h3 class="font-semibold text-sm text-text mb-4">Company</h3>
+            <h3 class="font-semibold text-sm text-text mb-4">{labels.company}</h3>
             <ul class="space-y-3">
               {companyLinks.map((link) => (
                 <li>
@@ -204,7 +217,7 @@ const legalLinks = filterByFeature(footer.legal);
         <!-- Copyright -->
         <p class="text-sm text-text-muted">
           &copy; {currentYear}
-          {siteConfig.name}. All rights reserved.
+          {siteConfig.name}. {labels.rights}
         </p>
         <!-- Legal Links -->
         <div class="flex items-center gap-6">

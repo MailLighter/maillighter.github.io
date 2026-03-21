@@ -13,12 +13,17 @@
  * ```
  */
 import { siteConfig } from '@/config';
+import { navigationByLang, type Lang } from '@/config/navigation';
 import { Icon } from 'astro-icon/components';
 import ThemeToggle from '@ui/ThemeToggle.astro';
 import type { FeatureFlags } from '@/lib/types';
 
-const { features, navigation } = siteConfig;
-const { header: headerNav } = navigation;
+const { features } = siteConfig;
+
+// Detect language from URL path
+const pathname = Astro.url.pathname;
+const lang: Lang = pathname.startsWith('/fr') ? 'fr' : pathname.startsWith('/es') ? 'es' : 'en';
+const { header: headerNav } = navigationByLang[lang];
 
 // Filter navigation items based on feature flags
 const mainNavItems = headerNav.main.filter(
@@ -28,6 +33,9 @@ const mainNavItems = headerNav.main.filter(
 // Separate CTA buttons by variant
 const ghostCTAs = headerNav.cta.filter((cta) => cta.variant === 'ghost');
 const primaryCTA = headerNav.cta.find((cta) => cta.variant === 'primary');
+
+// Language switcher roots
+const langRoots: Record<Lang, string> = { en: '/', fr: '/fr/', es: '/es/' };
 ---
 
 <header
@@ -66,9 +74,20 @@ const primaryCTA = headerNav.cta.find((cta) => cta.variant === 'primary');
         <ThemeToggle />
         <!-- Language Switcher -->
         <div class="flex items-center gap-1 text-sm font-medium">
-          <a id="lang-en" href="/" class="px-2 py-1 rounded-md text-text-muted hover:text-text transition-colors">EN</a>
-          <span class="text-border">|</span>
-          <a id="lang-fr" href="/fr/" class="px-2 py-1 rounded-md text-text-muted hover:text-text transition-colors">FR</a>
+          {(['en', 'fr', 'es'] as Lang[]).map((l, i) => (
+            <>
+              {i > 0 && <span class="text-border">|</span>}
+              <a
+                href={langRoots[l]}
+                class:list={[
+                  'px-2 py-1 rounded-md transition-colors',
+                  lang === l ? 'text-primary font-semibold' : 'text-text-muted hover:text-text',
+                ]}
+              >
+                {l.toUpperCase()}
+              </a>
+            </>
+          ))}
         </div>
         {
           primaryCTA && (
@@ -142,9 +161,20 @@ const primaryCTA = headerNav.cta.find((cta) => cta.variant === 'primary');
       <div class="border-t border-border my-2"></div>
       <!-- Language Switcher (mobile) -->
       <div class="flex items-center gap-2 px-3 py-3">
-        <a href="/" class="text-sm font-medium text-text-muted hover:text-text transition-colors">EN</a>
-        <span class="text-border">|</span>
-        <a href="/fr/" class="text-sm font-medium text-text-muted hover:text-text transition-colors">FR</a>
+        {(['en', 'fr', 'es'] as Lang[]).map((l, i) => (
+          <>
+            {i > 0 && <span class="text-border">|</span>}
+            <a
+              href={langRoots[l]}
+              class:list={[
+                'text-sm font-medium transition-colors',
+                lang === l ? 'text-primary font-semibold' : 'text-text-muted hover:text-text',
+              ]}
+            >
+              {l.toUpperCase()}
+            </a>
+          </>
+        ))}
       </div>
       {
         primaryCTA && (

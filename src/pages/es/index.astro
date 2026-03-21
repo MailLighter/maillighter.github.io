@@ -1,0 +1,291 @@
+---
+import MarketingLayout from '@/layouts/MarketingLayout.astro';
+import Hero from '@sections/marketing/Hero.astro';
+import HowItWorks from '@sections/marketing/HowItWorks.astro';
+import FeaturesSection from '@sections/marketing/FeaturesSection.astro';
+import BentoGrid from '@sections/marketing/BentoGrid.astro';
+import CTA from '@sections/marketing/CTA.astro';
+import { siteConfig } from '@/config';
+
+const features = [
+  {
+    icon: 'lucide:scissors',
+    title: 'Elimina los archivos adjuntos',
+    description:
+      'Elimine los archivos adjuntos innecesarios de sus correos antes de enviar o responder. Mantenga su buzón ligero.',
+  },
+  {
+    icon: 'lucide:image-off',
+    title: 'Suprime las imágenes incrustadas',
+    description:
+      'Limpie los logotipos, banners e imágenes en línea que sobrecargan cada correo de la cadena.',
+  },
+  {
+    icon: 'lucide:list-collapse',
+    title: 'Recorta las cadenas de respuestas',
+    description:
+      'Conserve solo los mensajes más recientes del hilo. Elimine el interminable rastro de respuestas citadas.',
+  },
+  {
+    icon: 'lucide:mouse-pointer-click',
+    title: 'Acción en un clic',
+    description:
+      'Un único botón en Outlook lo hace todo. Sin configuraciones, sin flujos de trabajo que aprender.',
+  },
+  {
+    icon: 'lucide:shield-check',
+    title: 'Cumplimiento RGPD',
+    description:
+      'Todo el procesamiento ocurre localmente. Ningún dato abandona su entorno. Totalmente respetuoso con su privacidad.',
+  },
+  {
+    icon: 'lucide:cloud-cog',
+    title: 'Compatible con Microsoft 365',
+    description:
+      'Funciona perfectamente con entornos Microsoft 365 — Outlook de escritorio y Outlook en la web.',
+  },
+];
+
+const bentoItems = [
+  {
+    title: 'Productividad y legibilidad',
+    description:
+      'Correos más cortos, información más clara, menos ruido, menos desplazamiento. Decisiones más rápidas para todos.',
+    icon: 'lucide:trending-up',
+    size: 'large' as const,
+    accent: 'blue' as const,
+  },
+  {
+    title: 'Reducción de costes IT',
+    description: 'Menos almacenamiento en servidor, copias de seguridad más ligeras, menos ancho de banda. Un buzón más eficiente.',
+    icon: 'lucide:server',
+    accent: 'green' as const,
+  },
+  {
+    title: 'Impacto RSC inmediato',
+    description:
+      'Cada correo más ligero significa menos datos almacenados y replicados, menos energía consumida, una huella digital menor.',
+    icon: 'lucide:leaf',
+    accent: 'green' as const,
+  },
+  {
+    title: 'Sobriedad digital',
+    description:
+      'MailLighter convierte cada envío en un gesto de sobriedad digital. Impacto modesto individualmente, masivo a escala.',
+    icon: 'lucide:globe',
+    size: 'medium' as const,
+    accent: 'primary' as const,
+  },
+];
+---
+
+<MarketingLayout
+  title={`${siteConfig.name} — Correos más ligeros, impacto más ligero`}
+  description="El plugin de Outlook que limpia sus correos en un clic. Para intercambios más claros, servidores menos cargados y una sobriedad digital concreta."
+>
+  <!-- HERO -->
+  <Hero
+    title="MailLighter para Outlook"
+    subtitle="Aligere sus correos. Aligere su impacto. El plugin de Outlook que limpia sus correos en un clic. Para intercambios más claros, servidores menos cargados y una sobriedad digital concreta."
+    primaryCTA={{ label: 'Probar ahora', href: 'https://appsource.microsoft.com/' }}
+    secondaryCTA={{ label: 'Saber más', href: '#problem' }}
+    backgroundType="gradient"
+    gradient="from-primary/10 via-background to-background"
+  />
+
+  <!-- PROBLEMA -->
+  <section id="problem" class="py-section bg-surface">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <p class="text-sm font-semibold text-primary uppercase tracking-wide mb-3">El problema hoy</p>
+      <h2 class="text-3xl sm:text-4xl font-bold text-text mb-6">
+        Sus correos son más pesados de lo que cree
+      </h2>
+      <p class="text-lg text-text-muted mb-10 max-w-2xl mx-auto">
+        Cada día, sus colegas envían y reciben archivos adjuntos duplicados, imágenes incrustadas innecesarias y cadenas de correos interminables. Esto sobrecarga innecesariamente los buzones, los servidores y los equipos — y aumenta la huella de carbono digital de su organización.
+      </p>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="bg-background rounded-lg p-6 border border-border">
+          <div class="text-3xl mb-3">📎</div>
+          <h3 class="font-semibold text-text mb-2">Archivos adjuntos duplicados</h3>
+          <p class="text-sm text-text-muted">Los mismos archivos reenviados una y otra vez en cada respuesta.</p>
+        </div>
+        <div class="bg-background rounded-lg p-6 border border-border">
+          <div class="text-3xl mb-3">🖼️</div>
+          <h3 class="font-semibold text-text mb-2">Imágenes inútiles</h3>
+          <p class="text-sm text-text-muted">Logotipos, banners, firmas — incrustados en cada mensaje de la cadena.</p>
+        </div>
+        <div class="bg-background rounded-lg p-6 border border-border">
+          <div class="text-3xl mb-3">🔁</div>
+          <h3 class="font-semibold text-text mb-2">Cadenas interminables</h3>
+          <p class="text-sm text-text-muted">Hilos con decenas de respuestas citadas que nadie lee.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOLUCIÓN -->
+  <section id="solution" class="py-section bg-background">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <p class="text-sm font-semibold text-secondary uppercase tracking-wide mb-3">La solución</p>
+      <h2 class="text-3xl sm:text-4xl font-bold text-text mb-4">
+        El botón de Outlook que conserva lo esencial — y elimina el resto
+      </h2>
+      <p class="text-lg text-text-muted mb-10">
+        En un clic, directamente en Outlook, sin cambiar sus hábitos.
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+        <div class="text-center">
+          <div class="w-16 h-16 ml-gradient-bg rounded-xl flex items-center justify-center mx-auto mb-4">
+            <span class="text-white text-2xl">✂️</span>
+          </div>
+          <h3 class="font-semibold text-text mb-2">Elimina archivos adjuntos</h3>
+          <p class="text-sm text-text-muted">Elimine los archivos innecesarios de la conversación.</p>
+        </div>
+        <div class="text-center">
+          <div class="w-16 h-16 ml-gradient-bg rounded-xl flex items-center justify-center mx-auto mb-4">
+            <span class="text-white text-2xl">🖼️</span>
+          </div>
+          <h3 class="font-semibold text-text mb-2">Suprime las imágenes</h3>
+          <p class="text-sm text-text-muted">Limpie las imágenes incrustadas de firmas y cadenas.</p>
+        </div>
+        <div class="text-center">
+          <div class="w-16 h-16 ml-gradient-bg rounded-xl flex items-center justify-center mx-auto mb-4">
+            <span class="text-white text-2xl">🧹</span>
+          </div>
+          <h3 class="font-semibold text-text mb-2">Limpia las respuestas</h3>
+          <p class="text-sm text-text-muted">Conserve solo los últimos mensajes del hilo.</p>
+        </div>
+      </div>
+
+      <!-- Placeholder captura de pantalla -->
+      <div class="bg-surface border-2 border-dashed border-border rounded-xl p-12 max-w-2xl mx-auto">
+        <div class="text-text-muted text-center">
+          <div class="text-4xl mb-3">📸</div>
+          <p class="font-medium">Captura de pantalla próximamente</p>
+          <p class="text-sm mt-1">MailLighter en acción dentro de Outlook</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CARACTERÍSTICAS -->
+  <FeaturesSection
+    title="Todo lo que necesita, nada más"
+    subtitle="Simple, eficaz y respetuoso. MailLighter se integra de forma natural en su flujo de trabajo diario."
+    features={features}
+    background="muted"
+    id="features"
+  />
+
+  <!-- BENEFICIOS (Bento Grid) -->
+  <BentoGrid
+    title="Beneficios medibles"
+    subtitle="Para sus equipos, su IT y el planeta."
+    items={bentoItems}
+    background="default"
+    id="benefits"
+  />
+
+  <!-- RSC -->
+  <section class="py-section bg-surface">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <p class="text-sm font-semibold text-primary uppercase tracking-wide mb-3">Una herramienta de sobriedad digital</p>
+        <h2 class="text-3xl sm:text-4xl font-bold text-text mb-4">
+          Refuerce su política RSC
+        </h2>
+        <p class="text-lg text-text-muted max-w-2xl mx-auto">
+          MailLighter actúa directamente sobre los usos cotidianos, reduciendo el volumen y el impacto medioambiental de los correos desde el origen.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mb-12">
+        {[
+          { icon: '✅', text: 'Simple' },
+          { icon: '✅', text: 'Bajo coste' },
+          { icon: '✅', text: 'Fácil de desplegar' },
+          { icon: '✅', text: 'Sin cambio de hábitos' },
+          { icon: '✅', text: 'Escalable' },
+          { icon: '✅', text: 'Impacto real' },
+        ].map((item) => (
+          <div class="flex items-center gap-2 bg-background rounded-lg p-4 border border-border">
+            <span class="text-lg">{item.icon}</span>
+            <span class="text-sm font-medium text-text">{item.text}</span>
+          </div>
+        ))}
+      </div>
+
+      <div class="bg-background rounded-xl p-8 border border-border">
+        <h3 class="font-semibold text-text text-lg mb-4">MailLighter ayuda a las organizaciones a:</h3>
+        <ul class="space-y-3 text-text-muted">
+          <li class="flex items-start gap-3">
+            <span class="text-primary mt-0.5">→</span>
+            <span>Cumplir con las expectativas de <strong class="text-text">informes RSC / ESG</strong>, auditorías internas e iniciativas Green IT</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-primary mt-0.5">→</span>
+            <span>Demostrar <strong class="text-text">acciones operativas</strong>, no solo declaraciones</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- PÚBLICO OBJETIVO -->
+  <section id="audience" class="py-section bg-background">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <p class="text-sm font-semibold text-primary uppercase tracking-wide mb-3">¿Para quién?</p>
+      <h2 class="text-3xl sm:text-4xl font-bold text-text mb-10">
+        Diseñado para organizaciones comprometidas con el digital responsable
+      </h2>
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-6">
+        {[
+          { icon: '🏢', title: 'Empresas privadas' },
+          { icon: '🏛️', title: 'Organizaciones públicas' },
+          { icon: '💻', title: 'Equipos IT / CIO' },
+          { icon: '🌱', title: 'Departamentos RSC' },
+          { icon: '🔧', title: 'Servicios informáticos' },
+          { icon: '🌍', title: 'Digital responsable' },
+        ].map((item) => (
+          <div class="bg-surface rounded-lg p-6 border border-border text-center">
+            <div class="text-3xl mb-3">{item.icon}</div>
+            <h3 class="font-medium text-text text-sm">{item.title}</h3>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- DESPLIEGUE -->
+  <HowItWorks
+    title="Despliegue sencillo"
+    subtitle="Operativo en minutos."
+    steps={[
+      {
+        title: 'Instalación rápida',
+        description: 'Instale desde la marketplace de Microsoft AppSource en pocos clics.',
+        icon: 'lucide:download',
+      },
+      {
+        title: 'Compatible con Microsoft 365',
+        description: 'Funciona con su entorno Microsoft 365 existente. Sin migración necesaria.',
+        icon: 'lucide:check-circle',
+      },
+      {
+        title: 'Adopción inmediata',
+        description: 'Sin formación necesaria. Sin impacto en la seguridad. Cumple el RGPD.',
+        icon: 'lucide:rocket',
+      },
+    ]}
+    variant="horizontal"
+    background="muted"
+  />
+
+  <!-- CTA -->
+  <CTA
+    title="Correos más ligeros. Digital más responsable."
+    description="Pruebe MailLighter hoy y convierta cada correo en un gesto de sobriedad digital."
+    action={{ label: 'Probar ahora', href: 'https://appsource.microsoft.com/' }}
+  />
+</MarketingLayout>
