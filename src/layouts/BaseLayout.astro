@@ -66,6 +66,26 @@ const lang = pathname.startsWith('/fr') ? 'fr' : pathname.startsWith('/es') ? 'e
             document.documentElement.classList.add(`announcement-${id}-dismissed`);
           }
         });
+
+        // Language auto-detection — only on the English root page
+        const path = window.location.pathname;
+        if (path === '/' || path === '') {
+          const savedLang = localStorage.getItem('preferred-lang');
+          if (savedLang && savedLang !== 'en') {
+            window.location.replace('/' + savedLang + '/');
+          } else if (!savedLang) {
+            const browserLang = (navigator.language || '').toLowerCase().split('-')[0];
+            if (browserLang === 'fr') {
+              localStorage.setItem('preferred-lang', 'fr');
+              window.location.replace('/fr/');
+            } else if (browserLang === 'es') {
+              localStorage.setItem('preferred-lang', 'es');
+              window.location.replace('/es/');
+            } else {
+              localStorage.setItem('preferred-lang', 'en');
+            }
+          }
+        }
       })();
     </script>
   </head>

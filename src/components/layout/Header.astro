@@ -79,8 +79,9 @@ const langRoots: Record<Lang, string> = { en: '/', fr: '/fr/', es: '/es/' };
               {i > 0 && <span class="text-border">|</span>}
               <a
                 href={langRoots[l]}
+                data-lang={l}
                 class:list={[
-                  'px-2 py-1 rounded-md transition-colors',
+                  'lang-switcher px-2 py-1 rounded-md transition-colors',
                   lang === l ? 'text-primary font-semibold' : 'text-text-muted hover:text-text',
                 ]}
               >
@@ -166,8 +167,9 @@ const langRoots: Record<Lang, string> = { en: '/', fr: '/fr/', es: '/es/' };
             {i > 0 && <span class="text-border">|</span>}
             <a
               href={langRoots[l]}
+              data-lang={l}
               class:list={[
-                'text-sm font-medium transition-colors',
+                'lang-switcher text-sm font-medium transition-colors',
                 lang === l ? 'text-primary font-semibold' : 'text-text-muted hover:text-text',
               ]}
             >
@@ -244,5 +246,13 @@ const langRoots: Record<Lang, string> = { en: '/', fr: '/fr/', es: '/es/' };
 
   mobileMenu?.querySelectorAll('a').forEach((link) => {
     link.addEventListener('click', closeMobileMenu);
+  });
+
+  // Save language preference when user manually switches language
+  document.querySelectorAll<HTMLAnchorElement>('.lang-switcher').forEach((link) => {
+    link.addEventListener('click', () => {
+      const lang = link.dataset.lang;
+      if (lang) localStorage.setItem('preferred-lang', lang);
+    });
   });
 </script>
