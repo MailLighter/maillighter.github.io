@@ -2,17 +2,22 @@
 @plugin "@tailwindcss/typography";
 
 @theme {
-  /* Brand Colors - MailLighter blue-to-green */
-  --color-primary: oklch(0.50 0.18 250);
-  --color-primary-dark: oklch(0.42 0.18 250);
-  --color-secondary: oklch(0.55 0.15 155);
+  /* Brand Colors - MailLighter logo exact match
+     Primary: #335DFF (blue "Mail" from SVG icon)
+     Secondary: green "Lighter" gradient (dark → light mint) */
+  --color-primary: oklch(0.52 0.26 264);        /* #335DFF vivid blue */
+  --color-primary-dark: oklch(0.44 0.26 264);   /* Hover/pressed state */
+  --color-primary-light: oklch(0.93 0.06 264);  /* Tinted backgrounds, badges */
+
+  --color-secondary: oklch(0.58 0.17 145);      /* Logo green (start of "Lighter") */
+  --color-secondary-light: oklch(0.83 0.08 145); /* Logo mint (end of "Lighter") */
 
   /* Semantic Colors */
   --color-background: oklch(1 0 0);
-  --color-surface: oklch(0.97 0.005 200);
+  --color-surface: oklch(0.97 0.008 264);       /* Subtle brand-blue tint */
   --color-text: oklch(0.15 0 0);
   --color-text-muted: oklch(0.45 0 0);
-  --color-border: oklch(0.9 0.005 200);
+  --color-border: oklch(0.90 0.006 264);        /* Blue-tinted border */
 
   /* Status Colors */
   --color-success: oklch(0.45 0.15 145);
@@ -21,8 +26,8 @@
   --color-warning-bg: oklch(0.95 0.05 85);
   --color-error: oklch(0.46 0.2 25);
   --color-error-bg: oklch(0.95 0.05 25);
-  --color-info: oklch(0.45 0.15 240);
-  --color-info-bg: oklch(0.95 0.05 240);
+  --color-info: oklch(0.45 0.15 264);           /* Info aligns with brand blue */
+  --color-info-bg: oklch(0.95 0.05 264);
 
   /* Spacing */
   --spacing-section: 6rem;
@@ -36,11 +41,11 @@
 
 /* Dark mode overrides */
 .dark {
-  --color-background: oklch(0.15 0.01 220);
-  --color-surface: oklch(0.2 0.01 220);
+  --color-background: oklch(0.13 0.02 264);    /* Deep blue-dark, on-brand */
+  --color-surface: oklch(0.18 0.02 264);        /* Slightly lighter blue-dark */
   --color-text: oklch(0.95 0 0);
   --color-text-muted: oklch(0.65 0 0);
-  --color-border: oklch(0.3 0.01 220);
+  --color-border: oklch(0.28 0.02 264);         /* Blue-tinted border */
 
   --color-success: oklch(0.65 0.15 145);
   --color-success-bg: oklch(0.25 0.05 145);
@@ -48,8 +53,8 @@
   --color-warning-bg: oklch(0.25 0.05 85);
   --color-error: oklch(0.65 0.2 25);
   --color-error-bg: oklch(0.25 0.05 25);
-  --color-info: oklch(0.65 0.15 240);
-  --color-info-bg: oklch(0.25 0.05 240);
+  --color-info: oklch(0.65 0.15 264);
+  --color-info-bg: oklch(0.25 0.05 264);
 }
 
 /* Base styles */
@@ -160,14 +165,34 @@ select:focus-visible {
   }
 }
 
-/* MailLighter gradient utility */
+/* MailLighter gradient utilities - mirroring the logo gradient
+   Blue "Mail" (#335DFF) → dark green → light mint (like "Lighter" text) */
 .ml-gradient-text {
-  background: linear-gradient(135deg, oklch(0.50 0.18 250), oklch(0.55 0.15 155));
+  background: linear-gradient(
+    90deg,
+    oklch(0.52 0.26 264),
+    oklch(0.58 0.17 145) 55%,
+    oklch(0.83 0.08 145)
+  );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
 .ml-gradient-bg {
-  background: linear-gradient(135deg, oklch(0.50 0.18 250), oklch(0.55 0.15 155));
+  background: linear-gradient(
+    135deg,
+    oklch(0.52 0.26 264),
+    oklch(0.58 0.17 145) 60%,
+    oklch(0.83 0.08 145)
+  );
+}
+
+/* Subtle blue brand tint for section backgrounds */
+.ml-tint-bg {
+  background: linear-gradient(
+    180deg,
+    oklch(0.97 0.008 264),
+    oklch(1 0 0)
+  );
 }
