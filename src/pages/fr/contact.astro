@@ -3,16 +3,43 @@ import MarketingLayout from '@/layouts/MarketingLayout.astro';
 import PageHeader from '@sections/content/PageHeader.astro';
 import ContactForm from '@forms/ContactForm.astro';
 import { Icon } from 'astro-icon/components';
-import { siteConfig, contactMethods, contactFAQs } from '@/config';
+import { siteConfig } from '@/config';
+
+const contactMethods = [
+  {
+    icon: 'lucide:mail',
+    label: 'Email',
+    value: 'contact@maillighter.com',
+    href: 'mailto:contact@maillighter.com',
+  },
+];
+
+const contactFAQs = [
+  {
+    question: 'Comment installer MailLighter ?',
+    answer:
+      'MailLighter est disponible sur la marketplace Microsoft AppSource. Installez-le directement depuis là dans votre environnement Outlook.',
+  },
+  {
+    question: 'MailLighter est-il compatible avec ma version d\'Outlook ?',
+    answer:
+      'MailLighter fonctionne avec les environnements Microsoft 365 (Outlook bureau et Outlook web).',
+  },
+  {
+    question: 'Mes données sont-elles en sécurité avec MailLighter ?',
+    answer:
+      'Oui. MailLighter traite les emails localement et est entièrement conforme au RGPD. Aucune donnée ne quitte votre environnement.',
+  },
+];
 ---
 
 <MarketingLayout
   title={`Contact - ${siteConfig.name}`}
-  description="Get in touch with the MailLighter team. We're here to help with questions about our plugin."
+  description="Contactez l'équipe MailLighter. Nous sommes là pour répondre à vos questions sur notre plugin."
 >
   <PageHeader
-    title="Get in touch"
-    subtitle={`Have a question about ${siteConfig.name}? We'd love to hear from you.`}
+    title="Nous contacter"
+    subtitle={`Une question sur ${siteConfig.name} ? Nous serions ravis de vous aider.`}
     align="left"
     maxWidth="lg"
   />
@@ -21,14 +48,14 @@ import { siteConfig, contactMethods, contactFAQs } from '@/config';
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
         <div>
-          <h2 class="text-2xl font-bold text-text mb-8">Send us a message</h2>
-          <ContactForm accessKey="490a3f5f-4387-4922-bba3-147f540ce414" />
+          <h2 class="text-2xl font-bold text-text mb-8">Envoyez-nous un message</h2>
+          <ContactForm accessKey="490a3f5f-4387-4922-bba3-147f540ce414" lang="fr" />
         </div>
 
         <div class="space-y-8">
-          <!-- Contact Methods -->
+          <!-- Moyens de contact -->
           <div>
-            <h2 class="text-2xl font-bold text-text mb-4">Other ways to reach us</h2>
+            <h2 class="text-2xl font-bold text-text mb-4">Autres moyens de nous contacter</h2>
             <div class="space-y-3">
               {
                 contactMethods.map((method) => (
@@ -46,7 +73,7 @@ import { siteConfig, contactMethods, contactFAQs } from '@/config';
 
           <!-- FAQ Mini -->
           <div>
-            <h2 class="text-2xl font-bold text-text mb-4">Common questions</h2>
+            <h2 class="text-2xl font-bold text-text mb-4">Questions fréquentes</h2>
             <div class="space-y-4">
               {
                 contactFAQs.map((faq) => (

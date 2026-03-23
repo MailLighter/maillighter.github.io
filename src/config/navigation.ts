@@ -11,8 +11,8 @@ export const navigationByLang: Record<Lang, Navigation> = {
     header: {
       main: [
         { label: 'Features', href: '/#features' },
-        { label: 'Benefits', href: '/#benefits' },
         { label: 'FAQ', href: '/faq' },
+        { label: 'Contact', href: '/contact' },
         { label: 'Docs', href: '/docs', feature: 'docs' },
       ],
       cta: [
@@ -24,12 +24,8 @@ export const navigationByLang: Record<Lang, Navigation> = {
         { label: 'Features', href: '/#features' },
         { label: 'Benefits', href: '/#benefits' },
         { label: 'FAQ', href: '/faq' },
-        { label: 'Documentation', href: '/docs', feature: 'docs' },
       ],
-      solutions: [
-        { label: 'Enterprise', href: '/#audience' },
-        { label: 'Contact', href: '/contact' },
-      ],
+
       resources: [
         { label: 'Documentation', href: '/docs', feature: 'docs' },
       ],
@@ -38,7 +34,6 @@ export const navigationByLang: Record<Lang, Navigation> = {
       ],
       legal: [
         { label: 'Privacy', href: '/privacy' },
-        { label: 'Terms', href: '/terms' },
       ],
     },
   },
@@ -47,8 +42,8 @@ export const navigationByLang: Record<Lang, Navigation> = {
     header: {
       main: [
         { label: 'Fonctionnalités', href: '/fr/#features' },
-        { label: 'Bénéfices', href: '/fr/#benefits' },
         { label: 'FAQ', href: '/fr/faq' },
+        { label: 'Contact', href: '/fr/contact' },
         { label: 'Docs', href: '/docs', feature: 'docs' },
       ],
       cta: [
@@ -60,21 +55,16 @@ export const navigationByLang: Record<Lang, Navigation> = {
         { label: 'Fonctionnalités', href: '/fr/#features' },
         { label: 'Bénéfices', href: '/fr/#benefits' },
         { label: 'FAQ', href: '/fr/faq' },
-        { label: 'Documentation', href: '/docs', feature: 'docs' },
       ],
-      solutions: [
-        { label: 'Grandes entreprises', href: '/fr/#audience' },
-        { label: 'Contact', href: '/contact' },
-      ],
+
       resources: [
         { label: 'Documentation', href: '/docs', feature: 'docs' },
       ],
       company: [
-        { label: 'Contact', href: '/contact' },
+        { label: 'Contact', href: '/fr/contact' },
       ],
       legal: [
         { label: 'Confidentialité', href: '/privacy' },
-        { label: "Conditions d'utilisation", href: '/terms' },
       ],
     },
   },
@@ -83,8 +73,8 @@ export const navigationByLang: Record<Lang, Navigation> = {
     header: {
       main: [
         { label: 'Características', href: '/es/#features' },
-        { label: 'Beneficios', href: '/es/#benefits' },
         { label: 'Preguntas frecuentes', href: '/es/faq' },
+        { label: 'Contacto', href: '/es/contact' },
         { label: 'Docs', href: '/docs', feature: 'docs' },
       ],
       cta: [
@@ -96,21 +86,16 @@ export const navigationByLang: Record<Lang, Navigation> = {
         { label: 'Características', href: '/es/#features' },
         { label: 'Beneficios', href: '/es/#benefits' },
         { label: 'Preguntas frecuentes', href: '/es/faq' },
-        { label: 'Documentación', href: '/docs', feature: 'docs' },
       ],
-      solutions: [
-        { label: 'Empresas', href: '/es/#audience' },
-        { label: 'Contacto', href: '/contact' },
-      ],
+
       resources: [
         { label: 'Documentación', href: '/docs', feature: 'docs' },
       ],
       company: [
-        { label: 'Contacto', href: '/contact' },
+        { label: 'Contacto', href: '/es/contact' },
       ],
       legal: [
         { label: 'Privacidad', href: '/privacy' },
-        { label: 'Términos de uso', href: '/terms' },
       ],
     },
   },
