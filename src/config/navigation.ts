@@ -22,7 +22,6 @@ export const navigationByLang: Record<Lang, Navigation> = {
     footer: {
       product: [
         { label: 'Features', href: '/#features' },
-        { label: 'Benefits', href: '/#benefits' },
         { label: 'FAQ', href: '/faq' },
       ],
 
@@ -53,7 +52,6 @@ export const navigationByLang: Record<Lang, Navigation> = {
     footer: {
       product: [
         { label: 'Fonctionnalités', href: '/fr/#features' },
-        { label: 'Bénéfices', href: '/fr/#benefits' },
         { label: 'FAQ', href: '/fr/faq' },
       ],
 
@@ -84,7 +82,6 @@ export const navigationByLang: Record<Lang, Navigation> = {
     footer: {
       product: [
         { label: 'Características', href: '/es/#features' },
-        { label: 'Beneficios', href: '/es/#benefits' },
         { label: 'Preguntas frecuentes', href: '/es/faq' },
       ],
 
