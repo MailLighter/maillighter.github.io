@@ -1,0 +1,93 @@
+---
+import MarketingLayout from '@/layouts/MarketingLayout.astro';
+import PageHeader from '@sections/content/PageHeader.astro';
+import ContactForm from '@forms/ContactForm.astro';
+import { Icon } from 'astro-icon/components';
+import { siteConfig } from '@/config';
+
+const contactMethods = [
+  {
+    icon: 'lucide:mail',
+    label: 'Email',
+    value: 'contact@maillighter.com',
+    href: 'mailto:contact@maillighter.com',
+  },
+];
+
+const contactFAQs = [
+  {
+    question: 'Comment installer MailLighter ?',
+    answer:
+      'MailLighter est disponible sur la marketplace Microsoft AppSource. Installez-le directement depuis là dans votre environnement Outlook.',
+  },
+  {
+    question: 'MailLighter est-il compatible avec ma version d\'Outlook ?',
+    answer:
+      'MailLighter fonctionne avec les environnements Microsoft 365 (Outlook bureau et Outlook web).',
+  },
+  {
+    question: 'Mes données sont-elles en sécurité avec MailLighter ?',
+    answer:
+      'Oui. MailLighter traite les emails localement et est entièrement conforme au RGPD. Aucune donnée ne quitte votre environnement.',
+  },
+];
+---
+
+<MarketingLayout
+  title={`Contact - ${siteConfig.name}`}
+  description="Contactez l'équipe MailLighter. Nous sommes là pour répondre à vos questions sur notre plugin."
+>
+  <PageHeader
+    title="Nous contacter"
+    subtitle={`Une question sur ${siteConfig.name} ? Nous serions ravis de vous aider.`}
+    align="left"
+    maxWidth="lg"
+  />
+
+  <section class="py-section bg-surface">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <div>
+          <h2 class="text-2xl font-bold text-text mb-8">Envoyez-nous un message</h2>
+          {/* TODO: Replace YOUR_FORM_ID with your Formspree form ID (https://formspree.io) */}
+          <ContactForm action="https://formspree.io/f/YOUR_FORM_ID" />
+        </div>
+
+        <div class="space-y-8">
+          <!-- Moyens de contact -->
+          <div>
+            <h2 class="text-2xl font-bold text-text mb-4">Autres moyens de nous contacter</h2>
+            <div class="space-y-3">
+              {
+                contactMethods.map((method) => (
+                  <a
+                    href={method.href}
+                    class="flex items-center gap-3 text-text-muted hover:text-primary transition-colors group"
+                  >
+                    <Icon name={method.icon} class="w-5 h-5 text-primary" />
+                    <span class="group-hover:underline">{method.value}</span>
+                  </a>
+                ))
+              }
+            </div>
+          </div>
+
+          <!-- FAQ Mini -->
+          <div>
+            <h2 class="text-2xl font-bold text-text mb-4">Questions fréquentes</h2>
+            <div class="space-y-4">
+              {
+                contactFAQs.map((faq) => (
+                  <div>
+                    <h3 class="font-medium text-text">{faq.question}</h3>
+                    <p class="text-sm text-text-muted mt-1">{faq.answer}</p>
+                  </div>
+                ))
+              }
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</MarketingLayout>
