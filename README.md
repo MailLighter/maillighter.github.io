@@ -67,5 +67,5 @@ npm run check
 ## Liens projet
 
 - Site: https://maillighter.com
-- GitHub MailLighter: https://github.com/maillighter
+- GitHub MailLighter: https://github.com/MailLighter/MailLighter
 
