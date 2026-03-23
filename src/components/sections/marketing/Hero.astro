@@ -198,7 +198,7 @@ const buttonAlignClass = align === 'left' ? 'justify-start' : 'justify-center';
           textClasses.heading,
         ]}
       >
-        {title}
+        {Astro.slots.has('title') ? <slot name="title" /> : title}
       </h1>
       <p class:list={['mt-6 text-lg sm:text-xl leading-relaxed', textClasses.body]}>
         {subtitle}
