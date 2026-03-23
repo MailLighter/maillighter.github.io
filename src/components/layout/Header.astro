@@ -36,6 +36,7 @@ const primaryCTA = headerNav.cta.find((cta) => cta.variant === 'primary');
 
 // Language switcher roots
 const langRoots: Record<Lang, string> = { en: '/', fr: '/fr/', es: '/es/' };
+const langLabels: Record<Lang, string> = { en: 'English', fr: 'Français', es: 'Español' };
 ---
 
 <header
@@ -73,22 +74,18 @@ const langRoots: Record<Lang, string> = { en: '/', fr: '/fr/', es: '/es/' };
       <div class="hidden md:flex items-center gap-4">
         <ThemeToggle />
         <!-- Language Switcher -->
-        <div class="flex items-center gap-1 text-sm font-medium">
-          {(['en', 'fr', 'es'] as Lang[]).map((l, i) => (
-            <>
-              {i > 0 && <span class="text-border">|</span>}
-              <a
-                href={langRoots[l]}
-                data-lang={l}
-                class:list={[
-                  'lang-switcher px-2 py-1 rounded-md transition-colors',
-                  lang === l ? 'text-primary font-semibold' : 'text-text-muted hover:text-text',
-                ]}
-              >
-                {l.toUpperCase()}
-              </a>
-            </>
-          ))}
+        <div class="relative flex items-center">
+          <Icon name="lucide:languages" class="absolute left-2 w-4 h-4 text-text-muted pointer-events-none" aria-hidden="true" />
+          <label class="sr-only" for="lang-select-desktop">Select language</label>
+          <select
+            id="lang-select-desktop"
+            class="lang-select appearance-none pl-7 pr-6 py-1.5 text-sm bg-transparent border border-border rounded-md text-text hover:border-primary focus:outline-none focus-visible:ring-2 focus-visible:ring-primary cursor-pointer"
+          >
+            {(['en', 'fr', 'es'] as Lang[]).map((l) => (
+              <option value={langRoots[l]} data-lang={l} selected={lang === l}>{langLabels[l]}</option>
+            ))}
+          </select>
+          <Icon name="lucide:chevron-down" class="absolute right-1.5 w-3 h-3 text-text-muted pointer-events-none" aria-hidden="true" />
         </div>
         {
           primaryCTA && (
@@ -161,22 +158,20 @@ const langRoots: Record<Lang, string> = { en: '/', fr: '/fr/', es: '/es/' };
       <!-- Divider -->
       <div class="border-t border-border my-2"></div>
       <!-- Language Switcher (mobile) -->
-      <div class="flex items-center gap-2 px-3 py-3">
-        {(['en', 'fr', 'es'] as Lang[]).map((l, i) => (
-          <>
-            {i > 0 && <span class="text-border">|</span>}
-            <a
-              href={langRoots[l]}
-              data-lang={l}
-              class:list={[
-                'lang-switcher text-sm font-medium transition-colors',
-                lang === l ? 'text-primary font-semibold' : 'text-text-muted hover:text-text',
-              ]}
-            >
-              {l.toUpperCase()}
-            </a>
-          </>
-        ))}
+      <div class="px-3 py-3">
+        <div class="relative flex items-center">
+          <Icon name="lucide:languages" class="absolute left-2 w-4 h-4 text-text-muted pointer-events-none" aria-hidden="true" />
+          <label class="sr-only" for="lang-select-mobile">Select language</label>
+          <select
+            id="lang-select-mobile"
+            class="lang-select w-full appearance-none pl-7 pr-6 py-2 text-sm bg-background border border-border rounded-md text-text focus:outline-none focus-visible:ring-2 focus-visible:ring-primary cursor-pointer"
+          >
+            {(['en', 'fr', 'es'] as Lang[]).map((l) => (
+              <option value={langRoots[l]} data-lang={l} selected={lang === l}>{langLabels[l]}</option>
+            ))}
+          </select>
+          <Icon name="lucide:chevron-down" class="absolute right-2 w-3 h-3 text-text-muted pointer-events-none" aria-hidden="true" />
+        </div>
       </div>
       {
         primaryCTA && (
@@ -248,11 +243,21 @@ const langRoots: Record<Lang, string> = { en: '/', fr: '/fr/', es: '/es/' };
     link.addEventListener('click', closeMobileMenu);
   });
 
-  // Save language preference when user manually switches language
-  document.querySelectorAll<HTMLAnchorElement>('.lang-switcher').forEach((link) => {
-    link.addEventListener('click', () => {
-      const lang = link.dataset.lang;
+  // Language select dropdowns
+  document.querySelectorAll<HTMLSelectElement>('.lang-select').forEach((select) => {
+    select.addEventListener('change', () => {
+      const selected = select.options[select.selectedIndex];
+      const lang = selected.dataset.lang;
       if (lang) localStorage.setItem('preferred-lang', lang);
+      window.location.pathname = select.value;
+    });
+    // Sync on back/forward navigation
+    window.addEventListener('pageshow', (e) => {
+      if (!e.persisted) return;
+      const marked = select.querySelector<HTMLOptionElement>('option[selected]');
+      if (marked && marked.index !== select.selectedIndex) {
+        select.selectedIndex = marked.index;
+      }
     });
   });
 </script>
