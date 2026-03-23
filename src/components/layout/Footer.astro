@@ -3,8 +3,8 @@
  * Footer - Site-wide footer with navigation and social links
  *
  * @description
- * A comprehensive footer with 5-column navigation layout:
- * Brand, Product, Solutions, Resources, Company.
+ * A comprehensive footer with navigation layout:
+ * Brand, Product, Resources, Company.
  * Navigation items are automatically filtered based on feature flags.
  *
  * @example
@@ -28,9 +28,9 @@ const currentYear = new Date().getFullYear();
 
 // Localised labels
 const labels = {
-  en: { product: 'Product', solutions: 'Solutions', resources: 'Resources', company: 'Company', rights: 'All rights reserved.', description: siteConfig.description },
-  fr: { product: 'Produit', solutions: 'Solutions', resources: 'Ressources', company: 'Entreprise', rights: 'Tous droits réservés.', description: 'Le plugin Outlook qui nettoie vos emails en un clic. Des emails plus légers, un impact réduit.' },
-  es: { product: 'Producto', solutions: 'Soluciones', resources: 'Recursos', company: 'Empresa', rights: 'Todos los derechos reservados.', description: 'El complemento de Outlook que limpia tus correos en un clic. Correos más ligeros, menor impacto.' },
+  en: { product: 'Product', resources: 'Resources', company: 'Company', rights: 'All rights reserved.', description: siteConfig.description },
+  fr: { product: 'Produit', resources: 'Ressources', company: 'Entreprise', rights: 'Tous droits réservés.', description: 'Le plugin Outlook qui nettoie vos emails en un clic. Des emails plus légers, un impact réduit.' },
+  es: { product: 'Producto', resources: 'Recursos', company: 'Empresa', rights: 'Todos los derechos reservados.', description: 'El complemento de Outlook que limpia tus correos en un clic. Correos más ligeros, menor impacto.' },
 }[lang];
 
 // Helper to filter items by feature flag
@@ -39,7 +39,6 @@ const filterByFeature = (items: NavigationItem[]) =>
 
 // Filter all navigation sections
 const productLinks = filterByFeature(footer.product);
-const solutionsLinks = filterByFeature(footer.solutions);
 const resourcesLinks = filterByFeature(footer.resources);
 const companyLinks = filterByFeature(footer.company);
 const legalLinks = filterByFeature(footer.legal);
@@ -48,7 +47,7 @@ const legalLinks = filterByFeature(footer.legal);
 <footer class="bg-surface border-t border-background">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
     <!-- Links Grid -->
-    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-8 lg:gap-12">
+    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-8 lg:gap-12">
       <!-- Brand Column -->
       <div class="col-span-2 sm:col-span-3 lg:col-span-2 mb-4 lg:mb-0">
         <a href="/" class="inline-flex items-center gap-2 font-semibold text-lg text-text">
@@ -131,27 +130,6 @@ const legalLinks = filterByFeature(footer.legal);
             <h3 class="font-semibold text-sm text-text mb-4">{labels.product}</h3>
             <ul class="space-y-3">
               {productLinks.map((link) => (
-                <li>
-                  <a
-                    href={link.href}
-                    class="text-sm text-text-muted hover:text-text transition-colors"
-                  >
-                    {link.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-        )
-      }
-
-      <!-- Solutions Column -->
-      {
-        solutionsLinks.length > 0 && (
-          <div>
-            <h3 class="font-semibold text-sm text-text mb-4">{labels.solutions}</h3>
-            <ul class="space-y-3">
-              {solutionsLinks.map((link) => (
                 <li>
                   <a
                     href={link.href}

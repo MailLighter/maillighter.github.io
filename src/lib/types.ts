@@ -29,8 +29,6 @@ export interface HeaderNavigation {
 export interface FooterNavigation {
   /** Product-related links */
   product: NavigationItem[];
-  /** Solutions/use-case links */
-  solutions: NavigationItem[];
   /** Resources like docs, blog */
   resources: NavigationItem[];
   /** Company info links */

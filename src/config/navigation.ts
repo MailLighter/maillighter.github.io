@@ -24,7 +24,7 @@ export const navigationByLang: Record<Lang, Navigation> = {
         { label: 'Benefits', href: '/#benefits' },
         { label: 'FAQ', href: '/faq' },
       ],
-      solutions: [],
+
       resources: [
         { label: 'Documentation', href: '/docs', feature: 'docs' },
       ],
@@ -54,7 +54,7 @@ export const navigationByLang: Record<Lang, Navigation> = {
         { label: 'Bénéfices', href: '/fr/#benefits' },
         { label: 'FAQ', href: '/fr/faq' },
       ],
-      solutions: [],
+
       resources: [
         { label: 'Documentation', href: '/docs', feature: 'docs' },
       ],
@@ -84,7 +84,7 @@ export const navigationByLang: Record<Lang, Navigation> = {
         { label: 'Beneficios', href: '/es/#benefits' },
         { label: 'Preguntas frecuentes', href: '/es/faq' },
       ],
-      solutions: [],
+
       resources: [
         { label: 'Documentación', href: '/docs', feature: 'docs' },
       ],
