@@ -34,8 +34,6 @@ const mainNavItems = headerNav.main.filter(
 const ghostCTAs = headerNav.cta.filter((cta) => cta.variant === 'ghost');
 const primaryCTA = headerNav.cta.find((cta) => cta.variant === 'primary');
 
-// Language switcher roots
-const langRoots: Record<Lang, string> = { en: '/', fr: '/fr/', es: '/es/' };
 const langLabels: Record<Lang, string> = { en: 'English', fr: 'Français', es: 'Español' };
 ---
 
@@ -82,7 +80,7 @@ const langLabels: Record<Lang, string> = { en: 'English', fr: 'Français', es: '
             class="lang-select appearance-none pl-7 pr-6 py-1.5 text-sm bg-background border border-border rounded-md text-text hover:border-primary focus:outline-none focus-visible:ring-2 focus-visible:ring-primary cursor-pointer dark:[color-scheme:dark]"
           >
             {(['en', 'fr', 'es'] as Lang[]).map((l) => (
-              <option value={langRoots[l]} data-lang={l} selected={lang === l}>{langLabels[l]}</option>
+              <option value={l} data-lang={l} selected={lang === l}>{langLabels[l]}</option>
             ))}
           </select>
           <Icon name="lucide:chevron-down" class="absolute right-1.5 w-3 h-3 text-text-muted pointer-events-none" aria-hidden="true" />
@@ -167,7 +165,7 @@ const langLabels: Record<Lang, string> = { en: 'English', fr: 'Français', es: '
             class="lang-select w-full appearance-none pl-7 pr-6 py-2 text-sm bg-background border border-border rounded-md text-text focus:outline-none focus-visible:ring-2 focus-visible:ring-primary cursor-pointer dark:[color-scheme:dark]"
           >
             {(['en', 'fr', 'es'] as Lang[]).map((l) => (
-              <option value={langRoots[l]} data-lang={l} selected={lang === l}>{langLabels[l]}</option>
+              <option value={l} data-lang={l} selected={lang === l}>{langLabels[l]}</option>
             ))}
           </select>
           <Icon name="lucide:chevron-down" class="absolute right-2 w-3 h-3 text-text-muted pointer-events-none" aria-hidden="true" />
@@ -248,17 +246,41 @@ const langLabels: Record<Lang, string> = { en: 'English', fr: 'Français', es: '
     const path = window.location.pathname;
     const currentLang = path.startsWith('/fr') ? 'fr' : path.startsWith('/es') ? 'es' : 'en';
     document.querySelectorAll<HTMLSelectElement>('.lang-select').forEach((select) => {
-      const target = select.querySelector<HTMLOptionElement>(`option[data-lang="${currentLang}"]`);
-      if (target) select.value = target.value;
+      select.value = currentLang;
     });
+  }
+
+  function getLocalizedPath(targetLang: 'en' | 'fr' | 'es'): string {
+    const url = new URL(window.location.href);
+    const currentPath = url.pathname;
+    const pathWithoutLang = currentPath.replace(/^\/(fr|es)(?=\/|$)/, '') || '/';
+    const normalizedPath =
+      pathWithoutLang.length > 1 && pathWithoutLang.endsWith('/')
+        ? pathWithoutLang.slice(0, -1)
+        : pathWithoutLang;
+
+    // Only these routes are localized today.
+    const localizedRoutes = new Set(['/','/faq','/contact']);
+    if (!localizedRoutes.has(normalizedPath)) {
+      return `${url.pathname}${url.search}${url.hash}`;
+    }
+
+    const nextPath =
+      targetLang === 'en'
+        ? normalizedPath
+        : `/${targetLang}${normalizedPath === '/' ? '/' : normalizedPath}`;
+
+    return `${nextPath}${url.search}${url.hash}`;
   }
 
   document.querySelectorAll<HTMLSelectElement>('.lang-select').forEach((select) => {
     select.addEventListener('change', () => {
       const selected = select.options[select.selectedIndex];
-      const lang = selected.dataset.lang;
-      if (lang) localStorage.setItem('preferred-lang', lang);
-      window.location.pathname = select.value;
+      const selectedLang = selected.dataset.lang as 'en' | 'fr' | 'es' | undefined;
+      if (!selectedLang) return;
+
+      localStorage.setItem('preferred-lang', selectedLang);
+      window.location.assign(getLocalizedPath(selectedLang));
     });
   });
 

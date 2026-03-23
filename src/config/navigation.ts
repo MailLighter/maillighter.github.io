@@ -13,7 +13,7 @@ export const navigationByLang: Record<Lang, Navigation> = {
         { label: 'Features', href: '/#features' },
         { label: 'FAQ', href: '/faq' },
         { label: 'Contact', href: '/contact' },
-        { label: 'Docs', href: '/docs', feature: 'docs' },
+        { label: 'Documentation', href: '/docs', feature: 'docs' },
       ],
       cta: [
         { label: 'Try it now', href: 'https://appsource.microsoft.com/', variant: 'primary' },
@@ -43,7 +43,7 @@ export const navigationByLang: Record<Lang, Navigation> = {
         { label: 'Fonctionnalités', href: '/fr/#features' },
         { label: 'FAQ', href: '/fr/faq' },
         { label: 'Contact', href: '/fr/contact' },
-        { label: 'Docs', href: '/docs', feature: 'docs' },
+        { label: 'Documentation', href: '/docs', feature: 'docs' },
       ],
       cta: [
         { label: 'Essayer maintenant', href: 'https://appsource.microsoft.com/', variant: 'primary' },
@@ -73,7 +73,7 @@ export const navigationByLang: Record<Lang, Navigation> = {
         { label: 'Características', href: '/es/#features' },
         { label: 'Preguntas frecuentes', href: '/es/faq' },
         { label: 'Contacto', href: '/es/contact' },
-        { label: 'Docs', href: '/docs', feature: 'docs' },
+        { label: 'Documentation', href: '/docs', feature: 'docs' },
       ],
       cta: [
         { label: 'Probar ahora', href: 'https://appsource.microsoft.com/', variant: 'primary' },
