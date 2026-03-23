@@ -12,6 +12,7 @@ export const navigationByLang: Record<Lang, Navigation> = {
       main: [
         { label: 'Features', href: '/#features' },
         { label: 'FAQ', href: '/faq' },
+        { label: 'Contact', href: '/contact' },
         { label: 'Docs', href: '/docs', feature: 'docs' },
       ],
       cta: [
@@ -42,6 +43,7 @@ export const navigationByLang: Record<Lang, Navigation> = {
       main: [
         { label: 'Fonctionnalités', href: '/fr/#features' },
         { label: 'FAQ', href: '/fr/faq' },
+        { label: 'Contact', href: '/fr/contact' },
         { label: 'Docs', href: '/docs', feature: 'docs' },
       ],
       cta: [
@@ -59,7 +61,7 @@ export const navigationByLang: Record<Lang, Navigation> = {
         { label: 'Documentation', href: '/docs', feature: 'docs' },
       ],
       company: [
-        { label: 'Contact', href: '/contact' },
+        { label: 'Contact', href: '/fr/contact' },
       ],
       legal: [
         { label: 'Confidentialité', href: '/privacy' },
@@ -72,6 +74,7 @@ export const navigationByLang: Record<Lang, Navigation> = {
       main: [
         { label: 'Características', href: '/es/#features' },
         { label: 'Preguntas frecuentes', href: '/es/faq' },
+        { label: 'Contacto', href: '/es/contact' },
         { label: 'Docs', href: '/docs', feature: 'docs' },
       ],
       cta: [
@@ -89,7 +92,7 @@ export const navigationByLang: Record<Lang, Navigation> = {
         { label: 'Documentación', href: '/docs', feature: 'docs' },
       ],
       company: [
-        { label: 'Contacto', href: '/contact' },
+        { label: 'Contacto', href: '/es/contact' },
       ],
       legal: [
         { label: 'Privacidad', href: '/privacy' },
