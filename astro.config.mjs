@@ -9,6 +9,9 @@ const siteUrl = process.env.SITE_URL || 'http://localhost:4321';
 
 export default defineConfig({
   site: siteUrl,
+  devToolbar: {
+    enabled: false,
+  },
   i18n: {
     defaultLocale: 'en',
     locales: ['en', 'fr', 'es'],
