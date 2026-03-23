@@ -1,36 +1,91 @@
 ---
 /**
- * ContactForm - Contact form with validation and Formspree support
+ * ContactForm - Multilingual contact form with validation and Formspree support
  *
- * @description
- * A fully-featured contact form with client-side validation, loading states,
- * and success/error feedback. Supports Formspree and custom endpoints.
- * Runs in demo mode (simulates success) when no action URL is provided.
- *
- * @example Demo mode (no backend)
+ * @example
  * ```astro
- * <ContactForm />
- * ```
- *
- * @example Formspree
- * ```astro
- * <ContactForm action="https://formspree.io/f/YOUR_FORM_ID" />
- * ```
- *
- * @example Custom endpoint
- * ```astro
- * <ContactForm action="https://api.example.com/contact" method="POST" />
+ * <ContactForm action="https://formspree.io/f/YOUR_FORM_ID" lang="fr" />
  * ```
  */
 
+import type { Lang } from '@/config/navigation';
+
 interface Props {
-  /** Form action URL - leave empty for client-side only demo */
   action?: string;
-  /** HTTP method for form submission */
   method?: 'POST' | 'GET';
+  lang?: Lang;
 }
 
-const { action = '', method = 'POST' } = Astro.props;
+const { action = '', method = 'POST', lang = 'en' } = Astro.props;
+
+const t = {
+  en: {
+    firstName: 'First name',
+    lastName: 'Last name',
+    email: 'Email',
+    subject: 'Subject',
+    message: 'Message',
+    placeholderFirstName: 'Jane',
+    placeholderLastName: 'Doe',
+    placeholderEmail: 'jane@example.com',
+    placeholderSubject: "What's on your mind?",
+    placeholderMessage: 'Tell us how we can help...',
+    send: 'Send Message',
+    sending: 'Sending...',
+    required: 'Required fields',
+    successTitle: 'Message sent successfully!',
+    successText: "We'll get back to you within 24 hours.",
+    errorTitle: 'Something went wrong',
+    errorText: 'Please try again or contact us directly via email.',
+    validationRequired: 'is required',
+    validationMinChars: 'must be at least {n} characters',
+    validationEmail: 'Please enter a valid email address',
+  },
+  fr: {
+    firstName: 'Prénom',
+    lastName: 'Nom',
+    email: 'Email',
+    subject: 'Objet',
+    message: 'Message',
+    placeholderFirstName: 'Marie',
+    placeholderLastName: 'Dupont',
+    placeholderEmail: 'marie@exemple.com',
+    placeholderSubject: 'Quel est votre sujet ?',
+    placeholderMessage: 'Dites-nous comment nous pouvons vous aider...',
+    send: 'Envoyer',
+    sending: 'Envoi en cours...',
+    required: 'Champs obligatoires',
+    successTitle: 'Message envoyé avec succès !',
+    successText: 'Nous vous répondrons dans les 24 heures.',
+    errorTitle: 'Une erreur est survenue',
+    errorText: 'Veuillez réessayer ou nous contacter directement par email.',
+    validationRequired: 'est requis',
+    validationMinChars: 'doit contenir au moins {n} caractères',
+    validationEmail: 'Veuillez entrer une adresse email valide',
+  },
+  es: {
+    firstName: 'Nombre',
+    lastName: 'Apellido',
+    email: 'Email',
+    subject: 'Asunto',
+    message: 'Mensaje',
+    placeholderFirstName: 'María',
+    placeholderLastName: 'García',
+    placeholderEmail: 'maria@ejemplo.com',
+    placeholderSubject: '¿Cuál es su consulta?',
+    placeholderMessage: 'Díganos cómo podemos ayudarle...',
+    send: 'Enviar',
+    sending: 'Enviando...',
+    required: 'Campos obligatorios',
+    successTitle: '¡Mensaje enviado con éxito!',
+    successText: 'Le responderemos en un plazo de 24 horas.',
+    errorTitle: 'Algo salió mal',
+    errorText: 'Por favor, inténtelo de nuevo o contáctenos directamente por email.',
+    validationRequired: 'es obligatorio',
+    validationMinChars: 'debe tener al menos {n} caracteres',
+    validationEmail: 'Por favor, introduzca una dirección de email válida',
+  },
+}[lang];
 ---
 
 <form
@@ -39,6 +94,15 @@ const { action = '', method = 'POST' } = Astro.props;
   method={method}
   class="space-y-6"
   novalidate
+  data-lang={lang}
+  data-validation-required={t.validationRequired}
+  data-validation-min-chars={t.validationMinChars}
+  data-validation-email={t.validationEmail}
+  data-label-first-name={t.firstName}
+  data-label-last-name={t.lastName}
+  data-label-email={t.email}
+  data-label-subject={t.subject}
+  data-label-message={t.message}
 >
   <!-- Formspree: static email subject -->
   <input type="hidden" name="_subject" value="[MailLighter] New contact message" />
@@ -56,7 +120,7 @@ const { action = '', method = 'POST' } = Astro.props;
   <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
     <div>
       <label for="firstName" class="block text-sm font-medium text-text mb-2">
-        First name <span class="text-red-500">*</span>
+        {t.firstName} <span class="text-red-500">*</span>
       </label>
       <input
         type="text"
@@ -65,13 +129,13 @@ const { action = '', method = 'POST' } = Astro.props;
         required
         minlength="2"
         class="w-full px-4 py-3 rounded-md border border-border bg-background text-text placeholder-text-muted focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-colors"
-        placeholder="Jane"
+        placeholder={t.placeholderFirstName}
       />
       <p class="mt-1 text-sm text-red-500 hidden" data-error="firstName"></p>
     </div>
     <div>
       <label for="lastName" class="block text-sm font-medium text-text mb-2">
-        Last name <span class="text-red-500">*</span>
+        {t.lastName} <span class="text-red-500">*</span>
       </label>
       <input
         type="text"
@@ -80,7 +144,7 @@ const { action = '', method = 'POST' } = Astro.props;
         required
         minlength="2"
         class="w-full px-4 py-3 rounded-md border border-border bg-background text-text placeholder-text-muted focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-colors"
-        placeholder="Doe"
+        placeholder={t.placeholderLastName}
       />
       <p class="mt-1 text-sm text-red-500 hidden" data-error="lastName"></p>
     </div>
@@ -88,7 +152,7 @@ const { action = '', method = 'POST' } = Astro.props;
 
   <div>
     <label for="email" class="block text-sm font-medium text-text mb-2">
-      Email <span class="text-red-500">*</span>
+      {t.email} <span class="text-red-500">*</span>
     </label>
     <input
       type="email"
@@ -96,14 +160,14 @@ const { action = '', method = 'POST' } = Astro.props;
       name="email"
       required
       class="w-full px-4 py-3 rounded-md border border-border bg-background text-text placeholder-text-muted focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-colors"
-      placeholder="jane@example.com"
+      placeholder={t.placeholderEmail}
     />
     <p class="mt-1 text-sm text-red-500 hidden" data-error="email"></p>
   </div>
 
   <div>
     <label for="subject" class="block text-sm font-medium text-text mb-2">
-      Subject <span class="text-red-500">*</span>
+      {t.subject} <span class="text-red-500">*</span>
     </label>
     <input
       type="text"
@@ -112,14 +176,14 @@ const { action = '', method = 'POST' } = Astro.props;
       required
       minlength="2"
       class="w-full px-4 py-3 rounded-md border border-border bg-background text-text placeholder-text-muted focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-colors"
-      placeholder="What's on your mind?"
+      placeholder={t.placeholderSubject}
     />
     <p class="mt-1 text-sm text-red-500 hidden" data-error="subject"></p>
   </div>
 
   <div>
     <label for="message" class="block text-sm font-medium text-text mb-2">
-      Message <span class="text-red-500">*</span>
+      {t.message} <span class="text-red-500">*</span>
     </label>
     <textarea
       id="message"
@@ -128,7 +192,7 @@ const { action = '', method = 'POST' } = Astro.props;
       required
       minlength="10"
       class="w-full px-4 py-3 rounded-md border border-border bg-background text-text placeholder-text-muted focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent resize-none transition-colors"
-      placeholder="Tell us how we can help..."></textarea>
+      placeholder={t.placeholderMessage}></textarea>
     <p class="mt-1 text-sm text-red-500 hidden" data-error="message"></p>
   </div>
 
@@ -138,18 +202,18 @@ const { action = '', method = 'POST' } = Astro.props;
       id="form-success"
       class="hidden p-4 rounded-md bg-green-100 dark:bg-green-950 border border-green-300 dark:border-green-800"
     >
-      <p class="text-green-900 dark:text-green-100 font-medium">Message sent successfully!</p>
+      <p class="text-green-900 dark:text-green-100 font-medium">{t.successTitle}</p>
       <p class="text-green-800 dark:text-green-300 text-sm mt-1">
-        We'll get back to you within 24 hours.
+        {t.successText}
       </p>
     </div>
     <div
       id="form-error"
       class="hidden p-4 rounded-md bg-red-100 dark:bg-red-950 border border-red-300 dark:border-red-800"
     >
-      <p class="text-red-900 dark:text-red-100 font-medium">Something went wrong</p>
+      <p class="text-red-900 dark:text-red-100 font-medium">{t.errorTitle}</p>
       <p class="text-red-800 dark:text-red-300 text-sm mt-1">
-        Please try again or contact us directly via email.
+        {t.errorText}
       </p>
     </div>
   </div>
@@ -160,7 +224,7 @@ const { action = '', method = 'POST' } = Astro.props;
       id="submit-button"
       class="w-full sm:w-auto px-6 py-3 rounded-md bg-primary text-white font-medium hover:bg-primary-dark transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed"
     >
-      <span id="button-text">Send Message</span>
+      <span id="button-text">{t.send}</span>
       <span id="button-loading" class="hidden">
         <svg
           class="animate-spin inline-block w-5 h-5 mr-2"
@@ -176,11 +240,11 @@ const { action = '', method = 'POST' } = Astro.props;
             d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
           ></path>
         </svg>
-        Sending...
+        {t.sending}
       </span>
     </button>
     <p class="text-sm text-text-muted">
-      <span class="text-red-500">*</span> Required fields
+      <span class="text-red-500">*</span> {t.required}
     </p>
   </div>
 </form>
@@ -194,32 +258,46 @@ const { action = '', method = 'POST' } = Astro.props;
   const formSuccess = document.getElementById('form-success');
   const formError = document.getElementById('form-error');
 
+  // Read translated validation messages from data attributes
+  const requiredMsg = form.dataset.validationRequired || 'is required';
+  const minCharsMsg = form.dataset.validationMinChars || 'must be at least {n} characters';
+  const emailMsg = form.dataset.validationEmail || 'Please enter a valid email address';
+
+  // Field labels for validation messages
+  const fieldLabels: Record<string, string> = {
+    firstName: form.dataset.labelFirstName || 'First name',
+    lastName: form.dataset.labelLastName || 'Last name',
+    email: form.dataset.labelEmail || 'Email',
+    subject: form.dataset.labelSubject || 'Subject',
+    message: form.dataset.labelMessage || 'Message',
+  };
+
   // Validation rules
   const validationRules: Record<string, (value: string) => string | null> = {
     firstName: (value) => {
-      if (!value.trim()) return 'First name is required';
-      if (value.trim().length < 2) return 'First name must be at least 2 characters';
+      if (!value.trim()) return `${fieldLabels.firstName} ${requiredMsg}`;
+      if (value.trim().length < 2) return `${fieldLabels.firstName} ${minCharsMsg.replace('{n}', '2')}`;
       return null;
     },
     lastName: (value) => {
-      if (!value.trim()) return 'Last name is required';
-      if (value.trim().length < 2) return 'Last name must be at least 2 characters';
+      if (!value.trim()) return `${fieldLabels.lastName} ${requiredMsg}`;
+      if (value.trim().length < 2) return `${fieldLabels.lastName} ${minCharsMsg.replace('{n}', '2')}`;
       return null;
     },
     email: (value) => {
-      if (!value.trim()) return 'Email is required';
+      if (!value.trim()) return `${fieldLabels.email} ${requiredMsg}`;
       const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      if (!emailRegex.test(value)) return 'Please enter a valid email address';
+      if (!emailRegex.test(value)) return emailMsg;
       return null;
     },
     subject: (value) => {
-      if (!value.trim()) return 'Subject is required';
-      if (value.trim().length < 2) return 'Subject must be at least 2 characters';
+      if (!value.trim()) return `${fieldLabels.subject} ${requiredMsg}`;
+      if (value.trim().length < 2) return `${fieldLabels.subject} ${minCharsMsg.replace('{n}', '2')}`;
       return null;
     },
     message: (value) => {
-      if (!value.trim()) return 'Message is required';
-      if (value.trim().length < 10) return 'Message must be at least 10 characters';
+      if (!value.trim()) return `${fieldLabels.message} ${requiredMsg}`;
+      if (value.trim().length < 10) return `${fieldLabels.message} ${minCharsMsg.replace('{n}', '10')}`;
       return null;
     },
   };
