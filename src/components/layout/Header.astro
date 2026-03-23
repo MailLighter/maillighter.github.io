@@ -79,7 +79,7 @@ const langLabels: Record<Lang, string> = { en: 'English', fr: 'Français', es: '
           <label class="sr-only" for="lang-select-desktop">Select language</label>
           <select
             id="lang-select-desktop"
-            class="lang-select appearance-none pl-7 pr-6 py-1.5 text-sm bg-transparent border border-border rounded-md text-text hover:border-primary focus:outline-none focus-visible:ring-2 focus-visible:ring-primary cursor-pointer"
+            class="lang-select appearance-none pl-7 pr-6 py-1.5 text-sm bg-background border border-border rounded-md text-text hover:border-primary focus:outline-none focus-visible:ring-2 focus-visible:ring-primary cursor-pointer dark:[color-scheme:dark]"
           >
             {(['en', 'fr', 'es'] as Lang[]).map((l) => (
               <option value={langRoots[l]} data-lang={l} selected={lang === l}>{langLabels[l]}</option>
@@ -164,7 +164,7 @@ const langLabels: Record<Lang, string> = { en: 'English', fr: 'Français', es: '
           <label class="sr-only" for="lang-select-mobile">Select language</label>
           <select
             id="lang-select-mobile"
-            class="lang-select w-full appearance-none pl-7 pr-6 py-2 text-sm bg-background border border-border rounded-md text-text focus:outline-none focus-visible:ring-2 focus-visible:ring-primary cursor-pointer"
+            class="lang-select w-full appearance-none pl-7 pr-6 py-2 text-sm bg-background border border-border rounded-md text-text focus:outline-none focus-visible:ring-2 focus-visible:ring-primary cursor-pointer dark:[color-scheme:dark]"
           >
             {(['en', 'fr', 'es'] as Lang[]).map((l) => (
               <option value={langRoots[l]} data-lang={l} selected={lang === l}>{langLabels[l]}</option>
@@ -244,6 +244,15 @@ const langLabels: Record<Lang, string> = { en: 'English', fr: 'Français', es: '
   });
 
   // Language select dropdowns
+  function syncLangSelects() {
+    const path = window.location.pathname;
+    const currentLang = path.startsWith('/fr') ? 'fr' : path.startsWith('/es') ? 'es' : 'en';
+    document.querySelectorAll<HTMLSelectElement>('.lang-select').forEach((select) => {
+      const target = select.querySelector<HTMLOptionElement>(`option[data-lang="${currentLang}"]`);
+      if (target) select.value = target.value;
+    });
+  }
+
   document.querySelectorAll<HTMLSelectElement>('.lang-select').forEach((select) => {
     select.addEventListener('change', () => {
       const selected = select.options[select.selectedIndex];
@@ -251,13 +260,8 @@ const langLabels: Record<Lang, string> = { en: 'English', fr: 'Français', es: '
       if (lang) localStorage.setItem('preferred-lang', lang);
       window.location.pathname = select.value;
     });
-    // Sync on back/forward navigation
-    window.addEventListener('pageshow', (e) => {
-      if (!e.persisted) return;
-      const marked = select.querySelector<HTMLOptionElement>('option[selected]');
-      if (marked && marked.index !== select.selectedIndex) {
-        select.selectedIndex = marked.index;
-      }
-    });
   });
+
+  // Always sync on page show (covers bfcache back/forward navigation)
+  window.addEventListener('pageshow', syncLangSelects);
 </script>
