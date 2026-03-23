@@ -28,9 +28,9 @@ const currentYear = new Date().getFullYear();
 
 // Localised labels
 const labels = {
-  en: { product: 'Product', solutions: 'Solutions', resources: 'Resources', company: 'Company', rights: 'All rights reserved.' },
-  fr: { product: 'Produit', solutions: 'Solutions', resources: 'Ressources', company: 'Entreprise', rights: 'Tous droits réservés.' },
-  es: { product: 'Producto', solutions: 'Soluciones', resources: 'Recursos', company: 'Empresa', rights: 'Todos los derechos reservados.' },
+  en: { product: 'Product', solutions: 'Solutions', resources: 'Resources', company: 'Company', rights: 'All rights reserved.', description: siteConfig.description },
+  fr: { product: 'Produit', solutions: 'Solutions', resources: 'Ressources', company: 'Entreprise', rights: 'Tous droits réservés.', description: 'Le plugin Outlook qui nettoie vos emails en un clic. Des emails plus légers, un impact réduit.' },
+  es: { product: 'Producto', solutions: 'Soluciones', resources: 'Recursos', company: 'Empresa', rights: 'Todos los derechos reservados.', description: 'El complemento de Outlook que limpia tus correos en un clic. Correos más ligeros, menor impacto.' },
 }[lang];
 
 // Helper to filter items by feature flag
@@ -61,7 +61,7 @@ const legalLinks = filterByFeature(footer.legal);
           }
         </a>
         <p class="mt-3 text-sm text-text-muted max-w-xs">
-          {siteConfig.description}
+          {labels.description}
         </p>
         <!-- Contact Info -->
         <div class="mt-4 space-y-1 text-sm text-text-muted">
