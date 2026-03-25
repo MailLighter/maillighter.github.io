@@ -29,7 +29,6 @@ export type {
   LegalConfig,
   FeatureFlags,
   AnnouncementConfig,
-  ContentStrings,
   SiteConfig,
 } from '../lib/types';
 
@@ -38,7 +37,7 @@ import { name, description, url, author, logo, ogImage, social, legal } from './
 import { contact } from './contact';
 import { navigation } from './navigation';
 import { features } from './features';
-import { announcement, content } from './content';
+import { announcement } from './content';
 
 import type { SiteConfig } from '../lib/types';
 
@@ -62,5 +61,4 @@ export const siteConfig: SiteConfig = {
   navigation,
   features,
   announcement,
-  content,
 };
