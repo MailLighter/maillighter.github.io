@@ -60,7 +60,7 @@ interface Props {
   /** Supporting text that appears below the headline */
   subtitle: string;
   /** Primary call-to-action button with label and link */
-  primaryCTA: { label: string; href: string };
+  primaryCTA?: { label: string; href: string };
   /** Optional secondary call-to-action button */
   secondaryCTA?: { label: string; href: string };
   /** Background type */
@@ -203,27 +203,31 @@ const buttonAlignClass = align === 'left' ? 'justify-start' : 'justify-center';
       <p class:list={['mt-6 text-lg sm:text-xl leading-relaxed', textClasses.body]}>
         {subtitle}
       </p>
-      <div class:list={['mt-10 flex flex-col sm:flex-row items-center gap-4', buttonAlignClass]}>
-        <a
-          href={primaryCTA.href}
-          class="inline-flex items-center justify-center px-6 py-3 rounded-md bg-primary text-white font-medium hover:bg-primary-dark transition-colors w-full sm:w-auto"
-        >
-          {primaryCTA.label}
-        </a>
-        {
-          secondaryCTA && (
-            <a
-              href={secondaryCTA.href}
-              class:list={[
-                'inline-flex items-center justify-center px-6 py-3 rounded-md border font-medium transition-colors w-full sm:w-auto',
-                textClasses.button,
-              ]}
-            >
-              {secondaryCTA.label}
-            </a>
-          )
-        }
-      </div>
+      {(primaryCTA || secondaryCTA) && (
+        <div class:list={['mt-10 flex flex-col sm:flex-row items-center gap-4', buttonAlignClass]}>
+          {primaryCTA && (
+          <a
+            href={primaryCTA.href}
+            class="inline-flex items-center justify-center px-6 py-3 rounded-md bg-primary text-white font-medium hover:bg-primary-dark transition-colors w-full sm:w-auto"
+          >
+            {primaryCTA.label}
+          </a>
+          )}
+          {
+            secondaryCTA && (
+              <a
+                href={secondaryCTA.href}
+                class:list={[
+                  'inline-flex items-center justify-center px-6 py-3 rounded-md border font-medium transition-colors w-full sm:w-auto',
+                  textClasses.button,
+                ]}
+              >
+                {secondaryCTA.label}
+              </a>
+            )
+          }
+        </div>
+      )}
     </div>
   </div>
 </section>

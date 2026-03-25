@@ -1,6 +1,6 @@
 ---
 /**
- * Documentation Landing Page (EN)
+ * Documentation Landing Page (FR)
  */
 import { getCollection, type CollectionEntry } from 'astro:content';
 import MarketingLayout from '@/layouts/MarketingLayout.astro';
@@ -9,12 +9,10 @@ import { siteConfig } from '@/config';
 
 type DocsEntry = CollectionEntry<'docs'>;
 
-// Get all non-draft EN docs (exclude fr/ and es/ prefixes)
 const allDocs = await getCollection('docs', ({ data, id }: DocsEntry) =>
-  !data.draft && !id.startsWith('fr/') && !id.startsWith('es/')
+  !data.draft && id.startsWith('fr/')
 );
 
-// Group docs by section and sort by order
 interface DocItem {
   title: string;
   description: string;
@@ -37,7 +35,7 @@ for (const doc of allDocs) {
   sectionMap.get(sectionName)!.push({
     title: doc.data.title,
     description: doc.data.description,
-    slug: doc.id,
+    slug: doc.id.replace('fr/', ''),
     order: doc.data.order,
   });
 }
@@ -57,10 +55,10 @@ docsSections.sort((a, b) => {
 const firstDoc = allDocs.sort((a: DocsEntry, b: DocsEntry) => a.data.order - b.data.order)[0];
 
 const sectionIcons: Record<string, string> = {
-  'Getting Started': 'lucide:rocket',
-  Usage: 'lucide:terminal',
-  Technical: 'lucide:shield',
-  Resources: 'lucide:help-circle',
+  'Prise en main': 'lucide:rocket',
+  Utilisation: 'lucide:terminal',
+  Technique: 'lucide:shield',
+  Ressources: 'lucide:help-circle',
 };
 
 function getSectionIcon(section: string): string {
@@ -70,7 +68,7 @@ function getSectionIcon(section: string): string {
 
 <MarketingLayout
   title={`Documentation - ${siteConfig.name}`}
-  description={`Learn how to use ${siteConfig.name}. Guides, tutorials, and reference documentation to help you get started.`}
+  description={`Apprenez à utiliser ${siteConfig.name}. Guides, tutoriels et documentation de référence.`}
 >
   <!-- Hero Section -->
   <section class="py-section bg-surface">
@@ -78,17 +76,17 @@ function getSectionIcon(section: string): string {
       <div class="max-w-3xl mx-auto text-center">
         <h1 class="text-4xl sm:text-5xl font-bold text-text">Documentation</h1>
         <p class="mt-6 text-lg text-text-muted">
-          Everything you need to know about {siteConfig.name}. Installation, commands, technical details, and troubleshooting.
+          Tout ce que vous devez savoir sur {siteConfig.name}. Installation, commandes, détails techniques et dépannage.
         </p>
         <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
           {
             firstDoc && (
               <a
-                href={`/docs/${firstDoc.id}`}
+                href={`/fr/docs/${firstDoc.id.replace('fr/', '')}`}
                 class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-md bg-green-600 text-white font-medium hover:bg-green-700 transition-colors shadow-sm hover:shadow-md"
               >
                 <Icon name="lucide:book-open" class="w-5 h-5" />
-                Get Started
+                Commencer
               </a>
             )
           }
@@ -102,7 +100,7 @@ function getSectionIcon(section: string): string {
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
         <a
-          href="/docs/installation"
+          href="/fr/docs/installation"
           class="flex items-center gap-3 p-4 rounded-lg bg-surface hover:bg-surface/80 transition-colors group"
         >
           <div
@@ -113,7 +111,7 @@ function getSectionIcon(section: string): string {
           <span class="font-medium text-text">Installation</span>
         </a>
         <a
-          href="/docs/commands"
+          href="/fr/docs/commands"
           class="flex items-center gap-3 p-4 rounded-lg bg-surface hover:bg-surface/80 transition-colors group"
         >
           <div
@@ -121,10 +119,10 @@ function getSectionIcon(section: string): string {
           >
             <Icon name="lucide:terminal" class="w-5 h-5" />
           </div>
-          <span class="font-medium text-text">Commands</span>
+          <span class="font-medium text-text">Commandes</span>
         </a>
         <a
-          href="/docs/privacy-security"
+          href="/fr/docs/privacy-security"
           class="flex items-center gap-3 p-4 rounded-lg bg-surface hover:bg-surface/80 transition-colors group"
         >
           <div
@@ -132,10 +130,10 @@ function getSectionIcon(section: string): string {
           >
             <Icon name="lucide:shield" class="w-5 h-5" />
           </div>
-          <span class="font-medium text-text">Privacy</span>
+          <span class="font-medium text-text">Confidentialité</span>
         </a>
         <a
-          href="/docs/faq"
+          href="/fr/docs/faq"
           class="flex items-center gap-3 p-4 rounded-lg bg-surface hover:bg-surface/80 transition-colors group"
         >
           <div
@@ -165,7 +163,7 @@ function getSectionIcon(section: string): string {
               <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                 {section.items.map((doc) => (
                   <a
-                    href={`/docs/${doc.slug}`}
+                    href={`/fr/docs/${doc.slug}`}
                     class="block p-6 rounded-lg border border-border bg-background hover:border-primary hover:shadow-md transition-all group"
                   >
                     <h3 class="font-semibold text-text group-hover:text-primary transition-colors">
@@ -173,7 +171,7 @@ function getSectionIcon(section: string): string {
                     </h3>
                     <p class="mt-2 text-sm text-text-muted line-clamp-2">{doc.description}</p>
                     <div class="mt-4 flex items-center gap-1 text-sm text-primary font-medium">
-                      Read more
+                      Lire la suite
                       <Icon
                         name="lucide:arrow-right"
                         class="w-4 h-4 group-hover:translate-x-1 transition-transform"
@@ -193,22 +191,22 @@ function getSectionIcon(section: string): string {
   <section class="py-section bg-surface">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="max-w-3xl mx-auto text-center">
-        <h2 class="text-2xl font-bold text-text">Need more help?</h2>
-        <p class="mt-4 text-text-muted">Can't find what you're looking for? We're here to help.</p>
+        <h2 class="text-2xl font-bold text-text">Besoin d'aide ?</h2>
+        <p class="mt-4 text-text-muted">Vous ne trouvez pas ce que vous cherchez ? Nous sommes là pour vous aider.</p>
         <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
           <a
-            href="/contact"
+            href="/fr/contact"
             class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-md border border-border bg-background text-text font-medium hover:bg-background/80 transition-colors"
           >
             <Icon name="lucide:mail" class="w-5 h-5" />
-            Contact Support
+            Nous contacter
           </a>
           <a
-            href="/faq"
+            href="/fr/faq"
             class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-md border border-border bg-background text-text font-medium hover:bg-background/80 transition-colors"
           >
             <Icon name="lucide:help-circle" class="w-5 h-5" />
-            View FAQ
+            Voir la FAQ
           </a>
         </div>
       </div>

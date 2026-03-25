@@ -1,0 +1,80 @@
+---
+title: "Commandes"
+description: "Découvrez les 5 commandes de MailLighter : supprimer les images, supprimer les pièces jointes, garder 2 réponses, garder la sélection, et nettoyage complet."
+section: "Utilisation"
+order: 3
+draft: false
+---
+
+MailLighter propose 5 commandes, toutes accessibles depuis un menu déroulant dans le ruban d'Outlook. Chaque commande cible un type spécifique d'encombrement.
+
+## Supprimer les images
+
+Retire toutes les images intégrées (balises `<img>`) du corps de l'e-mail. Utile pour transférer des e-mails contenant des logos, bannières, signatures avec images ou captures d'écran.
+
+**Ce qui est supprimé :**
+- Images intégrées (dans le corps HTML)
+- Signatures avec images
+- Bannières marketing
+
+**Ce qui est conservé :**
+- Tout le contenu texte
+- Les pièces jointes (utilisez « Supprimer les pièces jointes » pour celles-ci)
+- La mise en forme de l'e-mail
+
+## Supprimer les pièces jointes
+
+Supprime toutes les pièces jointes de l'e-mail. Idéal pour transférer uniquement le contenu du message sans les fichiers joints.
+
+**Ce qui est supprimé :**
+- Toutes les pièces jointes (PDF, Word, Excel, images, etc.)
+
+**Ce qui est conservé :**
+- Le corps complet de l'e-mail (texte + images intégrées)
+- La chaîne de réponse
+
+## Garder 2 réponses
+
+Réduit la conversation en ne conservant que les **2 dernières réponses**. Parfait pour les longues chaînes d'e-mails où seuls les échanges récents comptent.
+
+**Ce qui est supprimé :**
+- Toutes les réponses au-delà des 2 plus récentes
+
+**Ce qui est conservé :**
+- Le message actuel
+- La réponse précédente
+- Tout le contenu de ces 2 messages (images, mise en forme)
+
+## Garder la sélection
+
+Ne conserve que le texte que vous avez **sélectionné manuellement** dans l'e-mail, en supprimant tout le reste. Vous gardez un contrôle total sur le contenu à conserver.
+
+**Comment l'utiliser :**
+1. Ouvrez ou répondez à un e-mail
+2. Sélectionnez le texte que vous souhaitez conserver
+3. Cliquez sur **Garder la sélection** dans le menu MailLighter
+
+**Ce qui est supprimé :**
+- Tout ce qui est en dehors de votre sélection
+
+**Ce qui est conservé :**
+- Votre texte sélectionné, avec la mise en forme préservée
+
+## Nettoyage complet
+
+Applique toutes les opérations de nettoyage en une fois : supprime les images, supprime les pièces jointes et ne garde que les 2 dernières réponses. C'est le moyen le plus rapide de nettoyer un e-mail avant de le transférer.
+
+**Équivalent à exécuter :**
+1. Supprimer les images
+2. Supprimer les pièces jointes
+3. Garder 2 réponses
+
+## Résumé des commandes
+
+| Commande | Images | Pièces jointes | Chaîne de réponse |
+|----------|--------|----------------|-------------------|
+| Supprimer les images | ✅ Supprimées | Conservées | Conservée |
+| Supprimer les pièces jointes | Conservées | ✅ Supprimées | Conservée |
+| Garder 2 réponses | Conservées | Conservées | ✅ Réduite |
+| Garder la sélection | Selon sélection | Conservées | Selon sélection |
+| Nettoyage complet | ✅ Supprimées | ✅ Supprimées | ✅ Réduite |

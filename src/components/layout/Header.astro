@@ -54,13 +54,13 @@ const langLabels: Record<Lang, string> = { en: 'English', fr: 'Français', es: '
         }
       </a>
 
-      <!-- Desktop Navigation - Center -->
-      <div class="hidden md:flex items-center gap-6">
+      <!-- Desktop Navigation - Right -->
+      <div class="hidden md:flex items-center gap-6 ml-auto">
         {
           mainNavItems.map((item) => (
             <a
               href={item.href}
-              class="text-primary hover:text-primary-dark transition-colors text-sm font-medium rounded-md px-2 py-1 focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background focus:outline-none"
+              class="text-text-muted hover:text-success transition-colors text-sm font-medium rounded-md px-2 py-1 focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background focus:outline-none"
             >
               {item.label}
             </a>
@@ -89,8 +89,9 @@ const langLabels: Record<Lang, string> = { en: 'English', fr: 'Français', es: '
           primaryCTA && (
             <a
               href={primaryCTA.href}
-              class="px-4 py-2 rounded-md bg-primary text-white text-sm font-medium hover:bg-primary-dark transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+              class="inline-flex items-center gap-1.5 px-4 py-2 rounded-md bg-green-600 text-white text-sm font-medium hover:bg-green-700 transition-colors shadow-sm hover:shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-green-500 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
             >
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
               {primaryCTA.label}
             </a>
           )
@@ -175,8 +176,9 @@ const langLabels: Record<Lang, string> = { en: 'English', fr: 'Français', es: '
         primaryCTA && (
           <a
             href={primaryCTA.href}
-            class="block px-3 py-3 rounded-md bg-primary text-white hover:bg-primary-dark transition-colors text-base font-medium text-center focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-inset"
+            class="flex items-center justify-center gap-2 px-3 py-3 rounded-md bg-green-600 text-white hover:bg-green-700 transition-colors text-base font-medium text-center shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-green-500 focus-visible:ring-inset"
           >
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
             {primaryCTA.label}
           </a>
         )
@@ -259,9 +261,10 @@ const langLabels: Record<Lang, string> = { en: 'English', fr: 'Français', es: '
         ? pathWithoutLang.slice(0, -1)
         : pathWithoutLang;
 
-    // Only these routes are localized today.
+    // Only these routes (or prefixes) are localized today.
     const localizedRoutes = new Set(['/','/faq','/contact']);
-    if (!localizedRoutes.has(normalizedPath)) {
+    const isLocalized = localizedRoutes.has(normalizedPath) || normalizedPath.startsWith('/docs');
+    if (!isLocalized) {
       return `${url.pathname}${url.search}${url.hash}`;
     }
 

@@ -1,109 +1,70 @@
 ---
 title: "Installation"
-description: "Get Virex set up in your project in under 5 minutes. This guide covers installation, authentication, and your first deployment."
+description: "Install MailLighter in Outlook in under a minute. Available on Microsoft AppSource for Outlook Desktop on Windows and macOS."
 section: "Getting Started"
 order: 2
 draft: false
 ---
 
-Getting started with Virex takes just a few minutes. This guide will walk you through installation, authentication, and deploying your first project.
+Installing MailLighter takes less than a minute. This guide covers requirements, installation from AppSource, and verifying that the add-in is working.
 
-## Prerequisites
+## Requirements
 
-Before you begin, make sure you have:
+Before installing, ensure you have:
 
-- **Node.js 18+** installed on your machine
-- A **Virex account** (sign up at [virex.example.com](https://virex.example.com))
-- **Git** installed and configured
+- **Outlook Desktop** on Windows or macOS
+- A **Microsoft 365** or **Exchange** account
+- An active internet connection (for installation only — the add-in works offline after that)
 
-## Install the CLI
+> MailLighter is not yet available for Outlook on the Web or Outlook Mobile.
 
-The Virex CLI is the primary way to interact with the platform. Install it globally:
+## Install from AppSource
 
-```bash
-npm install -g @virex/cli
-```
+1. Open **Outlook Desktop**
+2. Go to **Home** → **Get Add-ins** (or **Insert** → **Get Add-ins** depending on your version)
+3. Search for **MailLighter** in the Store
+4. Click **Add** to install
 
-Verify the installation:
+The add-in appears in your ribbon immediately. No restart required.
 
-```bash
-virex --version
-```
+## Verify Installation
 
-## Authenticate
+Once installed, you should see a **MailLighter** group in the ribbon when composing or reading an email. The group contains a dropdown menu with 5 commands:
 
-Log in to your Virex account:
+1. Remove images
+2. Remove attachments
+3. Keep 2 replies
+4. Keep selection only
+5. Full cleanup
 
-```bash
-virex login
-```
+If you don't see the ribbon group, check the [Troubleshooting](/docs/troubleshooting) guide.
 
-This opens your browser for authentication. Once complete, you're ready to create projects.
+## Sideloading (Developers)
 
-## Initialize Your Project
+If you want to test a development version or contribute to the project:
 
-Navigate to your project directory and initialize Virex:
-
-```bash
-cd your-project
-virex init
-```
-
-This creates a `virex.config.js` file with sensible defaults:
-
-```javascript
-export default {
-  name: 'your-project',
-  framework: 'auto', // Virex auto-detects your framework
-  buildCommand: 'npm run build',
-  outputDirectory: 'dist',
-};
-```
-
-## Deploy
-
-Deploy your project with a single command:
+1. Clone the repository:
 
 ```bash
-virex deploy
+git clone https://github.com/MailLighter/MailLighter.git
+cd MailLighter
 ```
 
-That's it! Virex will:
+2. Install dependencies:
 
-1. Build your project
-2. Upload the artifacts
-3. Deploy to a preview URL
-4. Return the live URL
+```bash
+npm install
+```
+
+3. Start the development server:
+
+```bash
+npm start
+```
+
+4. Sideload the add-in in Outlook following [Microsoft's sideloading guide](https://learn.microsoft.com/en-us/office/dev/add-ins/outlook/sideload-outlook-add-ins-for-testing).
 
 ## Next Steps
 
-Now that you're set up:
-
-- Learn about [Configuration](/docs/configuration) options
-- Set up [environments](/docs/configuration#environments) for staging and production
-- Explore [Customization](/docs/customization) options
-
-## Troubleshooting
-
-### "Command not found: virex"
-
-Make sure npm's global bin directory is in your PATH. Run `npm bin -g` to find the location.
-
-### Authentication Issues
-
-Try logging out and back in:
-
-```bash
-virex logout
-virex login
-```
-
-### Build Failures
-
-Check that your build command works locally before deploying:
-
-```bash
-npm run build
-```
-
-Still stuck? Join our [Discord](https://discord.gg/virex) for help from the community.
+- Learn about each command in the [Commands](/docs/commands) guide
+- Understand [How It Works](/docs/how-it-works) under the hood

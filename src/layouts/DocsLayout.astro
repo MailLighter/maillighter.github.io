@@ -9,12 +9,21 @@ interface Props {
   title: string;
   description: string;
   section: string;
+  lang?: 'en' | 'fr' | 'es';
+  basePath?: string;
 }
 
-const { title, description, section } = Astro.props;
+const { title, description, section, lang = 'en', basePath = '/docs' } = Astro.props;
 
-// Get all non-draft docs and organize by section
-const allDocs = await getCollection('docs', ({ data }: { data: DocsEntry['data'] }) => !data.draft);
+// Determine language prefix for filtering docs
+const langPrefix = lang === 'en' ? '' : `${lang}/`;
+
+// Get all non-draft docs filtered by language
+const allDocs = await getCollection('docs', ({ data, id }: { data: DocsEntry['data']; id: string }) => {
+  if (data.draft) return false;
+  if (lang === 'en') return !id.startsWith('fr/') && !id.startsWith('es/');
+  return id.startsWith(langPrefix);
+});
 
 // Group docs by section and sort by order
 interface DocItem {
@@ -36,9 +45,11 @@ for (const doc of allDocs) {
   if (!sectionMap.has(sectionName)) {
     sectionMap.set(sectionName, []);
   }
+  // Strip lang prefix from slug for URL generation
+  const slug = langPrefix ? doc.id.replace(langPrefix, '') : doc.id;
   sectionMap.get(sectionName)!.push({
     title: doc.data.title,
-    slug: doc.id,
+    slug,
     order: doc.data.order,
   });
 }
@@ -57,7 +68,7 @@ sidebarSections.sort((a, b) => {
 });
 
 // Get current page slug for highlighting
-const currentSlug = Astro.url.pathname.replace('/docs/', '').replace(/\/$/, '');
+const currentSlug = Astro.url.pathname.replace(`${basePath}/`, '').replace(/\/$/, '');
 ---
 
 <MarketingLayout title={title} description={description}>
@@ -88,7 +99,7 @@ const currentSlug = Astro.url.pathname.replace('/docs/', '').replace(/\/$/, '');
                       return (
                         <li>
                           <a
-                            href={`/docs/${item.slug}`}
+                            href={`${basePath}/${item.slug}`}
                             class:list={[
                               'block px-3 py-2 text-sm rounded-md transition-colors',
                               isActive

@@ -6,9 +6,11 @@ import { siteConfig } from '@/config';
 type DocsEntry = CollectionEntry<'docs'>;
 
 export async function getStaticPaths() {
-  const docs = await getCollection('docs', ({ data, id }: DocsEntry) => !data.draft && !id.startsWith('fr/') && !id.startsWith('es/'));
+  const docs = await getCollection('docs', ({ data, id }: DocsEntry) =>
+    !data.draft && id.startsWith('es/')
+  );
   return docs.map((doc: DocsEntry) => ({
-    params: { slug: doc.id },
+    params: { slug: doc.id.replace('es/', '') },
     props: { doc },
   }));
 }
@@ -25,8 +27,8 @@ const { Content } = await render(doc);
   title={`${doc.data.title} - ${siteConfig.name} Docs`}
   description={doc.data.description}
   section={doc.data.section}
-  lang="en"
-  basePath="/docs"
+  lang="es"
+  basePath="/es/docs"
 >
   <Content />
 </DocsLayout>

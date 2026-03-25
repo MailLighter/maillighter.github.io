@@ -1,6 +1,5 @@
 ---
 import MarketingLayout from '@/layouts/MarketingLayout.astro';
-import PageHeader from '@sections/content/PageHeader.astro';
 import FAQSection from '@sections/content/FAQSection.astro';
 import { siteConfig } from '@/config';
 
@@ -112,10 +111,31 @@ const categories = [
   title={`FAQ - ${siteConfig.name}`}
   description="Frequently asked questions about MailLighter, the Outlook plugin for lighter, more responsible emails."
 >
-  <PageHeader
-    title="Frequently Asked Questions"
-    subtitle="Everything you need to know about MailLighter."
-  />
+  <!-- HERO -->
+  <section class="pt-16 pb-10 bg-gradient-to-br from-primary/10 via-background to-background">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div class="inline-flex items-center gap-1.5 bg-success-bg border border-success/30 text-success px-4 py-1.5 rounded-full text-xs font-semibold mb-6">❓ FAQ</div>
+      <h1 class="text-4xl sm:text-5xl font-extrabold text-text tracking-tight leading-tight">Frequently Asked Questions</h1>
+      <p class="mt-4 text-lg text-text-muted leading-relaxed">Everything you need to know about MailLighter, from installation to environmental impact.</p>
+    </div>
+  </section>
 
   <FAQSection categories={categories} background="default" />
+
+  <!-- CTA -->
+  <section class="py-16 px-6 text-center">
+    <div class="max-w-2xl mx-auto">
+      <h2 class="text-2xl sm:text-3xl font-extrabold text-text tracking-tight mb-4">Didn’t find your answer?</h2>
+      <p class="text-base text-text-muted mb-6">Contact us directly or install MailLighter to try it yourself.</p>
+      <div class="flex justify-center gap-4 flex-wrap">
+        <a href="/contact" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl border border-border font-semibold text-text hover:bg-surface transition">
+          Contact us
+        </a>
+        <a href="https://appsource.microsoft.com/" class="inline-flex items-center gap-2 bg-green-600 text-white px-6 py-3 rounded-xl font-bold shadow-lg shadow-green-600/30 transition hover:bg-green-700 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-green-600/40">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Install for free
+        </a>
+      </div>
+    </div>
+  </section>
 </MarketingLayout>

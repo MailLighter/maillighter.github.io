@@ -1,82 +1,7 @@
 ---
 import MarketingLayout from '@/layouts/MarketingLayout.astro';
 import Hero from '@sections/marketing/Hero.astro';
-import HowItWorks from '@sections/marketing/HowItWorks.astro';
-import FeaturesSection from '@sections/marketing/FeaturesSection.astro';
-import BentoGrid from '@sections/marketing/BentoGrid.astro';
-import CTA from '@sections/marketing/CTA.astro';
 import { siteConfig } from '@/config';
-
-const features = [
-  {
-    icon: 'lucide:scissors',
-    title: 'Elimina los archivos adjuntos',
-    description:
-      'Elimine los archivos adjuntos innecesarios de sus correos antes de enviar o responder. Mantenga su buzón ligero.',
-  },
-  {
-    icon: 'lucide:image-off',
-    title: 'Suprime las imágenes incrustadas',
-    description:
-      'Limpie los logotipos, banners e imágenes en línea que sobrecargan cada correo de la cadena.',
-  },
-  {
-    icon: 'lucide:list-collapse',
-    title: 'Recorta las cadenas de respuestas',
-    description:
-      'Conserve solo los mensajes más recientes del hilo. Elimine el interminable rastro de respuestas citadas.',
-  },
-  {
-    icon: 'lucide:mouse-pointer-click',
-    title: 'Acción en un clic',
-    description:
-      'Un único botón en Outlook lo hace todo. Sin configuraciones, sin flujos de trabajo que aprender.',
-  },
-  {
-    icon: 'lucide:shield-check',
-    title: 'Cumplimiento RGPD',
-    description:
-      'Todo el procesamiento ocurre localmente. Ningún dato abandona su entorno. Totalmente respetuoso con su privacidad.',
-  },
-  {
-    icon: 'lucide:cloud-cog',
-    title: 'Compatible con Microsoft 365',
-    description:
-      'Funciona perfectamente con entornos Microsoft 365 — Outlook de escritorio y Outlook en la web.',
-  },
-];
-
-const bentoItems = [
-  {
-    title: 'Productividad y legibilidad',
-    description:
-      'Correos más cortos, información más clara, menos ruido, menos desplazamiento. Decisiones más rápidas para todos.',
-    icon: 'lucide:trending-up',
-    size: 'large' as const,
-    accent: 'blue' as const,
-  },
-  {
-    title: 'Reducción de costes IT',
-    description: 'Menos almacenamiento en servidor, copias de seguridad más ligeras, menos ancho de banda. Un buzón más eficiente.',
-    icon: 'lucide:server',
-    accent: 'green' as const,
-  },
-  {
-    title: 'Impacto RSC inmediato',
-    description:
-      'Cada correo más ligero significa menos datos almacenados y replicados, menos energía consumida, una huella digital menor.',
-    icon: 'lucide:leaf',
-    accent: 'green' as const,
-  },
-  {
-    title: 'Sobriedad digital',
-    description:
-      'MailLighter convierte cada envío en un gesto de sobriedad digital. Impacto modesto individualmente, masivo a escala.',
-    icon: 'lucide:globe',
-    size: 'medium' as const,
-    accent: 'primary' as const,
-  },
-];
 ---
 
 <MarketingLayout
@@ -86,9 +11,7 @@ const bentoItems = [
   <!-- HERO -->
   <Hero
     title="MailLighter para Outlook"
-    subtitle="Aligere sus correos. Aligere su impacto. El plugin de Outlook que limpia sus correos en un clic. Para intercambios más claros, servidores menos cargados y una sobriedad digital concreta."
-    primaryCTA={{ label: 'Probar ahora', href: 'https://appsource.microsoft.com/' }}
-
+    subtitle="Aligere sus correos. Aligere su impacto."
     backgroundType="gradient"
     gradient="from-primary/10 via-background to-background"
   >
@@ -98,199 +21,214 @@ const bentoItems = [
     </Fragment>
   </Hero>
 
-  <!-- PROBLEMA -->
-  <section id="problem" class="py-section bg-surface">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <p class="text-sm font-semibold text-primary uppercase tracking-wide mb-3">El problema hoy</p>
-      <h2 class="text-3xl sm:text-4xl font-bold text-text mb-6">
-        Sus correos son más pesados de lo que cree
-      </h2>
-      <p class="text-lg text-text-muted mb-10 max-w-2xl mx-auto">
-        Cada día, sus colegas envían y reciben archivos adjuntos duplicados, imágenes incrustadas innecesarias y cadenas de correos interminables. Esto sobrecarga innecesariamente los buzones, los servidores y los equipos — y aumenta la huella de carbono digital de su organización.
-      </p>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div class="bg-background rounded-lg p-6 border border-border">
-          <div class="text-3xl mb-3">📎</div>
-          <h3 class="font-semibold text-text mb-2">Archivos adjuntos duplicados</h3>
-          <p class="text-sm text-text-muted">Los mismos archivos reenviados una y otra vez en cada respuesta.</p>
+  <!-- CONTENIDO HERO + ANTES / DESPUÉS -->
+  <section class="pt-4 pb-16 bg-background">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+      <!-- Columna izquierda -->
+      <div>
+        <div class="inline-flex items-center gap-1.5 bg-success-bg border border-success/30 text-success px-4 py-1.5 rounded-full text-xs font-semibold mb-6">🌿 Para correos más ligeros, para un planeta más ligero</div>
+        <h2 class="text-3xl sm:text-4xl font-black text-text tracking-tight leading-tight mb-5">Cada correo que envía tiene un <span class="bg-gradient-to-r from-green-700 to-green-500 bg-clip-text text-transparent">peso en el planeta.</span></h2>
+        <p class="text-base sm:text-lg text-text-muted leading-relaxed mb-8">
+          Imágenes inútiles, archivos adjuntos olvidados, historiales de respuestas acumulados durante semanas —
+          sus correos transportan megabytes que nadie volverá a leer.
+          <strong class="text-text">MailLighter</strong> limpia todo eso en un clic, sin salir de Outlook.
+        </p>
+        <div class="flex gap-3 flex-wrap mb-3">
+          <a href="https://appsource.microsoft.com/" class="inline-flex items-center gap-2 bg-green-600 text-white px-6 py-3 rounded-xl font-bold shadow-lg shadow-green-600/30 transition hover:bg-green-700 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-green-600/40">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Instalar gratis
+          </a>
         </div>
-        <div class="bg-background rounded-lg p-6 border border-border">
-          <div class="text-3xl mb-3">🖼️</div>
-          <h3 class="font-semibold text-text mb-2">Imágenes inútiles</h3>
-          <p class="text-sm text-text-muted">Logotipos, banners, firmas — incrustados en cada mensaje de la cadena.</p>
+        <p class="text-xs text-text-muted">Add-in gratuito · Outlook Desktop · Windows &amp; macOS</p>
+      </div>
+
+      <!-- Columna derecha: Antes / Después -->
+      <div class="flex items-center justify-center gap-4 sm:gap-6">
+        <div class="bg-gradient-to-br from-error-bg to-background border-[1.5px] border-error/30 rounded-2xl p-5 sm:p-6 text-center w-40 sm:w-44 shadow-lg">
+          <div class="text-[0.65rem] font-bold uppercase tracking-widest text-error mb-2">Antes</div>
+          <div class="text-3xl mb-1">📧</div>
+          <div class="text-3xl sm:text-4xl font-extrabold text-text leading-none">4.2 <small class="text-base font-semibold text-text-muted">MB</small></div>
+          <div class="flex flex-col gap-0.5 text-[0.72rem] text-text-muted my-2">
+            <span>12 imágenes incrustadas</span>
+            <span>3 archivos adjuntos</span>
+            <span>8 respuestas citadas</span>
+          </div>
+          <div class="text-sm font-bold text-error pt-2 border-t border-border">≈ 12 g CO₂</div>
         </div>
-        <div class="bg-background rounded-lg p-6 border border-border">
-          <div class="text-3xl mb-3">🔁</div>
-          <h3 class="font-semibold text-text mb-2">Cadenas interminables</h3>
-          <p class="text-sm text-text-muted">Hilos con decenas de respuestas citadas que nadie lee.</p>
+
+        <svg class="arrow-anim shrink-0" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="5" y1="12" x2="19" y2="12" class="text-success"/><polyline points="12 5 19 12 12 19" class="text-success"/>
+        </svg>
+
+        <div class="bg-gradient-to-br from-success-bg to-background border-[1.5px] border-success/30 rounded-2xl p-5 sm:p-6 text-center w-40 sm:w-44 shadow-lg scale-105">
+          <div class="text-[0.65rem] font-bold uppercase tracking-widest text-success mb-2">Después</div>
+          <div class="text-3xl mb-1">✉️</div>
+          <div class="text-3xl sm:text-4xl font-extrabold text-text leading-none">18 <small class="text-base font-semibold text-text-muted">KB</small></div>
+          <div class="flex flex-col gap-0.5 text-[0.72rem] text-text-muted my-2">
+            <span>Solo texto</span>
+            <span>2 respuestas recientes</span>
+          </div>
+          <div class="text-sm font-bold text-success pt-2 border-t border-border">≈ 0.05 g CO₂</div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- SOLUCIÓN -->
-  <section id="solution" class="py-section bg-background">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <p class="text-sm font-semibold text-secondary uppercase tracking-wide mb-3">La solución</p>
-      <h2 class="text-3xl sm:text-4xl font-bold text-text mb-4">
-        El botón de Outlook que conserva lo esencial — y elimina el resto
-      </h2>
-      <p class="text-lg text-text-muted mb-10">
-        En un clic, directamente en Outlook, sin cambiar sus hábitos.
-      </p>
+  <!-- BARRA DE ESTADÍSTICAS -->
+  <div class="bg-gray-900 text-white py-12 px-6">
+    <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+      <div>
+        <div class="text-4xl font-black text-green-400 tracking-tight">300 Mds</div>
+        <div class="text-sm text-gray-400 mt-1 leading-snug">de correos enviados cada día en el mundo</div>
+      </div>
+      <div>
+        <div class="text-4xl font-black text-green-400 tracking-tight">3 a 4 %</div>
+        <div class="text-sm text-gray-400 mt-1 leading-snug">de las emisiones mundiales de GEI se atribuyen al sector digital</div>
+      </div>
+      <div>
+        <div class="text-4xl font-black text-green-400 tracking-tight">~200×</div>
+        <div class="text-sm text-gray-400 mt-1 leading-snug">menos datos en tránsito con un correo aligerado por MailLighter</div>
+      </div>
+    </div>
+  </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-        <div class="text-center">
-          <div class="w-16 h-16 ml-gradient-bg rounded-xl flex items-center justify-center mx-auto mb-4">
-            <span class="text-white text-2xl">✂️</span>
-          </div>
-          <h3 class="font-semibold text-text mb-2">Elimina archivos adjuntos</h3>
-          <p class="text-sm text-text-muted">Elimine los archivos innecesarios de la conversación.</p>
-        </div>
-        <div class="text-center">
-          <div class="w-16 h-16 ml-gradient-bg rounded-xl flex items-center justify-center mx-auto mb-4">
-            <span class="text-white text-2xl">🖼️</span>
-          </div>
-          <h3 class="font-semibold text-text mb-2">Suprime las imágenes</h3>
-          <p class="text-sm text-text-muted">Limpie las imágenes incrustadas de firmas y cadenas.</p>
-        </div>
-        <div class="text-center">
-          <div class="w-16 h-16 ml-gradient-bg rounded-xl flex items-center justify-center mx-auto mb-4">
-            <span class="text-white text-2xl">🧹</span>
-          </div>
-          <h3 class="font-semibold text-text mb-2">Limpia las respuestas</h3>
-          <p class="text-sm text-text-muted">Conserve solo los últimos mensajes del hilo.</p>
+  <!-- SECCIÓN ECO -->
+  <section class="py-24 px-6 bg-gradient-to-br from-success-bg to-background" id="eco">
+    <div class="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+      <div>
+        <div class="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wide text-success mb-4">🌍 Impacto medioambiental</div>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-text tracking-tight leading-tight mb-5">Sus correos tienen una huella de carbono. Reduzcámosla juntos.</h2>
+        <div class="text-base text-text-muted leading-relaxed space-y-4">
+          <p>Cada megabyte enviado transita por centros de datos, se replica en sistemas de respaldo y permanece almacenado durante años. Un solo correo voluminoso reenviado a 10 personas puede generar <strong class="text-text">varios gramos de CO₂</strong> — invisibles, pero reales.</p>
+          <p>MailLighter actúa <strong class="text-text">en el origen</strong>, antes del envío. Menos datos = menos almacenamiento = menos energía. <strong class="text-text">Un pequeño hábito, un verdadero impacto acumulado.</strong></p>
         </div>
       </div>
-
-      <!-- Placeholder captura de pantalla -->
-      <div class="bg-surface border-2 border-dashed border-border rounded-xl p-12 max-w-2xl mx-auto">
-        <div class="text-text-muted text-center">
-          <div class="text-4xl mb-3">📸</div>
-          <p class="font-medium">Captura de pantalla próximamente</p>
-          <p class="text-sm mt-1">MailLighter en acción dentro de Outlook</p>
+      <div class="bg-background rounded-2xl p-8 shadow-lg border border-border">
+        <h3 class="text-base font-bold text-text mb-5">Lo que MailLighter evita, correo a correo</h3>
+        <div class="space-y-4">
+          <div class="flex items-start gap-3">
+            <span class="text-2xl shrink-0">🖥️</span>
+            <p class="text-sm text-text-muted leading-snug"><strong class="text-text">Menos almacenamiento en servidor</strong> — cada correo aligerado ocupa menos espacio en los centros de datos de su mensajería.</p>
+          </div>
+          <div class="flex items-start gap-3">
+            <span class="text-2xl shrink-0">📡</span>
+            <p class="text-sm text-text-muted leading-snug"><strong class="text-text">Menos ancho de banda</strong> — transferir un correo de 18 KB en lugar de 4 MB supone ~200× menos datos en tránsito.</p>
+          </div>
+          <div class="flex items-start gap-3">
+            <span class="text-2xl shrink-0">🔋</span>
+            <p class="text-sm text-text-muted leading-snug"><strong class="text-text">Menos energía</strong> — los servidores de correo mantienen sus datos activos permanentemente. Menos datos = menos vatios.</p>
+          </div>
+          <div class="flex items-start gap-3">
+            <span class="text-2xl shrink-0">🌱</span>
+            <p class="text-sm text-text-muted leading-snug"><strong class="text-text">Efecto palanca colectivo</strong> — si 1 000 usuarios aligeran 10 correos al día, son terabytes ahorrados cada mes.</p>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- CARACTERÍSTICAS -->
-  <FeaturesSection
-    title="Todo lo que necesita, nada más"
-    subtitle="Simple, eficaz y respetuoso. MailLighter se integra de forma natural en su flujo de trabajo diario."
-    features={features}
-    background="muted"
-    id="features"
-  />
-
-  <!-- BENEFICIOS (Bento Grid) -->
-  <BentoGrid
-    title="Beneficios medibles"
-    subtitle="Para sus equipos, su IT y el planeta."
-    items={bentoItems}
-    background="default"
-    id="benefits"
-  />
-
-  <!-- RSC -->
-  <section class="py-section bg-surface">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-12">
-        <p class="text-sm font-semibold text-primary uppercase tracking-wide mb-3">Una herramienta de sobriedad digital</p>
-        <h2 class="text-3xl sm:text-4xl font-bold text-text mb-4">
-          Refuerce su política RSC
-        </h2>
-        <p class="text-lg text-text-muted max-w-2xl mx-auto">
-          MailLighter actúa directamente sobre los usos cotidianos, reduciendo el volumen y el impacto medioambiental de los correos desde el origen.
-        </p>
+  <section class="py-24 px-6" id="features">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center mb-14">
+        <div class="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wide text-success mb-3">⚡ Características</div>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-text tracking-tight">Cinco acciones, un solo clic.</h2>
+        <p class="text-base text-text-muted mt-3">Disponibles directamente en la cinta de Outlook, sin salir de su correo.</p>
       </div>
-
-      <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mb-12">
-        {[
-          { icon: '✅', text: 'Simple' },
-          { icon: '✅', text: 'Bajo coste' },
-          { icon: '✅', text: 'Fácil de desplegar' },
-          { icon: '✅', text: 'Sin cambio de hábitos' },
-          { icon: '✅', text: 'Escalable' },
-          { icon: '✅', text: 'Impacto real' },
-        ].map((item) => (
-          <div class="flex items-center gap-2 bg-background rounded-lg p-4 border border-border">
-            <span class="text-lg">{item.icon}</span>
-            <span class="text-sm font-medium text-text">{item.text}</span>
-          </div>
-        ))}
-      </div>
-
-      <div class="bg-background rounded-xl p-8 border border-border">
-        <h3 class="font-semibold text-text text-lg mb-4">MailLighter ayuda a las organizaciones a:</h3>
-        <ul class="space-y-3 text-text-muted">
-          <li class="flex items-start gap-3">
-            <span class="text-primary mt-0.5">→</span>
-            <span>Cumplir con las expectativas de <strong class="text-text">informes RSC / ESG</strong>, auditorías internas e iniciativas Green IT</span>
-          </li>
-          <li class="flex items-start gap-3">
-            <span class="text-primary mt-0.5">→</span>
-            <span>Demostrar <strong class="text-text">acciones operativas</strong>, no solo declaraciones</span>
-          </li>
-        </ul>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="bg-surface border border-border rounded-2xl p-7 transition hover:border-success hover:shadow-md hover:-translate-y-0.5">
+          <div class="text-3xl mb-3">🖼️</div>
+          <div class="text-base font-bold text-text mb-2">Eliminar imágenes</div>
+          <div class="text-sm text-text-muted leading-relaxed">Elimina todas las imágenes incrustadas del cuerpo del mensaje. MailLighter le muestra el número y el espacio ahorrado.</div>
+          <span class="inline-block mt-3 text-[0.7rem] font-bold uppercase tracking-wide bg-success-bg text-success px-2.5 py-0.5 rounded-full">Espacio liberado</span>
+        </div>
+        <div class="bg-surface border border-border rounded-2xl p-7 transition hover:border-success hover:shadow-md hover:-translate-y-0.5">
+          <div class="text-3xl mb-3">📎</div>
+          <div class="text-base font-bold text-text mb-2">Eliminar archivos adjuntos</div>
+          <div class="text-sm text-text-muted leading-relaxed">Elimina los archivos adjuntos. Las imágenes inline de las firmas no se tocan.</div>
+          <span class="inline-block mt-3 text-[0.7rem] font-bold uppercase tracking-wide bg-success-bg text-success px-2.5 py-0.5 rounded-full">Inteligente</span>
+        </div>
+        <div class="bg-surface border border-border rounded-2xl p-7 transition hover:border-success hover:shadow-md hover:-translate-y-0.5">
+          <div class="text-3xl mb-3">↩️</div>
+          <div class="text-base font-bold text-text mb-2">Conservar 2 respuestas</div>
+          <div class="text-sm text-text-muted leading-relaxed">Reduce los hilos largos a los 2 mensajes más recientes. Detecta bloques citados en todos los formatos de Outlook y en varios idiomas.</div>
+          <span class="inline-block mt-3 text-[0.7rem] font-bold uppercase tracking-wide bg-success-bg text-success px-2.5 py-0.5 rounded-full">Multi-idioma</span>
+        </div>
+        <div class="bg-surface border border-border rounded-2xl p-7 transition hover:border-success hover:shadow-md hover:-translate-y-0.5">
+          <div class="text-3xl mb-3">✂️</div>
+          <div class="text-base font-bold text-text mb-2">Conservar la selección</div>
+          <div class="text-sm text-text-muted leading-relaxed">Reemplace todo el hilo citado por el único pasaje que seleccionó. Precisión quirúrgica.</div>
+          <span class="inline-block mt-3 text-[0.7rem] font-bold uppercase tracking-wide bg-success-bg text-success px-2.5 py-0.5 rounded-full">Selección HTML</span>
+        </div>
+        <div class="bg-gradient-to-br from-success-bg to-background border border-success/30 rounded-2xl p-7 transition hover:shadow-md hover:-translate-y-0.5">
+          <div class="text-3xl mb-3">✅</div>
+          <div class="text-base font-bold text-text mb-2">Limpieza completa</div>
+          <div class="text-sm text-text-muted leading-relaxed">Ejecuta todas las acciones a la vez. Se muestra un resumen detallado: imágenes, adjuntos, respuestas — todo de una vez.</div>
+          <span class="inline-block mt-3 text-[0.7rem] font-bold uppercase tracking-wide bg-success-bg text-success px-2.5 py-0.5 rounded-full">Todo en uno</span>
+        </div>
+        <div class="bg-gray-900 border border-transparent rounded-2xl p-7 transition hover:shadow-md hover:-translate-y-0.5">
+          <div class="text-3xl mb-3">🔒</div>
+          <div class="text-base font-bold text-white mb-2">100 % local</div>
+          <div class="text-sm text-gray-400 leading-relaxed">Todo el procesamiento se realiza en Outlook a través de la API Office.js. Ningún dato se envía a un servidor externo.</div>
+          <span class="inline-block mt-3 text-[0.7rem] font-bold uppercase tracking-wide bg-green-400/15 text-green-400 px-2.5 py-0.5 rounded-full">Respeto a la privacidad</span>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- PÚBLICO OBJETIVO -->
-  <section id="audience" class="py-section bg-background">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <p class="text-sm font-semibold text-primary uppercase tracking-wide mb-3">¿Para quién?</p>
-      <h2 class="text-3xl sm:text-4xl font-bold text-text mb-10">
-        Diseñado para organizaciones comprometidas con el digital responsable
-      </h2>
-      <div class="grid grid-cols-2 md:grid-cols-3 gap-6">
-        {[
-          { icon: '🏢', title: 'Empresas privadas' },
-          { icon: '🏛️', title: 'Organizaciones públicas' },
-          { icon: '💻', title: 'Equipos IT / CIO' },
-          { icon: '🌱', title: 'Departamentos RSC' },
-          { icon: '🔧', title: 'Servicios informáticos' },
-          { icon: '🌍', title: 'Digital responsable' },
-        ].map((item) => (
-          <div class="bg-surface rounded-lg p-6 border border-border text-center">
-            <div class="text-3xl mb-3">{item.icon}</div>
-            <h3 class="font-medium text-text text-sm">{item.title}</h3>
-          </div>
-        ))}
+  <!-- CÓMO FUNCIONA -->
+  <section class="py-24 px-6 bg-surface" id="how">
+    <div class="max-w-4xl mx-auto text-center">
+      <div class="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wide text-success mb-3">🚀 Cómo funciona</div>
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-text tracking-tight mb-2">En tres pasos, listo.</h2>
+      <p class="text-base text-text-muted mb-12">Sin configuración compleja. Sin cuenta que crear.</p>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-6">
+        <div class="text-center p-6">
+          <div class="w-12 h-12 rounded-full bg-green-600 text-white font-extrabold text-lg flex items-center justify-center mx-auto mb-4">1</div>
+          <div class="font-bold text-text mb-1">Instale el add-in</div>
+          <div class="text-sm text-text-muted leading-relaxed">Descargue MailLighter desde Microsoft AppSource y añádalo a Outlook en segundos.</div>
+        </div>
+        <div class="text-center p-6">
+          <div class="w-12 h-12 rounded-full bg-green-600 text-white font-extrabold text-lg flex items-center justify-center mx-auto mb-4">2</div>
+          <div class="font-bold text-text mb-1">Redacte su correo</div>
+          <div class="text-sm text-text-muted leading-relaxed">Escriba o responda a un correo como de costumbre. El menú MailLighter está disponible en la cinta.</div>
+        </div>
+        <div class="text-center p-6">
+          <div class="w-12 h-12 rounded-full bg-green-600 text-white font-extrabold text-lg flex items-center justify-center mx-auto mb-4">3</div>
+          <div class="font-bold text-text mb-1">Aligere antes de enviar</div>
+          <div class="text-sm text-text-muted leading-relaxed">Elija la acción deseada. MailLighter se ejecuta al instante y le indica lo que se ha eliminado.</div>
+        </div>
+      </div>
+
+      <div class="mt-10 bg-gray-900 rounded-xl px-6 py-5 flex items-center gap-3 text-left max-w-xl mx-auto">
+        <span class="text-2xl shrink-0">✅</span>
+        <span class="text-sm text-green-200 font-mono">Limpieza completa — Imágenes: 8 (1.2 MB) | Adjuntos: 2 (3.4 MB) | Respuestas: 6 → 2</span>
       </div>
     </div>
   </section>
-
-  <!-- DESPLIEGUE -->
-  <HowItWorks
-    title="Despliegue sencillo"
-    subtitle="Operativo en minutos."
-    steps={[
-      {
-        title: 'Instalación rápida',
-        description: 'Instale desde la marketplace de Microsoft AppSource en pocos clics.',
-        icon: 'lucide:download',
-      },
-      {
-        title: 'Compatible con Microsoft 365',
-        description: 'Funciona con su entorno Microsoft 365 existente. Sin migración necesaria.',
-        icon: 'lucide:check-circle',
-      },
-      {
-        title: 'Adopción inmediata',
-        description: 'Sin formación necesaria. Sin impacto en la seguridad. Cumple el RGPD.',
-        icon: 'lucide:rocket',
-      },
-    ]}
-    variant="horizontal"
-    background="muted"
-  />
 
   <!-- CTA -->
-  <CTA
-    title="Correos más ligeros. Digital más responsable."
-    description="Pruebe MailLighter hoy y convierta cada correo en un gesto de sobriedad digital."
-    action={{ label: 'Probar ahora', href: 'https://appsource.microsoft.com/' }}
-  />
+  <section class="py-24 px-6 text-center" id="download">
+    <div class="max-w-2xl mx-auto">
+      <div class="inline-flex items-center gap-1.5 bg-success-bg border border-success/30 text-success px-4 py-1.5 rounded-full text-xs font-semibold mb-5">🌿 Adopte el reflejo del correo responsable</div>
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-text tracking-tight mb-4">¿Listo para aligerar sus correos <span class="bg-gradient-to-r from-green-700 to-green-500 bg-clip-text text-transparent">y su impacto?</span></h2>
+      <p class="text-base text-text-muted mb-8 leading-relaxed">Gratuito, sin cuenta, sin recopilación de datos. Instale MailLighter en segundos y empiece a enviar correos más limpios hoy mismo.</p>
+      <div class="flex justify-center gap-4 flex-wrap">
+        <a href="https://appsource.microsoft.com/" class="inline-flex items-center gap-2 bg-green-600 text-white px-7 py-3.5 rounded-xl font-bold shadow-lg shadow-green-600/30 transition hover:bg-green-700 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-green-600/40">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Instalar gratis
+        </a>
+      </div>
+      <p class="text-xs text-text-muted mt-4">Outlook Desktop · Windows &amp; macOS · Microsoft 365 o Exchange</p>
+    </div>
+  </section>
 </MarketingLayout>
+
+<style>
+  @keyframes slide {
+    0%, 100% { transform: translateX(0); opacity: 0.6; }
+    50% { transform: translateX(7px); opacity: 1; }
+  }
+  .arrow-anim { animation: slide 2s ease-in-out infinite; }
+</style>

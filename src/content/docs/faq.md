@@ -1,135 +1,83 @@
 ---
 title: "FAQ"
-description: "Frequently asked questions about Virex. Find answers to common questions about pricing, features, and troubleshooting."
+description: "Frequently asked questions about MailLighter: compatibility, security, supported formats, and languages."
 section: "Resources"
-order: 5
+order: 10
 draft: false
 ---
 
-Find answers to the most common questions about Virex.
+Find answers to the most common questions about MailLighter.
 
 ## General
 
-### What is Virex?
+### What is MailLighter?
 
-Virex is a modern development platform that helps teams build, deploy, and scale applications. We handle infrastructure complexity so you can focus on building great products.
+MailLighter is a free, open-source Outlook add-in that cleans emails before forwarding or replying. It removes images, attachments, and unnecessary reply chains.
 
-### Who is Virex for?
+### Is MailLighter free?
 
-Virex is designed for developers and teams of all sizes—from solo indie hackers to enterprise organizations. Our platform scales with your needs.
+Yes, completely free. No subscription, no premium tier, no in-app purchases. MailLighter is open-source under the MIT license.
 
-### What frameworks does Virex support?
+### What languages are supported?
 
-Virex supports all major frameworks including:
+MailLighter is available in English, French, and Spanish. The language is detected automatically from your Outlook settings.
 
-- Astro
-- Next.js
-- Remix
-- SvelteKit
-- Nuxt
-- Vue
-- React
-- And any static site generator
+## Compatibility
 
-We auto-detect your framework and configure builds automatically.
+### Which versions of Outlook are supported?
 
-## Pricing
+MailLighter works with **Outlook Desktop** on Windows and macOS. It requires a Microsoft 365 or Exchange account.
 
-### Is there a free tier?
+### Does it work with Outlook on the Web?
 
-Yes! Our Hobby plan is free forever and includes:
+Not yet. Outlook on the Web support is planned for a future release.
 
-- Unlimited personal projects
-- 100GB bandwidth per month
-- Automatic HTTPS
-- Preview deployments
+### Does it work with Outlook Mobile?
 
-### How does billing work?
+Not currently. Outlook Mobile does not support the add-in features MailLighter requires.
 
-We bill monthly based on usage. You only pay for what you use beyond the free tier limits. See our [pricing page](/pricing) for details.
+### Does it work with Gmail or other email clients?
 
-### Can I change plans anytime?
+No. MailLighter is built on Office.js, which is specific to Microsoft Outlook.
 
-Yes, you can upgrade or downgrade at any time. Changes take effect immediately, and we prorate charges.
+## Privacy & Security
 
-## Deployments
+### Does MailLighter read my emails?
 
-### How fast are deployments?
+MailLighter accesses only the email you are currently viewing or editing, using the `ReadWriteItem` permission. It never accesses your mailbox or other emails.
 
-Most deployments complete in under 30 seconds. Build times vary based on your project size and complexity.
+### Is my data sent to any server?
 
-### Can I rollback a deployment?
+No. MailLighter processes emails 100% locally on your device. There is no server — the add-in makes zero network requests after installation.
 
-Yes! Every deployment is saved, and you can rollback to any previous version instantly from the dashboard or CLI:
+### Is MailLighter GDPR compliant?
 
-```bash
-virex rollback --to=abc123
-```
+Yes. Since no data is collected, stored, or transmitted, MailLighter is GDPR compliant by design. See the [Privacy & Security](/docs/privacy-security) page for details.
 
-### Do you support preview deployments?
+## Usage
 
-Yes, every pull request automatically gets a unique preview URL. This is enabled by default for all projects.
+### Can I undo a cleanup?
 
-## Security
+MailLighter modifies the email draft. If you haven't sent the email yet, you can use Outlook's undo function (Ctrl+Z) to revert the changes.
 
-### Is my code secure?
+### Does "Remove images" also remove attachments?
 
-Absolutely. We take security seriously:
+No. Images and attachments are treated separately. "Remove images" only removes inline images embedded in the email body. Use "Remove attachments" for file attachments.
 
-- All data is encrypted at rest and in transit
-- SOC 2 Type II certified
-- Regular security audits
-- No access to your source code beyond build time
+### What does "Keep 2 replies" do exactly?
 
-### Do you support SSO?
+It trims the email conversation to keep only the 2 most recent replies, removing older parts of the thread. This is useful for long email chains.
 
-Yes, SSO is available on Team and Enterprise plans. We support SAML 2.0 and OIDC providers.
+### Can I customize the number of replies to keep?
 
-### Where is my data stored?
-
-By default, data is stored in US regions. Enterprise customers can choose specific regions for compliance requirements.
+Not currently. The "Keep 2 replies" command always keeps the last 2 replies. Customizable settings may be added in a future version.
 
 ## Troubleshooting
 
-### My build is failing
+### The add-in doesn't appear in the ribbon
 
-Common causes:
+See the [Troubleshooting](/docs/troubleshooting) guide for detailed solutions.
 
-1. **Missing dependencies** — Ensure all dependencies are in `package.json`
-2. **Node version mismatch** — Specify your Node version in config
-3. **Environment variables** — Check that required variables are set
+### A command didn't remove all expected content
 
-Run your build locally first to debug:
-
-```bash
-npm run build
-```
-
-### My site is slow
-
-Check these common issues:
-
-1. **Large assets** — Optimize images and use lazy loading
-2. **Too many requests** — Bundle and minify your code
-3. **No caching** — Configure cache headers appropriately
-
-Use our built-in analytics to identify bottlenecks.
-
-### I'm getting 404 errors
-
-For single-page applications, ensure you have a fallback configured:
-
-```javascript
-export default {
-  rewrites: [
-    { source: '/(.*)', destination: '/index.html' },
-  ],
-};
-```
-
-## Still Have Questions?
-
-- **Documentation** — Browse our [docs](/docs) for detailed guides
-- **Discord** — Join our [community](https://discord.gg/virex) for help
-- **Support** — Enterprise customers can contact support directly
-- **Twitter** — Follow [@virex](https://twitter.com/virex) for updates
+Some email clients generate complex HTML that may not be fully parsed. If you encounter this, please [report the issue](https://github.com/MailLighter/MailLighter/issues) with a description of the email format.

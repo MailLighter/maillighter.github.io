@@ -16,7 +16,7 @@ export const navigationByLang: Record<Lang, Navigation> = {
         { label: 'Documentation', href: '/docs', feature: 'docs' },
       ],
       cta: [
-        { label: 'Try it now', href: 'https://appsource.microsoft.com/', variant: 'primary' },
+        { label: 'Install for free', href: 'https://appsource.microsoft.com/', variant: 'primary' },
       ],
     },
     footer: {
@@ -43,10 +43,10 @@ export const navigationByLang: Record<Lang, Navigation> = {
         { label: 'Fonctionnalités', href: '/fr/#features' },
         { label: 'FAQ', href: '/fr/faq' },
         { label: 'Contact', href: '/fr/contact' },
-        { label: 'Documentation', href: '/docs', feature: 'docs' },
+        { label: 'Documentation', href: '/fr/docs', feature: 'docs' },
       ],
       cta: [
-        { label: 'Essayer maintenant', href: 'https://appsource.microsoft.com/', variant: 'primary' },
+        { label: 'Installer gratuitement', href: 'https://appsource.microsoft.com/', variant: 'primary' },
       ],
     },
     footer: {
@@ -56,7 +56,7 @@ export const navigationByLang: Record<Lang, Navigation> = {
       ],
 
       resources: [
-        { label: 'Documentation', href: '/docs', feature: 'docs' },
+        { label: 'Documentation', href: '/fr/docs', feature: 'docs' },
       ],
       company: [
         { label: 'Contact', href: '/fr/contact' },
@@ -73,10 +73,10 @@ export const navigationByLang: Record<Lang, Navigation> = {
         { label: 'Características', href: '/es/#features' },
         { label: 'Preguntas frecuentes', href: '/es/faq' },
         { label: 'Contacto', href: '/es/contact' },
-        { label: 'Documentation', href: '/docs', feature: 'docs' },
+        { label: 'Documentación', href: '/es/docs', feature: 'docs' },
       ],
       cta: [
-        { label: 'Probar ahora', href: 'https://appsource.microsoft.com/', variant: 'primary' },
+        { label: 'Instalar gratis', href: 'https://appsource.microsoft.com/', variant: 'primary' },
       ],
     },
     footer: {
@@ -86,7 +86,7 @@ export const navigationByLang: Record<Lang, Navigation> = {
       ],
 
       resources: [
-        { label: 'Documentación', href: '/docs', feature: 'docs' },
+        { label: 'Documentación', href: '/es/docs', feature: 'docs' },
       ],
       company: [
         { label: 'Contacto', href: '/es/contact' },

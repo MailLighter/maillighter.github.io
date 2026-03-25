@@ -1,52 +1,34 @@
 ---
 title: "Introduction"
-description: "Welcome to Virex—the modern platform for building and shipping software faster. Learn what Virex is and how it can help your team."
+description: "MailLighter is a free Outlook add-in that cleans your emails before forwarding or replying. Remove images, attachments, and unnecessary reply chains in one click."
 section: "Getting Started"
 order: 1
 draft: false
 ---
 
-Welcome to Virex! This documentation will help you get up and running quickly and make the most of the platform.
+MailLighter is a lightweight, free, and open-source Outlook add-in that helps you clean up emails before forwarding or replying. It removes unnecessary clutter — images, attachments, and long reply chains — so your messages stay clean and professional.
 
-## What is Virex?
+## Why MailLighter?
 
-Virex is a modern development platform designed to help teams build, deploy, and scale applications with confidence. We handle the infrastructure complexity so you can focus on building great products.
+Every day, emails accumulate inline images, heavy attachments, and endless reply chains. When you forward or reply, all that unnecessary content goes along for the ride, wasting bandwidth and cluttering inboxes.
 
-### Key Features
+MailLighter solves this with **5 targeted commands** accessible from Outlook's ribbon menu:
 
-- **Instant Deployments** — Push code and see it live in seconds, not minutes
-- **Automatic Scaling** — Handle traffic spikes without manual intervention
-- **Built-in Analytics** — Understand how your application performs in production
-- **Team Collaboration** — Work together seamlessly with real-time features
+- **Remove images** — Strip all inline images from the email body
+- **Remove attachments** — Delete all file attachments
+- **Keep 2 replies** — Trim the conversation to the last 2 replies only
+- **Keep selection only** — Keep only the text you've selected, remove everything else
+- **Full cleanup** — Apply all of the above in a single action
 
-## Who is Virex For?
+## Key Benefits
 
-Virex is built for:
+- **Fast** — Cleans emails in under a second
+- **Private** — 100% local processing, no external servers
+- **Free** — No subscription, no premium tier, no hidden costs
+- **Multilingual** — Available in English, French, and Spanish
+- **Non-destructive** — Works on the draft, your original email is preserved
+- **Open-source** — Full source code available on [GitHub](https://github.com/MailLighter/MailLighter)
 
-- **Startups** looking to move fast without sacrificing reliability
-- **Growing teams** that need to scale their infrastructure alongside their product
-- **Enterprise organizations** requiring security, compliance, and control
+## Getting Started
 
-## Core Concepts
-
-Before diving in, here are a few concepts you'll encounter:
-
-### Projects
-
-A project is your application. It contains your code, configuration, and deployment history.
-
-### Environments
-
-Environments are isolated instances of your project. Most teams use staging and production environments, but you can create as many as you need.
-
-### Deployments
-
-A deployment is a specific version of your code running in an environment. Virex keeps a history of all deployments, making rollbacks instant.
-
-## Getting Help
-
-- **Documentation** — You're here! Browse the sidebar for detailed guides
-- **Discord Community** — Join thousands of developers in our [Discord server](https://discord.gg/virex)
-- **Support** — Enterprise customers can reach our support team directly
-
-Ready to get started? Head to the [Installation guide](/docs/installation) to set up your first project.
+Ready to start? Head to the [Installation guide](/docs/installation) to set up MailLighter in Outlook.
