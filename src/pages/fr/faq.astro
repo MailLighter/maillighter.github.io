@@ -112,11 +112,11 @@ const categories = [
   description="Questions fréquentes sur MailLighter, le plugin Outlook pour des emails plus légers et plus responsables."
 >
   <!-- HERO -->
-  <section class="pt-16 pb-10 bg-gradient-to-br from-primary/10 via-background to-background">
-    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <div class="inline-flex items-center gap-1.5 bg-success-bg border border-success/30 text-success px-4 py-1.5 rounded-full text-xs font-semibold mb-6">❓ FAQ</div>
-      <h1 class="text-4xl sm:text-5xl font-extrabold text-text tracking-tight leading-tight">Questions fréquentes</h1>
-      <p class="mt-4 text-lg text-text-muted leading-relaxed">Tout ce que vous devez savoir sur MailLighter, de l’installation à l’impact environnemental.</p>
+  <section class="faq-hero">
+    <div class="faq-hero-inner">
+      <span class="faq-eyebrow">FAQ</span>
+      <h1 class="faq-title">Questions fréquentes</h1>
+      <p class="faq-sub">Tout ce que vous devez savoir sur MailLighter. Vous ne trouvez pas la réponse ? <a href="/fr/contact" class="faq-link">Contactez-nous.</a></p>
     </div>
   </section>
 
@@ -139,3 +139,49 @@ const categories = [
     </div>
   </section>
 </MarketingLayout>
+
+<style>
+  .faq-hero {
+    padding: 100px 52px 56px;
+    text-align: center;
+  }
+  .faq-hero-inner {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  .faq-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--ml-blue-pale);
+    color: var(--ml-blue);
+    font-size: 0.72rem;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 6px;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+  .faq-title {
+    font-size: clamp(2rem, 3.5vw, 2.8rem);
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 16px;
+  }
+  .faq-sub {
+    font-size: 1rem;
+    color: var(--ml-ink-soft);
+    line-height: 1.75;
+    max-width: 560px;
+    margin: 0 auto;
+  }
+  .faq-link {
+    color: var(--ml-blue);
+    text-decoration: none;
+    font-weight: 500;
+  }
+  .faq-link:hover {
+    text-decoration: underline;
+  }
+</style>

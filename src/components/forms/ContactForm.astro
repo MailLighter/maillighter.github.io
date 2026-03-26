@@ -40,6 +40,7 @@ const t = {
     validationRequired: 'is required',
     validationMinChars: 'must be at least {n} characters',
     validationEmail: 'Please enter a valid email address',
+    privacy: '🔒 Your data is never shared with third parties.',
   },
   fr: {
     firstName: 'Prénom',
@@ -62,6 +63,7 @@ const t = {
     validationRequired: 'est requis',
     validationMinChars: 'doit contenir au moins {n} caractères',
     validationEmail: 'Veuillez entrer une adresse email valide',
+    privacy: '🔒 Vos données ne sont jamais partagées avec des tiers.',
   },
   es: {
     firstName: 'Nombre',
@@ -84,6 +86,7 @@ const t = {
     validationRequired: 'es obligatorio',
     validationMinChars: 'debe tener al menos {n} caracteres',
     validationEmail: 'Por favor, introduzca una dirección de email válida',
+    privacy: '🔒 Sus datos nunca se comparten con terceros.',
   },
 }[lang];
 ---
@@ -218,35 +221,33 @@ const t = {
     </div>
   </div>
 
-  <div class="flex flex-col sm:flex-row sm:items-center gap-4">
-    <button
-      type="submit"
-      id="submit-button"
-      class="w-full sm:w-auto px-6 py-3 rounded-md bg-primary text-white font-medium hover:bg-primary-dark transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed"
-    >
-      <span id="button-text">{t.send}</span>
-      <span id="button-loading" class="hidden">
-        <svg
-          class="animate-spin inline-block w-5 h-5 mr-2"
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-        >
-          <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"
-          ></circle>
-          <path
-            class="opacity-75"
-            fill="currentColor"
-            d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
-          ></path>
-        </svg>
-        {t.sending}
-      </span>
-    </button>
-    <p class="text-sm text-text-muted">
-      <span class="text-red-500">*</span> {t.required}
-    </p>
-  </div>
+  <button
+    type="submit"
+    id="submit-button"
+    class="w-full py-3.5 rounded-lg bg-[var(--ml-blue)] text-white font-bold text-[0.95rem] cursor-pointer flex items-center justify-center gap-2 shadow-[0_4px_16px_rgba(21,100,192,0.3)] transition-all duration-200 hover:bg-[var(--ml-blue-dark)] hover:-translate-y-0.5 hover:shadow-[0_8px_24px_rgba(21,100,192,0.35)] focus:outline-none focus:ring-2 focus:ring-[var(--ml-blue)] focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed mt-1"
+  >
+    <span id="button-text" class="inline-flex items-center gap-2">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M14 2L2 6l4 4 4 4 4-12zM6 10l2-2"/></svg>
+      {t.send}
+    </span>
+    <span id="button-loading" class="inline-flex items-center gap-2" style="display: none;">
+      <svg
+        class="animate-spin w-5 h-5"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+      >
+        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+        <path
+          class="opacity-75"
+          fill="currentColor"
+          d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+        ></path>
+      </svg>
+      {t.sending}
+    </span>
+  </button>
+  <p class="text-xs text-center mt-3" style="color: var(--ml-ink-mute);">{t.privacy}</p>
 </form>
 
 <script>
@@ -383,8 +384,8 @@ const t = {
 
     // Show loading state
     submitButton.disabled = true;
-    buttonText?.classList.add('hidden');
-    buttonLoading?.classList.remove('hidden');
+    if (buttonText) buttonText.style.display = 'none';
+    if (buttonLoading) buttonLoading.style.display = 'inline-flex';
 
     const formData = new FormData(form);
     const hasAccessKey = form.dataset.hasAccessKey === 'true';
@@ -431,7 +432,7 @@ const t = {
 
   function resetButtonState() {
     submitButton.disabled = false;
-    buttonText?.classList.remove('hidden');
-    buttonLoading?.classList.add('hidden');
+    if (buttonText) buttonText.style.display = 'inline-flex';
+    if (buttonLoading) buttonLoading.style.display = 'none';
   }
 </script>

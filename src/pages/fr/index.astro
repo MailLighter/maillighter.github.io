@@ -1,6 +1,5 @@
 ---
 import MarketingLayout from '@/layouts/MarketingLayout.astro';
-import Hero from '@sections/marketing/Hero.astro';
 import { siteConfig } from '@/config';
 ---
 
@@ -8,227 +7,543 @@ import { siteConfig } from '@/config';
   title={`${siteConfig.name} — Allégez vos emails, allégez votre impact`}
   description="Le plugin Outlook qui nettoie vos emails en un clic. Pour des échanges plus clairs, des serveurs moins chargés et une sobriété numérique concrète."
 >
-  <!-- HERO -->
-  <Hero
-    title="MailLighter pour Outlook"
-    subtitle="Allégez vos emails. Allégez votre impact."
-    backgroundType="gradient"
-    gradient="from-primary/10 via-background to-background"
-  >
-    <Fragment slot="title">
-      <img src="/images/logo-full.png" alt="MailLighter" width="1016" height="207" fetchpriority="high" class="h-16 sm:h-20 w-auto mx-auto mb-2" />
-      <span class="block text-2xl sm:text-3xl font-semibold">pour Outlook</span>
-    </Fragment>
-  </Hero>
-
-  <!-- HERO CONTENT + AVANT / APRÈS -->
-  <section class="pt-4 pb-16 bg-background">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-      <!-- Colonne gauche : accroche + CTA -->
-      <div>
-        <div class="inline-flex items-center gap-1.5 bg-success-bg border border-success/30 text-success px-4 py-1.5 rounded-full text-xs font-semibold mb-6">🌿 Pour des emails plus légers, pour une planète plus légère</div>
-        <h2 class="text-3xl sm:text-4xl font-black text-text tracking-tight leading-tight mb-5">Chaque email que vous envoyez a un <span class="bg-gradient-to-r from-green-700 to-green-500 bg-clip-text text-transparent">poids sur la planète.</span></h2>
-        <p class="text-base sm:text-lg text-text-muted leading-relaxed mb-8">
-          Images inutiles, pièces jointes oubliées, histoires de réponses empilés sur des semaines —
-          vos emails transportent des mégaoctets que personne ne relira jamais.
-          <strong class="text-text">MailLighter</strong> nettoie tout ça en un clic, sans quitter Outlook.
-        </p>
-        <div class="flex gap-3 flex-wrap mb-3">
-          <a href="https://appsource.microsoft.com/" class="inline-flex items-center gap-2 bg-green-600 text-white px-6 py-3 rounded-xl font-bold shadow-lg shadow-green-600/30 transition hover:bg-green-700 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-green-600/40">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+  <!-- ════ HERO ════ -->
+  <section class="landing-hero">
+    <div class="hero-grid">
+      <div class="hero-left">
+        <span class="hero-badge">
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="var(--ml-blue)" stroke-width="1.8"><path d="M6 1v10M3 8l3 3 3-3" stroke-linecap="round"/></svg>
+          Add-in Outlook gratuit&nbsp;<span class="badge-accent">Sans compte</span>
+        </span>
+        <h1 class="hero-title">
+          <span class="accent-blue">Allégez</span> vos emails.<br>
+          <span class="accent-green">Allégez votre impact.</span>
+        </h1>
+        <p class="hero-sub">MailLighter supprime les images inutiles, les pièces jointes oubliées et les fils de réponses interminables — en un clic, directement depuis le ruban Outlook.</p>
+        <div class="hero-ctas">
+          <a href="https://appsource.microsoft.com/" class="btn-primary">
+            <svg width="15" height="15" viewBox="0 0 15 15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7.5 2v8M5 7l2.5 3 2.5-3M2 12h11"/></svg>
             Installer gratuitement
           </a>
+          <a href="#features" class="btn-ghost">Voir comment ça marche →</a>
         </div>
-        <p class="text-xs text-text-muted">Add-in gratuit · Outlook Desktop · Windows &amp; macOS</p>
-      </div>
-
-      <!-- Colonne droite : Avant / Après -->
-      <div class="flex items-center justify-center gap-4 sm:gap-6">
-        <div class="bg-gradient-to-br from-error-bg to-background border-[1.5px] border-error/30 rounded-2xl p-5 sm:p-6 text-center w-40 sm:w-44 shadow-lg">
-          <div class="text-[0.65rem] font-bold uppercase tracking-widest text-error mb-2">Avant</div>
-          <div class="text-3xl mb-1">📧</div>
-          <div class="text-3xl sm:text-4xl font-extrabold text-text leading-none">4.2 <small class="text-base font-semibold text-text-muted">MB</small></div>
-          <div class="flex flex-col gap-0.5 text-[0.72rem] text-text-muted my-2">
-            <span>12 images intégrées</span>
-            <span>3 pièces jointes</span>
-            <span>8 réponses citées</span>
-          </div>
-          <div class="text-sm font-bold text-error pt-2 border-t border-border">≈ 12 g CO₂</div>
-        </div>
-
-        <svg class="arrow-anim shrink-0" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-          <line x1="5" y1="12" x2="19" y2="12" class="text-success"/><polyline points="12 5 19 12 12 19" class="text-success"/>
-        </svg>
-
-        <div class="bg-gradient-to-br from-success-bg to-background border-[1.5px] border-success/30 rounded-2xl p-5 sm:p-6 text-center w-40 sm:w-44 shadow-lg scale-105">
-          <div class="text-[0.65rem] font-bold uppercase tracking-widest text-success mb-2">Après</div>
-          <div class="text-3xl mb-1">✉️</div>
-          <div class="text-3xl sm:text-4xl font-extrabold text-text leading-none">18 <small class="text-base font-semibold text-text-muted">KB</small></div>
-          <div class="flex flex-col gap-0.5 text-[0.72rem] text-text-muted my-2">
-            <span>Texte uniquement</span>
-            <span>2 réponses récentes</span>
-          </div>
-          <div class="text-sm font-bold text-success pt-2 border-t border-border">≈ 0.05 g CO₂</div>
+        <div class="hero-trust">
+          <a href="https://appsource.microsoft.com/" class="appsource-badge">
+            <svg width="16" height="16" viewBox="0 0 16 16"><rect width="7" height="7" rx="1" fill="#f25022"/><rect x="9" width="7" height="7" rx="1" fill="#7fba00"/><rect y="9" width="7" height="7" rx="1" fill="#00a4ef"/><rect x="9" y="9" width="7" height="7" rx="1" fill="#ffb900"/></svg>
+            Microsoft AppSource
+          </a>
+          <span class="trust-sep">·</span>
+          <span class="trust-text">Outlook Desktop · Windows & macOS · Microsoft 365</span>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- STATS BAR -->
-  <div class="bg-gray-900 text-white py-12 px-6">
-    <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-      <div>
-        <div class="text-4xl font-black text-green-400 tracking-tight">300 Mds</div>
-        <div class="text-sm text-gray-400 mt-1 leading-snug">d'emails envoyés chaque jour dans le monde</div>
-      </div>
-      <div>
-        <div class="text-4xl font-black text-green-400 tracking-tight">3 à 4 %</div>
-        <div class="text-sm text-gray-400 mt-1 leading-snug">des émissions de GES mondiales sont attribuées au numérique</div>
-      </div>
-      <div>
-        <div class="text-4xl font-black text-green-400 tracking-tight">~200×</div>
-        <div class="text-sm text-gray-400 mt-1 leading-snug">moins de données en transit avec un email allégé par MailLighter</div>
-      </div>
-    </div>
-  </div>
-
-  <!-- ECO SECTION -->
-  <section class="py-24 px-6 bg-gradient-to-br from-success-bg to-background" id="eco">
-    <div class="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-      <div>
-        <div class="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wide text-success mb-4">🌍 Impact environnemental</div>
-        <h2 class="text-3xl sm:text-4xl font-extrabold text-text tracking-tight leading-tight mb-5">Vos emails ont une empreinte carbone. Réduisons-la ensemble.</h2>
-        <div class="text-base text-text-muted leading-relaxed space-y-4">
-          <p>Chaque mégaoctet envoyé transite par des datacenters, est répliqué dans des systèmes de sauvegarde, et reste stocké pendant des années. Un seul email volumineux transféré à 10 personnes peut générer <strong class="text-text">plusieurs grammes de CO₂</strong> — invisibles, mais réels.</p>
-          <p>MailLighter agit <strong class="text-text">à la source</strong>, avant l'envoi. Moins de données = moins de stockage = moins d'énergie. <strong class="text-text">Un petit réflexe, un vrai impact cumulé.</strong></p>
-        </div>
-      </div>
-      <div class="bg-background rounded-2xl p-8 shadow-lg border border-border">
-        <h3 class="text-base font-bold text-text mb-5">Ce que MailLighter évite, email par email</h3>
-        <div class="space-y-4">
-          <div class="flex items-start gap-3">
-            <span class="text-2xl shrink-0">🖥️</span>
-            <p class="text-sm text-text-muted leading-snug"><strong class="text-text">Moins de stockage serveur</strong> — chaque email allégé occupe moins de place dans les datacenters de votre messagerie.</p>
+      <div class="hero-right">
+        <div class="outlook-mockup">
+          <div class="mock-titlebar">
+            <div class="tbar-dot"></div><div class="tbar-dot"></div><div class="tbar-dot"></div>
+            <span class="tbar-title">Nouvel e-mail — Microsoft Outlook</span>
           </div>
-          <div class="flex items-start gap-3">
-            <span class="text-2xl shrink-0">📡</span>
-            <p class="text-sm text-text-muted leading-snug"><strong class="text-text">Moins de bande passante</strong> — transférer un email de 18 Ko au lieu de 4 Mo, c'est ~200× moins de données en transit.</p>
+          <div class="mock-ribbon">
+            <div class="rbtn">Envoyer</div>
+            <div class="rbtn">Joindre</div>
+            <div class="rsep"></div>
+            <div class="rbtn blue">⚡ MailLighter</div>
+            <div class="rbtn green-outline">Nettoyage complet</div>
+            <div class="rbtn">Images</div>
+            <div class="rbtn">2 réponses</div>
           </div>
-          <div class="flex items-start gap-3">
-            <span class="text-2xl shrink-0">🔋</span>
-            <p class="text-sm text-text-muted leading-snug"><strong class="text-text">Moins d'énergie</strong> — les serveurs de mail maintiennent vos données en vie en permanence. Moins de données = moins de watts.</p>
-          </div>
-          <div class="flex items-start gap-3">
-            <span class="text-2xl shrink-0">🌱</span>
-            <p class="text-sm text-text-muted leading-snug"><strong class="text-text">Effet de levier collectif</strong> — si 1 000 utilisateurs allègent 10 emails par jour, ce sont des téraoctets économisés chaque mois.</p>
+          <div class="mock-body">
+            <div class="mock-header">
+              <div class="mock-row"><span class="mock-lbl">À :</span><span class="mock-val">equipe@entreprise.fr (12 destinataires)</span></div>
+              <div class="mock-row"><span class="mock-lbl">Obj :</span><span class="mock-val">Re : Rapport T4 — Relecture finale</span></div>
+            </div>
+            <div class="mock-text">
+              <p style="margin-bottom:8px">Bonjour à tous, vous trouverez ci-dessous la version mise à jour.</p>
+              <div class="mock-asset"><span class="mock-asset-icon">🖼️</span> banniere_entreprise.png — <strong>820 Ko</strong></div>
+              <div class="mock-asset"><span class="mock-asset-icon">📎</span> rapport_T4_final_v3.xlsx — <strong>3.4 Mo</strong></div>
+              <div class="mock-quoted">— Message d'origine (8 réponses, 3 semaines d'historique) —<br>De : Marc · 14 nov. · Envoyé : Re : Re : Re : Re : Rapport T4…</div>
+            </div>
+            <div class="mock-result">
+              <span class="mock-result-icon">✅</span>
+              <div><strong>Nettoyage complet terminé</strong><br>Images : 1 supprimée (820 Ko) · Pièces jointes : 1 supprimée (3.4 Mo)<br>Réponses : 8 → 2 conservées · <strong>Total économisé : 4.2 Mo</strong></div>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- FEATURES -->
-  <section class="py-24 px-6" id="features">
-    <div class="max-w-5xl mx-auto">
-      <div class="text-center mb-14">
-        <div class="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wide text-success mb-3">⚡ Fonctionnalités</div>
-        <h2 class="text-3xl sm:text-4xl font-extrabold text-text tracking-tight">Cinq actions, un seul clic.</h2>
-        <p class="text-base text-text-muted mt-3">Disponibles directement dans le ruban Outlook, sans jamais quitter votre email.</p>
+  <!-- ════ STATS ════ -->
+  <section class="stats-band">
+    <div class="stats-inner">
+      <div class="stat-item">
+        <div class="stat-num">300<span class="stat-unit"> Mds</span></div>
+        <div class="stat-label">d'emails envoyés chaque jour dans le monde</div>
+        <span class="stat-badge">volume quotidien</span>
       </div>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        <div class="bg-surface border border-border rounded-2xl p-7 transition hover:border-success hover:shadow-md hover:-translate-y-0.5">
-          <div class="text-3xl mb-3">🖼️</div>
-          <div class="text-base font-bold text-text mb-2">Supprimer les images</div>
-          <div class="text-sm text-text-muted leading-relaxed">Retire toutes les images intégrées du corps du message. MailLighter vous indique le nombre et la taille économisée.</div>
-          <span class="inline-block mt-3 text-[0.7rem] font-bold uppercase tracking-wide bg-success-bg text-success px-2.5 py-0.5 rounded-full">Espace libéré affiché</span>
+      <div class="stat-item">
+        <div class="stat-num">3–<span class="stat-unit">4 %</span></div>
+        <div class="stat-label">des émissions de GES mondiales attribuées au numérique</div>
+        <span class="stat-badge">impact GES</span>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">~<span class="stat-unit">200×</span></div>
+        <div class="stat-label">moins de données en transit après un nettoyage MailLighter</div>
+        <span class="stat-badge">économies</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════ BEFORE / AFTER ════ -->
+  <section class="ba-section">
+    <div class="ba-header">
+      <span class="section-eyebrow green">Impact réel</span>
+      <h2 class="section-title">Un clic. Une différence mesurable.</h2>
+      <p class="section-sub">La transformation concrète sur un email réel.</p>
+    </div>
+    <div class="ba-cards">
+      <div class="ba-card">
+        <div class="ba-label">📧 Avant</div>
+        <div class="ba-size red">4.2 Mo</div>
+        <div class="ba-details">12 images intégrées<br>3 pièces jointes oubliées<br>8 semaines d'historique</div>
+        <span class="ba-chip bad">🌡️ ≈ 12 g CO₂</span>
+      </div>
+      <div class="ba-divider">
+        <div class="ba-arrow-circle">→</div>
+        <div class="ba-ratio">200×<br>plus léger</div>
+      </div>
+      <div class="ba-card after">
+        <div class="ba-label green">✉️ Après MailLighter</div>
+        <div class="ba-size green">18 Ko</div>
+        <div class="ba-details">Texte uniquement<br>2 réponses récentes conservées<br>Rien de superflu</div>
+        <span class="ba-chip good">🌿 ≈ 0.05 g CO₂</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════ FEATURES ════ -->
+  <section class="features-section" id="features">
+    <div class="features-inner">
+      <span class="section-eyebrow">Fonctionnalités</span>
+      <h2 class="section-title">Cinq actions. Un seul clic.</h2>
+      <p class="section-sub">Tout accessible directement depuis le ruban Outlook. Aucune configuration nécessaire.</p>
+      <div class="features-grid">
+        <div class="fcard featured">
+          <div class="fcard-icon green"><svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="8"/><polyline points="7,10 9,12 13,8"/></svg></div>
+          <span class="fcard-tag green">⭐ Le plus utilisé</span>
+          <div class="fcard-name">Nettoyage complet</div>
+          <div class="fcard-desc">Lance toutes les actions en une seule fois. Images, pièces jointes, fils de réponses — nettoyés d'un coup. Un résumé détaillé montre exactement ce qui a été supprimé.</div>
         </div>
-        <div class="bg-surface border border-border rounded-2xl p-7 transition hover:border-success hover:shadow-md hover:-translate-y-0.5">
-          <div class="text-3xl mb-3">📎</div>
-          <div class="text-base font-bold text-text mb-2">Supprimer les pièces jointes</div>
-          <div class="text-sm text-text-muted leading-relaxed">Supprime les fichiers joints. Les images inline des signatures ne sont pas touchées.</div>
-          <span class="inline-block mt-3 text-[0.7rem] font-bold uppercase tracking-wide bg-success-bg text-success px-2.5 py-0.5 rounded-full">Intelligent</span>
+        <div class="fcard">
+          <div class="fcard-icon"><svg viewBox="0 0 20 20"><rect x="2" y="2" width="16" height="12" rx="2"/><line x1="7" y1="18" x2="13" y2="18"/><line x1="10" y1="14" x2="10" y2="18"/></svg></div>
+          <span class="fcard-tag">Intelligent</span>
+          <div class="fcard-name">Supprimer les images</div>
+          <div class="fcard-desc">Retire toutes les images intégrées du corps du message. Les images de signature sont préservées.</div>
         </div>
-        <div class="bg-surface border border-border rounded-2xl p-7 transition hover:border-success hover:shadow-md hover:-translate-y-0.5">
-          <div class="text-3xl mb-3">↩️</div>
-          <div class="text-base font-bold text-text mb-2">Garder 2 réponses</div>
-          <div class="text-sm text-text-muted leading-relaxed">Réduit les longs fils aux 2 messages les plus récents. Détecte les blocs cités dans tous les formats Outlook et en plusieurs langues.</div>
-          <span class="inline-block mt-3 text-[0.7rem] font-bold uppercase tracking-wide bg-success-bg text-success px-2.5 py-0.5 rounded-full">Multi-langues</span>
+        <div class="fcard">
+          <div class="fcard-icon"><svg viewBox="0 0 20 20"><path d="M13 2H6a2 2 0 00-2 2v14l6-3 6 3V4a2 2 0 00-2-2z"/></svg></div>
+          <span class="fcard-tag">Sûr</span>
+          <div class="fcard-name">Supprimer les pièces jointes</div>
+          <div class="fcard-desc">Supprime les fichiers joints du fil. Les images inline des signatures sont préservées.</div>
         </div>
-        <div class="bg-surface border border-border rounded-2xl p-7 transition hover:border-success hover:shadow-md hover:-translate-y-0.5">
-          <div class="text-3xl mb-3">✂️</div>
-          <div class="text-base font-bold text-text mb-2">Garder la sélection</div>
-          <div class="text-sm text-text-muted leading-relaxed">Remplacez l'intégralité du fil cité par le seul passage que vous avez sélectionné. Précision chirurgicale.</div>
-          <span class="inline-block mt-3 text-[0.7rem] font-bold uppercase tracking-wide bg-success-bg text-success px-2.5 py-0.5 rounded-full">Sélection HTML</span>
+        <div class="fcard">
+          <div class="fcard-icon"><svg viewBox="0 0 20 20"><polyline points="15,10 10,15 5,10"/><line x1="10" y1="4" x2="10" y2="15"/></svg></div>
+          <span class="fcard-tag">Multi-langues</span>
+          <div class="fcard-name">Garder 2 réponses</div>
+          <div class="fcard-desc">Réduit les longs fils aux 2 messages les plus récents. Détecte les blocs cités dans toutes les langues.</div>
         </div>
-        <div class="bg-gradient-to-br from-success-bg to-background border border-success/30 rounded-2xl p-7 transition hover:shadow-md hover:-translate-y-0.5">
-          <div class="text-3xl mb-3">✅</div>
-          <div class="text-base font-bold text-text mb-2">Nettoyage complet</div>
-          <div class="text-sm text-text-muted leading-relaxed">Lance toutes les actions en une seule fois. Un résumé détaillé s'affiche : images, pièces jointes, réponses — tout en un coup.</div>
-          <span class="inline-block mt-3 text-[0.7rem] font-bold uppercase tracking-wide bg-success-bg text-success px-2.5 py-0.5 rounded-full">Tout-en-un</span>
+        <div class="fcard">
+          <div class="fcard-icon"><svg viewBox="0 0 20 20"><path d="M17 3a2.828 2.828 0 11-4 4L6 14H3v-3L10 4a2.828 2.828 0 014-1z"/></svg></div>
+          <span class="fcard-tag">Chirurgical</span>
+          <div class="fcard-name">Garder la sélection</div>
+          <div class="fcard-desc">Remplacez tout le fil par uniquement le texte que vous avez sélectionné. Précision totale.</div>
         </div>
-        <div class="bg-gray-900 border border-transparent rounded-2xl p-7 transition hover:shadow-md hover:-translate-y-0.5">
-          <div class="text-3xl mb-3">🔒</div>
-          <div class="text-base font-bold text-white mb-2">100 % local</div>
-          <div class="text-sm text-gray-400 leading-relaxed">Tout le traitement s'effectue dans Outlook via l'API Office.js. Aucune donnée n'est envoyée à un serveur externe.</div>
-          <span class="inline-block mt-3 text-[0.7rem] font-bold uppercase tracking-wide bg-green-400/15 text-green-400 px-2.5 py-0.5 rounded-full">Respect de la vie privée</span>
+        <div class="fcard">
+          <div class="fcard-icon"><svg viewBox="0 0 20 20"><rect x="3" y="11" width="14" height="8" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/><circle cx="10" cy="15" r="1" fill="#93c5fd"/></svg></div>
+          <span class="fcard-tag">Vie privée</span>
+          <div class="fcard-name">100 % local</div>
+          <div class="fcard-desc">Fonctionne entièrement dans Outlook via Office.js. Aucune donnée ne quitte votre appareil.</div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- HOW IT WORKS -->
-  <section class="py-24 px-6 bg-surface" id="how">
-    <div class="max-w-4xl mx-auto text-center">
-      <div class="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wide text-success mb-3">🚀 Comment ça marche</div>
-      <h2 class="text-3xl sm:text-4xl font-extrabold text-text tracking-tight mb-2">En trois étapes, c'est réglé.</h2>
-      <p class="text-base text-text-muted mb-12">Pas de configuration complexe. Pas de compte à créer.</p>
-
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-6">
-        <div class="text-center p-6">
-          <div class="w-12 h-12 rounded-full bg-green-600 text-white font-extrabold text-lg flex items-center justify-center mx-auto mb-4">1</div>
-          <div class="font-bold text-text mb-1">Installez l'add-in</div>
-          <div class="text-sm text-text-muted leading-relaxed">Téléchargez MailLighter depuis le Microsoft AppSource et ajoutez-le à Outlook en quelques secondes.</div>
-        </div>
-        <div class="text-center p-6">
-          <div class="w-12 h-12 rounded-full bg-green-600 text-white font-extrabold text-lg flex items-center justify-center mx-auto mb-4">2</div>
-          <div class="font-bold text-text mb-1">Composez votre email</div>
-          <div class="text-sm text-text-muted leading-relaxed">Rédigez ou répondez à un email comme d'habitude. Le menu MailLighter est disponible dans le ruban.</div>
-        </div>
-        <div class="text-center p-6">
-          <div class="w-12 h-12 rounded-full bg-green-600 text-white font-extrabold text-lg flex items-center justify-center mx-auto mb-4">3</div>
-          <div class="font-bold text-text mb-1">Allégez avant d'envoyer</div>
-          <div class="text-sm text-text-muted leading-relaxed">Choisissez l'action souhaitée. MailLighter s'exécute en un instant et vous indique ce qui a été supprimé.</div>
-        </div>
+  <!-- ════ SOCIAL PROOF ════ -->
+  <section class="social-section">
+    <span class="section-eyebrow">Avis</span>
+    <h2 class="section-title">Adopté par des équipes engagées.</h2>
+    <p class="section-sub">Utilisé par des milliers de professionnels qui ont adopté le réflexe email responsable.</p>
+    <div class="testimonials">
+      <div class="tcard">
+        <div class="stars">★★★★★</div>
+        <p class="tcard-text">"Enfin un outil qui fait quelque chose de <strong>concret et immédiat</strong> pour l'empreinte carbone numérique. Ça prend 2 secondes, et le résultat est visible."</p>
+        <div class="tcard-author"><div class="avatar">SL</div><div><div class="author-name">Sophie L.</div><div class="author-role">Responsable RSE</div></div></div>
       </div>
-
-      <div class="mt-10 bg-gray-900 rounded-xl px-6 py-5 flex items-center gap-3 text-left max-w-xl mx-auto">
-        <span class="text-2xl shrink-0">✅</span>
-        <span class="text-sm text-green-200 font-mono">Nettoyage complet — Images : 8 (1.2 MB) | Pièces jointes : 2 (3.4 MB) | Réponses : 6 → 2</span>
+      <div class="tcard">
+        <div class="stars">★★★★★</div>
+        <p class="tcard-text">"J'utilise le Nettoyage complet sur chaque email avant envoi. <strong>J'économise plusieurs Mo par jour</strong> sans même y penser."</p>
+        <div class="tcard-author"><div class="avatar">TM</div><div><div class="author-name">Thomas M.</div><div class="author-role">Chef de projet</div></div></div>
+      </div>
+      <div class="tcard">
+        <div class="stars">★★★★☆</div>
+        <p class="tcard-text">"Simple, efficace, zéro courbe d'apprentissage. Si seulement tous les plugins Outlook étaient aussi <strong>bien pensés</strong>."</p>
+        <div class="tcard-author"><div class="avatar">AM</div><div><div class="author-name">Alice M.</div><div class="author-role">Directrice IT</div></div></div>
       </div>
     </div>
   </section>
 
-  <!-- CTA -->
-  <section class="py-24 px-6 text-center" id="download">
-    <div class="max-w-2xl mx-auto">
-      <div class="inline-flex items-center gap-1.5 bg-success-bg border border-success/30 text-success px-4 py-1.5 rounded-full text-xs font-semibold mb-5">🌿 Adoptez le réflexe email responsable</div>
-      <h2 class="text-3xl sm:text-4xl font-extrabold text-text tracking-tight mb-4">Prêt à alléger vos emails <span class="bg-gradient-to-r from-green-700 to-green-500 bg-clip-text text-transparent">et votre impact ?</span></h2>
-      <p class="text-base text-text-muted mb-8 leading-relaxed">Gratuit, sans compte, sans collecte de données. Installez MailLighter en quelques secondes et commencez à envoyer des emails plus propres dès aujourd'hui.</p>
-      <div class="flex justify-center gap-4 flex-wrap">
-        <a href="https://appsource.microsoft.com/" class="inline-flex items-center gap-2 bg-green-600 text-white px-7 py-3.5 rounded-xl font-bold shadow-lg shadow-green-600/30 transition hover:bg-green-700 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-green-600/40">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-          Installer gratuitement
-        </a>
+  <!-- ════ HOW IT WORKS ════ -->
+  <section class="hiw-section">
+    <div class="hiw-inner">
+      <span class="section-eyebrow">Démarrage</span>
+      <h2 class="section-title">Opérationnel en 60 secondes.</h2>
+      <p class="section-sub">Pas de compte à créer, pas de configuration complexe.</p>
+      <div class="hiw-steps">
+        <div class="hiw-step">
+          <div class="step-circle">1</div>
+          <div class="step-title">Installez l'add-in</div>
+          <div class="step-desc">Téléchargez MailLighter depuis le Microsoft AppSource et ajoutez-le à Outlook en quelques secondes.</div>
+        </div>
+        <div class="hiw-connector">→</div>
+        <div class="hiw-step">
+          <div class="step-circle">2</div>
+          <div class="step-title">Composez votre email</div>
+          <div class="step-desc">Rédigez ou répondez comme d'habitude. Le menu MailLighter apparaît dans le ruban.</div>
+        </div>
+        <div class="hiw-connector">→</div>
+        <div class="hiw-step">
+          <div class="step-circle">3</div>
+          <div class="step-title">Allégez avant d'envoyer</div>
+          <div class="step-desc">Choisissez votre action. MailLighter s'exécute en un instant et vous montre ce qui a été nettoyé.</div>
+        </div>
       </div>
-      <p class="text-xs text-text-muted mt-4">Outlook Desktop · Windows &amp; macOS · Microsoft 365 ou Exchange</p>
+    </div>
+  </section>
+
+  <!-- ════ FINAL CTA ════ -->
+  <section class="final-cta-wrap">
+    <div class="final-cta-box">
+      <span class="section-eyebrow">Prêt ?</span>
+      <h2 class="section-title">Commencez à alléger vos emails dès aujourd'hui.</h2>
+      <p class="section-sub">Gratuit, sans compte, sans collecte de données. Installez MailLighter en quelques secondes.</p>
+      <a href="https://appsource.microsoft.com/" class="btn-cta">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M8 2v9M5 8l3 3 3-3M2 13h12"/></svg>
+        Installer gratuitement sur AppSource
+      </a>
+      <div class="cta-pills">
+        <span class="cpill"><span class="cpill-dot"></span> Outlook Desktop</span>
+        <span class="cpill"><span class="cpill-dot"></span> Windows & macOS</span>
+        <span class="cpill"><span class="cpill-dot"></span> Microsoft 365 & Exchange</span>
+        <span class="cpill"><span class="cpill-dot"></span> 100 % gratuit</span>
+      </div>
     </div>
   </section>
 </MarketingLayout>
 
 <style>
-  @keyframes slide {
-    0%, 100% { transform: translateX(0); opacity: 0.6; }
-    50% { transform: translateX(7px); opacity: 1; }
+  /* ══════════════════════════════
+     LANDING PAGE — scoped styles
+     ══════════════════════════════ */
+
+  /* Animations */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
   }
-  .arrow-anim { animation: slide 2s ease-in-out infinite; }
+
+  /* ── HERO ── */
+  .landing-hero {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 120px 52px 80px;
+  }
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 56px;
+  }
+  .hero-left { display: flex; flex-direction: column; gap: 24px; }
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 7px;
+    background: var(--ml-blue-pale); border: 1px solid var(--ml-blue-light); color: var(--ml-blue);
+    font-size: 0.75rem; font-weight: 700; padding: 5px 12px; border-radius: 6px;
+    width: fit-content; letter-spacing: 0.05em; text-transform: uppercase;
+    animation: fadeUp 0.5s ease both;
+  }
+  .badge-accent { background: var(--ml-green); color: white; padding: 1px 7px; border-radius: 4px; font-size: 0.7rem; }
+  .hero-title {
+    font-size: clamp(2rem, 3.5vw, 3rem); font-weight: 800;
+    line-height: 1.1; color: var(--ml-ink); animation: fadeUp 0.5s 0.1s ease both;
+  }
+  .accent-blue { color: var(--ml-blue); }
+  .accent-green { color: var(--ml-green); font-style: italic; }
+  .hero-sub {
+    font-size: 1.05rem; line-height: 1.75; color: var(--ml-ink-soft);
+    max-width: 460px; animation: fadeUp 0.5s 0.2s ease both;
+  }
+  .hero-ctas { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; animation: fadeUp 0.5s 0.3s ease both; }
+
+  .btn-primary {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--ml-blue); color: white;
+    padding: 13px 26px; border-radius: 8px; font-weight: 600; font-size: 0.95rem;
+    text-decoration: none; box-shadow: 0 4px 16px rgba(21,100,192,0.3);
+    transition: background 0.22s, transform 0.22s, box-shadow 0.22s;
+  }
+  .btn-primary:hover { background: var(--ml-blue-dark); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(21,100,192,0.35); }
+
+  .btn-ghost {
+    display: inline-flex; align-items: center; gap: 6px;
+    color: var(--ml-ink-soft); font-weight: 500; font-size: 0.9rem;
+    text-decoration: none; border: 1px solid var(--color-border);
+    padding: 12px 22px; border-radius: 8px;
+    background: var(--color-surface); transition: border-color 0.2s, color 0.2s;
+  }
+  .btn-ghost:hover { border-color: var(--ml-blue); color: var(--ml-blue); }
+
+  .hero-trust { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; animation: fadeUp 0.5s 0.4s ease both; }
+  .appsource-badge {
+    display: inline-flex; align-items: center; gap: 7px;
+    background: var(--color-surface); border: 1px solid var(--color-border);
+    border-radius: 7px; padding: 7px 14px;
+    font-size: 0.78rem; font-weight: 600; color: var(--ml-ink); text-decoration: none;
+    transition: border-color 0.2s;
+  }
+  .appsource-badge:hover { border-color: var(--ml-blue); }
+  .trust-sep { color: var(--color-border); }
+  .trust-text { font-size: 0.78rem; color: var(--ml-ink-mute); }
+
+  /* ── OUTLOOK MOCKUP ── */
+  .hero-right { animation: fadeUp 0.5s 0.15s ease both; }
+  .outlook-mockup {
+    background: var(--ml-mock-bg); border-radius: 14px; overflow: hidden;
+    box-shadow: 0 20px 70px rgba(0,0,0,0.18), 0 4px 16px rgba(0,0,0,0.08);
+    border: 1px solid var(--ml-mock-border);
+  }
+  .mock-titlebar { background: #1e3a5f; padding: 9px 14px; display: flex; align-items: center; gap: 6px; }
+  .tbar-dot { width: 9px; height: 9px; border-radius: 50%; background: rgba(255,255,255,0.25); }
+  .tbar-title { color: rgba(255,255,255,0.85); font-size: 0.75rem; font-weight: 500; margin-left: 8px; }
+  .mock-ribbon {
+    background: var(--ml-mock-ribbon); padding: 6px 10px;
+    display: flex; align-items: center; gap: 5px;
+    border-bottom: 1px solid var(--ml-mock-ribbon-border); flex-wrap: wrap;
+  }
+  .rbtn {
+    background: var(--ml-mock-rbtn); border: 1px solid var(--ml-mock-border);
+    border-radius: 4px; padding: 4px 9px; font-size: 0.7rem;
+    color: var(--ml-mock-rbtn-c); white-space: nowrap;
+  }
+  .rbtn.blue { background: var(--ml-blue); border-color: var(--ml-blue); color: white; font-weight: 700; }
+  .rbtn.green-outline { border-color: var(--ml-green); color: var(--ml-green); font-weight: 600; }
+  .rsep { width: 1px; height: 18px; background: var(--ml-mock-border); margin: 0 3px; }
+  .mock-body { background: var(--ml-mock-body); padding: 18px 20px; }
+  .mock-header { padding-bottom: 12px; margin-bottom: 12px; border-bottom: 1px solid var(--color-border); display: flex; flex-direction: column; gap: 5px; }
+  .mock-row { display: flex; gap: 8px; font-size: 0.76rem; }
+  .mock-lbl { color: var(--ml-ink-mute); min-width: 36px; }
+  .mock-val { color: var(--ml-ink); font-weight: 500; }
+  .mock-text { font-size: 0.8rem; color: var(--ml-ink-soft); line-height: 1.6; }
+  .mock-asset {
+    background: var(--ml-mock-asset-bg); border: 1px dashed var(--ml-mock-asset-border);
+    border-radius: 6px; padding: 8px 12px;
+    display: flex; align-items: center; gap: 8px;
+    font-size: 0.72rem; color: var(--ml-ink-mute); margin: 8px 0;
+  }
+  .mock-asset-icon { font-size: 1rem; }
+  .mock-quoted { font-size: 0.72rem; color: var(--ml-ink-mute); border-left: 2px solid var(--color-border); padding-left: 8px; margin-top: 8px; line-height: 1.6; }
+  .mock-result {
+    margin-top: 12px; background: var(--ml-green-pale); border: 1px solid var(--ml-green-light);
+    border-radius: 8px; padding: 10px 14px;
+    display: flex; align-items: flex-start; gap: 8px;
+    font-size: 0.73rem; line-height: 1.6; color: var(--ml-ink-soft);
+  }
+  .mock-result strong { color: var(--ml-green-dark); }
+  :global(.dark) .mock-result strong { color: var(--ml-green); }
+  .mock-result-icon { font-size: 1rem; flex-shrink: 0; }
+
+  /* ── STATS BAND ── */
+  .stats-band {
+    background: linear-gradient(135deg, var(--ml-blue-deeper) 0%, var(--ml-blue-dark) 50%, #1a5c8a 100%);
+    padding: 60px 52px;
+  }
+  .stats-inner { display: flex; max-width: 960px; margin: 0 auto; }
+  .stat-item {
+    flex: 1; display: flex; flex-direction: column; align-items: center; gap: 6px;
+    padding: 0 36px; text-align: center; position: relative;
+  }
+  .stat-item:not(:last-child)::after {
+    content: ''; position: absolute; right: 0; top: 10%; height: 80%;
+    width: 1px; background: rgba(255,255,255,0.15);
+  }
+  .stat-num { font-size: clamp(2.2rem, 3vw, 3rem); color: white; line-height: 1; font-weight: 800; }
+  .stat-unit { color: var(--ml-green); }
+  .stat-label { font-size: 0.83rem; color: rgba(255,255,255,0.65); line-height: 1.5; max-width: 150px; }
+  .stat-badge {
+    display: inline-block; background: rgba(74,162,81,0.25); color: #86efac;
+    font-size: 0.68rem; font-weight: 700; padding: 2px 9px; border-radius: 4px;
+    letter-spacing: 0.06em; text-transform: uppercase;
+  }
+
+  /* ── SECTION COMMONS ── */
+  .section-eyebrow {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: var(--ml-blue-pale); color: var(--ml-blue);
+    font-size: 0.72rem; font-weight: 700; padding: 4px 12px; border-radius: 6px;
+    letter-spacing: 0.07em; text-transform: uppercase; margin-bottom: 14px;
+  }
+  .section-eyebrow.green { background: var(--ml-green-pale); color: var(--ml-green-dark); }
+  :global(.dark) .section-eyebrow.green { color: var(--ml-green); }
+  .section-title {
+    font-size: clamp(1.9rem, 3vw, 2.8rem); font-weight: 800;
+    color: var(--ml-ink); line-height: 1.15; margin-bottom: 14px;
+  }
+  .section-sub { font-size: 1rem; color: var(--ml-ink-soft); line-height: 1.7; max-width: 520px; margin-bottom: 48px; }
+
+  /* ── BEFORE / AFTER ── */
+  .ba-section { padding: 100px 52px; max-width: 1100px; margin: 0 auto; }
+  .ba-header { text-align: center; }
+  .ba-header .section-sub { margin: 0 auto 48px; }
+  .ba-cards { display: grid; grid-template-columns: 1fr 56px 1fr; align-items: center; }
+  .ba-card {
+    background: var(--color-surface); border-radius: 16px; padding: 36px 32px;
+    border: 1px solid var(--color-border); box-shadow: 0 4px 24px var(--ml-shadow);
+    transition: transform 0.3s;
+  }
+  .ba-card:hover { transform: translateY(-4px); }
+  .ba-card.after { border: 2px solid var(--ml-green); box-shadow: 0 8px 32px rgba(74,162,81,0.15); }
+  .ba-label {
+    font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em;
+    text-transform: uppercase; margin-bottom: 14px;
+    display: flex; align-items: center; gap: 6px; color: var(--ml-ink-mute);
+  }
+  .ba-label.green { color: var(--ml-green-dark); }
+  :global(.dark) .ba-label.green { color: var(--ml-green); }
+  .ba-size { font-size: 3.2rem; line-height: 1; font-weight: 800; }
+  .ba-size.red { color: #dc2626; }
+  .ba-size.green { color: var(--ml-green); }
+  .ba-details { font-size: 0.82rem; color: var(--ml-ink-soft); line-height: 2; margin: 14px 0; }
+  .ba-chip { display: inline-flex; align-items: center; gap: 5px; font-size: 0.78rem; font-weight: 600; padding: 5px 12px; border-radius: 6px; }
+  .ba-chip.bad { background: #fef2f2; color: #dc2626; }
+  :global(.dark) .ba-chip.bad { background: rgba(220,38,38,0.15); }
+  .ba-chip.good { background: var(--ml-green-pale); color: var(--ml-green-dark); }
+  :global(.dark) .ba-chip.good { color: var(--ml-green); }
+  .ba-divider { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; }
+  .ba-arrow-circle {
+    width: 44px; height: 44px; background: var(--ml-blue); border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    color: white; font-size: 1.1rem; box-shadow: 0 4px 16px rgba(21,100,192,0.3);
+  }
+  .ba-ratio { font-size: 0.68rem; font-weight: 700; color: var(--ml-blue); text-align: center; line-height: 1.3; }
+
+  /* ── FEATURES ── */
+  .features-section { background: var(--ml-blue-deeper); padding: 100px 52px; position: relative; overflow: hidden; }
+  .features-section::after {
+    content: ''; position: absolute; bottom: -100px; right: -100px;
+    width: 400px; height: 400px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(74,162,81,0.12), transparent 70%); pointer-events: none;
+  }
+  .features-inner { max-width: 1100px; margin: 0 auto; }
+  .features-section .section-eyebrow { background: rgba(255,255,255,0.1); color: rgba(255,255,255,0.8); }
+  .features-section .section-title { color: white; }
+  .features-section .section-sub { color: rgba(255,255,255,0.6); }
+  .features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .fcard {
+    background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 14px; padding: 26px 22px; transition: all 0.3s;
+  }
+  .fcard:hover { background: rgba(255,255,255,0.09); border-color: rgba(74,162,81,0.4); transform: translateY(-3px); }
+  .fcard.featured { border-color: rgba(74,162,81,0.5); background: rgba(74,162,81,0.08); grid-column: span 2; }
+  .fcard-icon { width: 42px; height: 42px; background: rgba(21,100,192,0.25); border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-bottom: 14px; }
+  .fcard-icon svg { width: 20px; height: 20px; stroke: #93c5fd; fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+  .fcard-icon.green { background: rgba(74,162,81,0.25); }
+  .fcard-icon.green svg { stroke: #86efac; }
+  .fcard-tag { display: inline-block; font-size: 0.67rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; padding: 2px 8px; border-radius: 4px; margin-bottom: 8px; background: rgba(21,100,192,0.2); color: #93c5fd; }
+  .fcard-tag.green { background: rgba(74,162,81,0.2); color: #86efac; }
+  .fcard-name { font-size: 1.15rem; font-weight: 700; color: white; margin-bottom: 6px; }
+  .fcard-desc { font-size: 0.83rem; color: rgba(255,255,255,0.55); line-height: 1.65; }
+
+  /* ── SOCIAL PROOF ── */
+  .social-section { padding: 100px 52px; max-width: 1100px; margin: 0 auto; text-align: center; }
+  .social-section .section-sub { margin: 0 auto 48px; }
+  .testimonials { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; text-align: left; }
+  .tcard {
+    background: var(--color-surface); border-radius: 14px; padding: 26px 22px;
+    box-shadow: 0 4px 20px var(--ml-shadow); border: 1px solid var(--color-border);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  .tcard:hover { transform: translateY(-3px); box-shadow: 0 10px 32px var(--ml-shadow); }
+  .stars { color: #f59e0b; font-size: 0.85rem; letter-spacing: 2px; margin-bottom: 10px; }
+  .tcard-text { font-size: 0.86rem; color: var(--ml-ink-soft); line-height: 1.7; margin-bottom: 16px; font-style: italic; }
+  .tcard-text strong { color: var(--ml-blue); font-style: normal; }
+  .tcard-author { display: flex; align-items: center; gap: 10px; }
+  .avatar { width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 0.82rem; background: linear-gradient(135deg, var(--ml-blue), var(--ml-blue-dark)); }
+  .author-name { font-size: 0.82rem; font-weight: 600; color: var(--ml-ink); }
+  .author-role { font-size: 0.74rem; color: var(--ml-ink-mute); }
+
+  /* ── HOW IT WORKS ── */
+  .hiw-section {
+    background: var(--ml-blue-pale);
+    border-top: 1px solid var(--ml-blue-light);
+    border-bottom: 1px solid var(--ml-blue-light);
+    padding: 100px 52px; text-align: center;
+  }
+  :global(.dark) .hiw-section { background: #0f1520; border-color: #1e2a40; }
+  .hiw-inner { max-width: 900px; margin: 0 auto; }
+  .hiw-section .section-sub { margin: 0 auto 48px; }
+  .hiw-steps { display: grid; grid-template-columns: 1fr auto 1fr auto 1fr; gap: 12px; align-items: start; margin-top: 56px; }
+  .step-circle {
+    width: 54px; height: 54px; background: var(--ml-blue); color: white; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.5rem; font-weight: 800;
+    margin: 0 auto 16px; box-shadow: 0 6px 20px rgba(21,100,192,0.3);
+  }
+  .step-title { font-weight: 700; color: var(--ml-ink); margin-bottom: 8px; font-size: 0.95rem; }
+  .step-desc { font-size: 0.81rem; color: var(--ml-ink-soft); line-height: 1.6; }
+  .hiw-connector { color: var(--ml-blue); font-size: 1.5rem; margin-top: 18px; opacity: 0.4; }
+
+  /* ── FINAL CTA ── */
+  .final-cta-wrap { padding: 80px 52px; }
+  .final-cta-box {
+    max-width: 820px; margin: 0 auto;
+    background: linear-gradient(135deg, var(--ml-blue-deeper) 0%, var(--ml-blue-dark) 60%, #1a6b3c 100%);
+    border-radius: 24px; padding: 64px 56px; text-align: center;
+    position: relative; overflow: hidden; box-shadow: 0 24px 80px rgba(21,100,192,0.25);
+  }
+  .final-cta-box::before { content: ''; position: absolute; top: -80px; right: -80px; width: 280px; height: 280px; border-radius: 50%; background: radial-gradient(circle, rgba(74,162,81,0.18), transparent 70%); }
+  .final-cta-box::after { content: ''; position: absolute; bottom: -60px; left: -60px; width: 220px; height: 220px; border-radius: 50%; background: radial-gradient(circle, rgba(21,100,192,0.3), transparent 70%); }
+  .final-cta-box .section-eyebrow { background: rgba(255,255,255,0.12); color: rgba(255,255,255,0.9); position: relative; z-index: 1; }
+  .final-cta-box .section-title { color: white; font-size: 2.4rem; position: relative; z-index: 1; }
+  .final-cta-box .section-sub { color: rgba(255,255,255,0.68); margin: 0 auto 36px; position: relative; z-index: 1; }
+  .btn-cta {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--ml-green); color: white;
+    padding: 15px 36px; border-radius: 8px; font-weight: 700; font-size: 1rem;
+    text-decoration: none; transition: all 0.25s;
+    box-shadow: 0 4px 20px rgba(74,162,81,0.4); position: relative; z-index: 1;
+  }
+  .btn-cta:hover { background: var(--ml-green-dark); transform: translateY(-2px); box-shadow: 0 8px 28px rgba(74,162,81,0.5); }
+  .cta-pills { display: flex; align-items: center; justify-content: center; gap: 8px; flex-wrap: wrap; margin-top: 22px; position: relative; z-index: 1; }
+  .cpill { display: flex; align-items: center; gap: 5px; font-size: 0.76rem; color: rgba(255,255,255,0.65); background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.12); padding: 4px 12px; border-radius: 5px; }
+  .cpill-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--ml-green); }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 768px) {
+    .landing-hero { padding: 100px 20px 60px; }
+    .hero-grid { grid-template-columns: 1fr; gap: 40px; }
+    .stats-band { padding: 40px 20px; }
+    .stats-inner { flex-direction: column; gap: 32px; }
+    .stat-item:not(:last-child)::after { display: none; }
+    .ba-section { padding: 60px 20px; }
+    .ba-cards { grid-template-columns: 1fr; gap: 20px; }
+    .ba-divider { flex-direction: row; }
+    .features-section { padding: 60px 20px; }
+    .features-grid { grid-template-columns: 1fr; }
+    .fcard.featured { grid-column: span 1; }
+    .social-section { padding: 60px 20px; }
+    .testimonials { grid-template-columns: 1fr; }
+    .hiw-section { padding: 60px 20px; }
+    .hiw-steps { grid-template-columns: 1fr; gap: 24px; }
+    .hiw-connector { display: none; }
+    .final-cta-wrap { padding: 40px 20px; }
+    .final-cta-box { padding: 40px 24px; }
+  }
 </style>

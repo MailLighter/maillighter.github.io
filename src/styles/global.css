@@ -196,3 +196,51 @@ select:focus-visible {
     oklch(1 0 0)
   );
 }
+
+/* ══════════════════════════════
+   LANDING PAGE — color palette
+   Light & dark mode vars
+   ══════════════════════════════ */
+:root {
+  --ml-blue:        #1564C0;
+  --ml-blue-dark:   #0d4a96;
+  --ml-blue-deeper: #082f60;
+  --ml-blue-light:  #dbeafe;
+  --ml-blue-pale:   #eff6ff;
+  --ml-green:       #4AA251;
+  --ml-green-dark:  #357a3b;
+  --ml-green-light: #c6efc9;
+  --ml-green-pale:  #edfaee;
+  --ml-ink:         #111827;
+  --ml-ink-soft:    #4b5563;
+  --ml-ink-mute:    #9ca3af;
+  --ml-shadow:      rgba(21,100,192,0.10);
+  --ml-mock-bg:     #f3f4f6;
+  --ml-mock-body:   #ffffff;
+  --ml-mock-ribbon: #e9eaed;
+  --ml-mock-rbtn:   #ffffff;
+  --ml-mock-rbtn-c: #444;
+  --ml-mock-border: #d1d5db;
+  --ml-mock-ribbon-border: #cccccc;
+  --ml-mock-asset-bg: #f9fafb;
+  --ml-mock-asset-border: #d1d5db;
+}
+.dark {
+  --ml-blue-pale:   rgba(21,100,192,0.18);
+  --ml-blue-light:  rgba(21,100,192,0.35);
+  --ml-green-pale:  rgba(74,162,81,0.14);
+  --ml-green-light: rgba(74,162,81,0.3);
+  --ml-ink:         #f1f5f9;
+  --ml-ink-soft:    #94a3b8;
+  --ml-ink-mute:    #64748b;
+  --ml-shadow:      rgba(0,0,0,0.35);
+  --ml-mock-bg:     #1a2033;
+  --ml-mock-body:   #131926;
+  --ml-mock-ribbon: #1e2535;
+  --ml-mock-rbtn:   #252d3d;
+  --ml-mock-rbtn-c: #94a3b8;
+  --ml-mock-border: #2a3347;
+  --ml-mock-ribbon-border: #2a3347;
+  --ml-mock-asset-bg: #1a2033;
+  --ml-mock-asset-border: #2a3347;
+}
