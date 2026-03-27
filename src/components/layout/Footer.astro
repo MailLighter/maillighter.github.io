@@ -108,6 +108,19 @@ const legalLinks = filterByFeature(footer.legal);
             )
           }
           {
+            social.linkedin && (
+              <a
+                href={social.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn"
+                class="text-text-muted hover:text-primary transition-colors"
+              >
+                <Icon name="simple-icons:linkedin" class="w-5 h-5" />
+              </a>
+            )
+          }
+          {
             social.discord && (
               <a
                 href={social.discord}

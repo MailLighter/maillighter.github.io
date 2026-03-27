@@ -26,11 +26,11 @@ MailLighter is available in English, French, and Spanish. The language is detect
 
 ### Which versions of Outlook are supported?
 
-MailLighter works with **Outlook Desktop** on Windows and macOS. It requires a Microsoft 365 or Exchange account.
+MailLighter works with **Outlook Desktop** on Windows and macOS, and **Outlook on the Web**. It requires a Microsoft 365 or Exchange account.
 
 ### Does it work with Outlook on the Web?
 
-Not yet. Outlook on the Web support is planned for a future release.
+Yes. MailLighter is available on both Outlook Desktop and Outlook on the Web.
 
 ### Does it work with Outlook Mobile?
 

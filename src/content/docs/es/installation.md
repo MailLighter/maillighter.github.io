@@ -1,6 +1,6 @@
 ---
 title: "Instalación"
-description: "Instala MailLighter en Outlook en menos de un minuto. Disponible en Microsoft AppSource para Outlook Desktop en Windows y macOS."
+description: "Instala MailLighter en Outlook en menos de un minuto. Disponible en Microsoft AppSource para Outlook Desktop y Outlook en la Web."
 section: "Primeros pasos"
 order: 2
 draft: false
@@ -12,11 +12,11 @@ Instalar MailLighter lleva menos de un minuto. Esta guía cubre los requisitos, 
 
 Antes de instalar, asegúrate de tener:
 
-- **Outlook Desktop** en Windows o macOS
+- **Outlook Desktop** en Windows o macOS, o **Outlook en la Web**
 - Una cuenta **Microsoft 365** o **Exchange**
 - Conexión a internet (solo para la instalación — el complemento funciona sin conexión después)
 
-> MailLighter aún no está disponible para Outlook en la Web ni Outlook Mobile.
+> MailLighter aún no está disponible para Outlook Mobile.
 
 ## Instalar desde AppSource
 

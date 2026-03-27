@@ -20,6 +20,7 @@ export const ogImage = '/images/og-image.png';
 
 export const social: SocialLinks = {
   github: 'https://github.com/maillighter',
+  linkedin: 'https://linkedin.com/company/maillighter',
 };
 
 export const legal: LegalConfig = {
