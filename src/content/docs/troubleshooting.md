@@ -19,7 +19,7 @@ The add-in may not be loaded, or the ribbon group may be collapsed.
 1. **Check it's installed**: Go to **Home** → **Get Add-ins** → **My Add-ins** and verify MailLighter is listed
 2. **Restart Outlook**: Close and reopen Outlook to reload add-ins
 3. **Check ribbon customization**: Right-click the ribbon → **Customize Ribbon** and ensure MailLighter is enabled
-4. **Reinstall**: Remove the add-in from **My Add-ins** and reinstall from AppSource
+4. **Reinstall**: Remove the add-in from **My Add-ins** and reinstall from Marketplace
 
 ## Buttons Are Greyed Out
 

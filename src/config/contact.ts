@@ -22,7 +22,7 @@ export const contactFAQs: ContactFAQ[] = [
   {
     question: 'How do I install MailLighter?',
     answer:
-      'MailLighter is available on the Microsoft AppSource marketplace. Install it directly from there into your Outlook environment.',
+      'MailLighter is available on the Microsoft Marketplace. Install it directly from there into your Outlook environment.',
   },
   {
     question: 'Is MailLighter compatible with my Outlook version?',

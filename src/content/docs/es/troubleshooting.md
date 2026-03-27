@@ -19,7 +19,7 @@ El complemento puede no estar cargado, o el grupo de la cinta puede estar minimi
 1. **Verifica la instalación**: Ve a **Inicio** → **Obtener complementos** → **Mis complementos** y verifica que MailLighter esté listado
 2. **Reinicia Outlook**: Cierra y vuelve a abrir Outlook para recargar los complementos
 3. **Verifica la personalización de la cinta**: Haz clic derecho en la cinta → **Personalizar cinta** y asegúrate de que MailLighter esté habilitado
-4. **Reinstala**: Elimina el complemento desde **Mis complementos** y reinstálalo desde AppSource
+4. **Reinstala**: Elimina el complemento desde **Mis complementos** y reinstálalo desde Marketplace
 
 ## Los botones están desactivados
 

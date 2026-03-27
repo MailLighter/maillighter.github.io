@@ -1,12 +1,12 @@
 ---
 title: "Installation"
-description: "Install MailLighter in Outlook in under a minute. Available on Microsoft AppSource for Outlook Desktop and Outlook on the Web."
+description: "Install MailLighter in Outlook in under a minute. Available on Microsoft Marketplace for Outlook Desktop and Outlook on the Web."
 section: "Getting Started"
 order: 2
 draft: false
 ---
 
-Installing MailLighter takes less than a minute. This guide covers requirements, installation from AppSource, and verifying that the add-in is working.
+Installing MailLighter takes less than a minute. This guide covers requirements, installation from Marketplace, and verifying that the add-in is working.
 
 ## Requirements
 
@@ -18,7 +18,7 @@ Before installing, ensure you have:
 
 > MailLighter is not yet available for Outlook Mobile.
 
-## Install from AppSource
+## Install from Marketplace
 
 1. Open **Outlook Desktop**
 2. Go to **Home** → **Get Add-ins** (or **Insert** → **Get Add-ins** depending on your version)

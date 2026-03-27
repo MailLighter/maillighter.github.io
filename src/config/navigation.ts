@@ -16,7 +16,7 @@ export const navigationByLang: Record<Lang, Navigation> = {
         { label: 'Documentation', href: '/docs', feature: 'docs' },
       ],
       cta: [
-        { label: 'Install for free', href: 'https://appsource.microsoft.com/', variant: 'primary' },
+        { label: 'Install for free', href: 'https://marketplace.microsoft.com/', variant: 'primary' },
       ],
     },
     footer: {
@@ -46,7 +46,7 @@ export const navigationByLang: Record<Lang, Navigation> = {
         { label: 'Documentation', href: '/fr/docs', feature: 'docs' },
       ],
       cta: [
-        { label: 'Installer gratuitement', href: 'https://appsource.microsoft.com/', variant: 'primary' },
+        { label: 'Installer gratuitement', href: 'https://marketplace.microsoft.com/', variant: 'primary' },
       ],
     },
     footer: {
@@ -76,7 +76,7 @@ export const navigationByLang: Record<Lang, Navigation> = {
         { label: 'Documentación', href: '/es/docs', feature: 'docs' },
       ],
       cta: [
-        { label: 'Instalar gratis', href: 'https://appsource.microsoft.com/', variant: 'primary' },
+        { label: 'Instalar gratis', href: 'https://marketplace.microsoft.com/', variant: 'primary' },
       ],
     },
     footer: {

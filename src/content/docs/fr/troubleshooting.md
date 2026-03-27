@@ -19,7 +19,7 @@ Le complément n'est peut-être pas chargé, ou le groupe du ruban est réduit.
 1. **Vérifiez l'installation** : Allez dans **Accueil** → **Obtenir des compléments** → **Mes compléments** et vérifiez que MailLighter est listé
 2. **Redémarrez Outlook** : Fermez et rouvrez Outlook pour recharger les compléments
 3. **Vérifiez la personnalisation du ruban** : Clic droit sur le ruban → **Personnaliser le ruban** et assurez-vous que MailLighter est activé
-4. **Réinstallez** : Supprimez le complément depuis **Mes compléments** et réinstallez-le depuis AppSource
+4. **Réinstallez** : Supprimez le complément depuis **Mes compléments** et réinstallez-le depuis Marketplace
 
 ## Les boutons sont grisés
 
