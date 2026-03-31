@@ -99,7 +99,7 @@ const hasCategories = categories.length > 0;
                       <Icon name="lucide:chevron-down" class="w-5 h-5" />
                     </span>
                   </summary>
-                  <div class="px-4 pt-4 pb-2 text-text-muted leading-relaxed">{faq.answer}</div>
+                  <div class="px-4 pt-4 pb-2 text-text-muted leading-relaxed" set:html={faq.answer} />
                 </details>
               ))
             : faqs.map((faq) => (
@@ -131,9 +131,7 @@ const hasCategories = categories.length > 0;
                             <Icon name="lucide:chevron-down" class="w-5 h-5" />
                           </span>
                         </summary>
-                        <div class="px-4 pt-4 pb-2 text-text-muted leading-relaxed">
-                          {faq.answer}
-                        </div>
+                        <div class="px-4 pt-4 pb-2 text-text-muted leading-relaxed" set:html={faq.answer} />
                       </details>
                     ))
                   : category.faqs.map((faq) => (
