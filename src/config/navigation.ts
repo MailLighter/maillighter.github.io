@@ -92,7 +92,7 @@ export const navigationByLang: Record<Lang, Navigation> = {
         { label: 'Contacto', href: '/es/contact' },
       ],
       legal: [
-        { label: 'Privacidad', href: '/privacy' },
+        { label: 'Privacidad', href: '/es/privacy' },
       ],
     },
   },
