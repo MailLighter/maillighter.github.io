@@ -266,7 +266,7 @@ const langLabels: Record<Lang, string> = { en: 'English', fr: 'Français', es: '
         : pathWithoutLang;
 
     // Only these routes (or prefixes) are localized today.
-    const localizedRoutes = new Set(['/','/faq','/contact']);
+    const localizedRoutes = new Set(['/','/faq','/contact','/privacy']);
     const isLocalized = localizedRoutes.has(normalizedPath) || normalizedPath.startsWith('/docs');
     if (!isLocalized) {
       return `${url.pathname}${url.search}${url.hash}`;
