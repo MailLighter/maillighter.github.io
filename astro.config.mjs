@@ -24,12 +24,7 @@ export default defineConfig({
     icon(),
     sitemap({
       filter: (page) => {
-        const { features } = siteConfig;
-        if (!features.blog && page.includes('/blog')) return false;
-        if (!features.docs && page.includes('/docs')) return false;
-        if (!features.changelog && page.includes('/changelog')) return false;
-        if (!features.testimonials && page.includes('/testimonials')) return false;
-        if (!features.roadmap && page.includes('/roadmap')) return false;
+        if (!siteConfig.features.docs && page.includes('/docs')) return false;
         return true;
       },
     }),
