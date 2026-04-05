@@ -49,26 +49,9 @@ export interface SocialLinks {
   discord?: string;
 }
 
-export interface Address {
-  street: string;
-  city: string;
-  state: string;
-  zip: string;
-  country: string;
-}
-
 export interface ContactInfo {
   email: string;
   supportEmail?: string;
-  salesEmail?: string;
-  address: Address;
-}
-
-export interface ContactMethod {
-  icon: string;
-  label: string;
-  value: string;
-  href: string;
 }
 
 export interface ContactFAQ {

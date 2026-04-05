@@ -1,21 +1,20 @@
 {
-  "name": "red-remnant",
+  "name": "maillighter",
   "type": "module",
   "version": "1.4.1",
-  "description": "A production-ready SaaS theme for Astro. Built for those who want to go from zero to launch quickly.",
+  "description": "MailLighter — The Outlook plugin that cleans your emails in one click.",
   "keywords": [
-    "astro",
-    "theme",
-    "saas",
-    "landing-page",
-    "tailwindcss"
+    "outlook",
+    "plugin",
+    "email",
+    "maillighter"
   ],
-  "author": "Erland <hello@erland.me>",
+  "author": "MailLighter",
   "repository": {
     "type": "git",
-    "url": "https://github.com/erlandv/virex.git"
+    "url": "https://github.com/maillighter/maillighter.github.io.git"
   },
-  "homepage": "https://virex.erland.me",
+  "homepage": "https://maillighter.com",
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
@@ -29,14 +28,12 @@
   },
   "dependencies": {
     "@astrojs/mdx": "^4.0.0",
-    "@astrojs/rss": "^4.0.0",
     "@astrojs/sitemap": "^3.2.0",
     "@iconify-json/lucide": "^1.2.82",
     "@iconify-json/simple-icons": "^1.2.63",
     "@tailwindcss/typography": "^0.5.19",
     "astro": "^5.16.6",
-    "astro-icon": "^1.1.5",
-    "chart.js": "^4.4.0"
+    "astro-icon": "^1.1.5"
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.6",
