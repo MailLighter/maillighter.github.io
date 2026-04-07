@@ -46,10 +46,16 @@ import { siteConfig } from '@/config';
             <div class="rbtn">Send</div>
             <div class="rbtn">Attach</div>
             <div class="rsep"></div>
-            <div class="rbtn blue">⚡ MailLighter</div>
-            <div class="rbtn green-outline">Full cleanup</div>
-            <div class="rbtn">Images</div>
-            <div class="rbtn">2 replies</div>
+            <div class="ribbon-ml">
+              <div class="rbtn blue"><img src="/images/icon-80.png" alt="" class="rbtn-icon"> MailLighter <span class="rbtn-chevron">▾</span></div>
+              <div class="ml-dropdown">
+                <div class="ml-dropdown-item"><img src="/images/icon-keep-selection-80.png" alt=""> Keep selection only</div>
+                <div class="ml-dropdown-item"><img src="/images/icon-remove-images-80.png" alt=""> Remove images</div>
+                <div class="ml-dropdown-item"><img src="/images/icon-remove-attachments-80.png" alt=""> Remove attachments</div>
+                <div class="ml-dropdown-item"><img src="/images/icon-keep-replies-80.png" alt=""> Keep latest 2 replies</div>
+                <div class="ml-dropdown-item"><img src="/images/icon-clean-all-80.png" alt=""> Full cleanup</div>
+              </div>
+            </div>
           </div>
           <div class="mock-body">
             <div class="mock-header">
@@ -128,38 +134,32 @@ import { siteConfig } from '@/config';
       <p class="section-sub">Everything accessible directly from the Outlook ribbon. No configuration needed.</p>
       <div class="features-grid">
         <div class="fcard featured">
-          <div class="fcard-icon green"><svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="8"/><polyline points="7,10 9,12 13,8"/></svg></div>
-          <span class="fcard-tag green">⭐ Most used</span>
+          <div class="fcard-icon green"><img src="/images/icon-clean-all-80.png" alt="Full Cleanup"></div>
           <div class="fcard-name">Full Cleanup</div>
           <div class="fcard-desc">Runs all actions at once. Images, attachments, reply threads — cleaned in one go. A detailed summary shows exactly what was removed and how much space was saved.</div>
         </div>
         <div class="fcard">
-          <div class="fcard-icon"><svg viewBox="0 0 20 20"><rect x="2" y="2" width="16" height="12" rx="2"/><line x1="7" y1="18" x2="13" y2="18"/><line x1="10" y1="14" x2="10" y2="18"/></svg></div>
-          <span class="fcard-tag">Smart</span>
+          <div class="fcard-icon"><img src="/images/icon-remove-images-80.png" alt="Remove Images"></div>
           <div class="fcard-name">Remove Images</div>
           <div class="fcard-desc">Strips all embedded images from the body. Signature images are preserved.</div>
         </div>
         <div class="fcard">
-          <div class="fcard-icon"><svg viewBox="0 0 20 20"><path d="M13 2H6a2 2 0 00-2 2v14l6-3 6 3V4a2 2 0 00-2-2z"/></svg></div>
-          <span class="fcard-tag">Safe</span>
+          <div class="fcard-icon"><img src="/images/icon-remove-attachments-80.png" alt="Remove Attachments"></div>
           <div class="fcard-name">Remove Attachments</div>
           <div class="fcard-desc">Removes attached files from the thread. Inline signature images are preserved.</div>
         </div>
         <div class="fcard">
-          <div class="fcard-icon"><svg viewBox="0 0 20 20"><polyline points="15,10 10,15 5,10"/><line x1="10" y1="4" x2="10" y2="15"/></svg></div>
-          <span class="fcard-tag">Multi-language</span>
+          <div class="fcard-icon"><img src="/images/icon-keep-replies-80.png" alt="Keep 2 Replies"></div>
           <div class="fcard-name">Keep 2 Replies</div>
           <div class="fcard-desc">Trims long threads to the 2 most recent messages. Detects quoted blocks in all languages.</div>
         </div>
         <div class="fcard">
-          <div class="fcard-icon"><svg viewBox="0 0 20 20"><path d="M17 3a2.828 2.828 0 11-4 4L6 14H3v-3L10 4a2.828 2.828 0 014-1z"/></svg></div>
-          <span class="fcard-tag">Surgical</span>
+          <div class="fcard-icon"><img src="/images/icon-keep-selection-80.png" alt="Keep Selection"></div>
           <div class="fcard-name">Keep Selection</div>
           <div class="fcard-desc">Replace the entire thread with only the text you selected. Total precision.</div>
         </div>
         <div class="fcard">
           <div class="fcard-icon"><svg viewBox="0 0 20 20"><rect x="3" y="11" width="14" height="8" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/><circle cx="10" cy="15" r="1" fill="#93c5fd"/></svg></div>
-          <span class="fcard-tag">Privacy first</span>
           <div class="fcard-name">100% Local</div>
           <div class="fcard-desc">Runs entirely inside Outlook via Office.js. No data ever leaves your device.</div>
         </div>
@@ -335,8 +335,22 @@ import { siteConfig } from '@/config';
     border-radius: 4px; padding: 4px 9px; font-size: 0.7rem;
     color: var(--ml-mock-rbtn-c); white-space: nowrap;
   }
-  .rbtn.blue { background: var(--ml-blue); border-color: var(--ml-blue); color: white; font-weight: 700; }
-  .rbtn.green-outline { border-color: var(--ml-green); color: var(--ml-green); font-weight: 600; }
+  .rbtn.blue { background: var(--ml-blue); border-color: var(--ml-blue); color: white; font-weight: 700; display: flex; align-items: center; gap: 4px; cursor: default; }
+  .rbtn-icon { width: 16px; height: 16px; border-radius: 2px; }
+  .rbtn-chevron { font-size: 0.6rem; opacity: 0.85; margin-left: 1px; }
+  .ribbon-ml { position: relative; }
+  .ml-dropdown {
+    position: absolute; top: calc(100% + 4px); left: 0; z-index: 10;
+    background: var(--ml-mock-bg); border: 1px solid var(--ml-mock-border);
+    border-radius: 6px; padding: 4px 0; min-width: 190px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.12), 0 2px 8px rgba(0,0,0,0.06);
+  }
+  .ml-dropdown-item {
+    display: flex; align-items: center; gap: 8px;
+    padding: 5px 12px; font-size: 0.72rem;
+    color: var(--ml-mock-rbtn-c); white-space: nowrap;
+  }
+  .ml-dropdown-item img { width: 20px; height: 20px; }
   .rsep { width: 1px; height: 18px; background: var(--ml-mock-border); margin: 0 3px; }
   .mock-body { background: var(--ml-mock-body); padding: 18px 20px; }
   .mock-header { padding-bottom: 12px; margin-bottom: 12px; border-bottom: 1px solid var(--color-border); display: flex; flex-direction: column; gap: 5px; }
@@ -456,6 +470,7 @@ import { siteConfig } from '@/config';
   .fcard.featured { border-color: rgba(74,162,81,0.5); background: rgba(74,162,81,0.08); grid-column: span 2; }
   .fcard-icon { width: 42px; height: 42px; background: rgba(21,100,192,0.25); border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-bottom: 14px; }
   .fcard-icon svg { width: 20px; height: 20px; stroke: #93c5fd; fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+  .fcard-icon img { width: 28px; height: 28px; border-radius: 4px; }
   .fcard-icon.green { background: rgba(74,162,81,0.25); }
   .fcard-icon.green svg { stroke: #86efac; }
   .fcard-tag { display: inline-block; font-size: 0.67rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; padding: 2px 8px; border-radius: 4px; margin-bottom: 8px; background: rgba(21,100,192,0.2); color: #93c5fd; }
