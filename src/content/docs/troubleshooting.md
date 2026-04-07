@@ -25,12 +25,12 @@ The add-in may not be loaded, or the ribbon group may be collapsed.
 
 ### Cause
 
-MailLighter commands are only available when you have an email open in compose or read mode.
+MailLighter commands are only available when composing an email (replying, forwarding, or creating a new message).
 
 ### Solutions
 
-1. **Open an email**: Click on an email to open it in the reading pane or in a new window
-2. **Check compose mode**: When replying or forwarding, the ribbon should be active
+1. **Start composing**: Reply to, forward, or create a new email
+2. **Check compose mode**: The MailLighter dropdown appears only in compose mode
 3. **Restart Outlook**: If the issue persists, restart Outlook
 
 ## Content Not Fully Removed
@@ -43,7 +43,7 @@ Some email clients generate non-standard HTML that may not be fully parsed by Ma
 
 1. **Try Full Cleanup**: Use the "Full cleanup" command which applies all operations
 2. **Check the email format**: MailLighter works best with HTML emails. Plain text emails have limited formatting to process
-3. **Report the issue**: If a specific email format consistently fails, [report it on GitHub](https://github.com/MailLighter/MailLighter/issues)
+3. **Report the issue**: If a specific email format consistently fails, [report it on GitHub](https://github.com/MailLighter/MailLighter/issues) or [contact us](/contact)
 
 ## Sideload Issues (Developers)
 

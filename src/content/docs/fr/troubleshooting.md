@@ -25,12 +25,12 @@ Le complément n'est peut-être pas chargé, ou le groupe du ruban est réduit.
 
 ### Cause
 
-Les commandes MailLighter ne sont disponibles que lorsqu'un e-mail est ouvert en mode lecture ou rédaction.
+Les fonctionnalités MailLighter ne sont disponibles que lors de la rédaction d'un e-mail (réponse, transfert ou création d'un nouveau message).
 
 ### Solutions
 
-1. **Ouvrez un e-mail** : Cliquez sur un e-mail pour l'ouvrir dans le volet de lecture ou dans une nouvelle fenêtre
-2. **Vérifiez le mode rédaction** : Lors d'une réponse ou d'un transfert, le ruban devrait être actif
+1. **Commencez à rédiger** : Répondez à, transférez ou créez un nouvel e-mail
+2. **Vérifiez le mode rédaction** : Le menu déroulant MailLighter n'apparaît qu'en mode rédaction
 3. **Redémarrez Outlook** : Si le problème persiste, redémarrez Outlook
 
 ## Le contenu n'est pas entièrement supprimé
@@ -43,7 +43,7 @@ Certains clients de messagerie génèrent du HTML non standard qui peut ne pas �
 
 1. **Essayez le nettoyage complet** : Utilisez la commande « Nettoyage complet » qui applique toutes les opérations
 2. **Vérifiez le format de l'e-mail** : MailLighter fonctionne mieux avec les e-mails HTML. Les e-mails en texte brut offrent peu de mise en forme à traiter
-3. **Signalez le problème** : Si un format d'e-mail spécifique échoue systématiquement, [signalez-le sur GitHub](https://github.com/MailLighter/MailLighter/issues)
+3. **Signalez le problème** : Si un format d'e-mail spécifique échoue systématiquement, [signalez-le sur GitHub](https://github.com/MailLighter/MailLighter/issues) ou [contactez-nous](/fr/contact)
 
 ## Problèmes de sideloading (Développeurs)
 

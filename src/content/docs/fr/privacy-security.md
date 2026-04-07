@@ -48,22 +48,15 @@ MailLighter est conforme au RGPD par conception :
 
 MailLighter utilise une seule permission Office.js :
 
-- **ReadWriteItem** — Permet de lire et modifier l'e-mail actuellement ouvert
+- **ReadWriteItem** : Permet de lire et modifier l'e-mail actuellement ouvert
 
 C'est le niveau de permission le plus restrictif qui permet au complément de fonctionner. Il donne accès uniquement à l'e-mail que vous consultez ou modifiez, pas à l'ensemble de votre boîte.
-
-## Transparence open-source
-
-MailLighter est entièrement open-source sous licence MIT. Vous pouvez :
-- **Auditer le code** sur [GitHub](https://github.com/MailLighter/MailLighter)
-- **Vérifier** qu'aucune donnée ne quitte votre appareil
-- **Compiler depuis les sources** pour garantir la correspondance avec le code public
 
 ## Bonnes pratiques de sécurité
 
 MailLighter respecte les bonnes pratiques de sécurité :
 
-- **Pas de scripts inline** — Tout le JavaScript est bundlé et servi depuis des fichiers locaux
-- **Content Security Policy** — Appliquée via le manifeste du complément
-- **Aucune dépendance tierce à l'exécution** — Uniquement Office.js (fourni par Microsoft)
+- **Pas de scripts inline** : Tout le JavaScript est bundlé et servi depuis des fichiers locaux
+- **Content Security Policy** : Appliquée via le manifeste du complément
+- **Aucune dépendance tierce à l'exécution** : Uniquement Office.js (fourni par Microsoft)
 - **Pas d'eval() ni d'exécution dynamique de code**

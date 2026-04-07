@@ -71,7 +71,7 @@ MailLighter est disponible en 3 langues :
 - **Français**
 - **Espagnol**
 
-La langue est automatiquement détectée depuis vos paramètres Outlook. Tous les libellés, descriptions et infobulles des commandes sont traduits.
+La langue est automatiquement détectée depuis vos paramètres Outlook. Tous les libellés, descriptions et infobulles des fonctionnalités sont traduits.
 
 ## Open-source
 

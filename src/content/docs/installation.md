@@ -14,13 +14,13 @@ Before installing, ensure you have:
 
 - **Outlook Desktop** on Windows or macOS, or **Outlook on the Web**
 - A **Microsoft 365** or **Exchange** account
-- An active internet connection (for installation only — the add-in works offline after that)
+- An active internet connection (for installation only, the add-in works offline after that)
 
 > MailLighter is not yet available for Outlook Mobile.
 
-## Install from Marketplace
+## Install from Microsoft Marketplace
 
-1. Open **Outlook Desktop**
+1. Open **Outlook Desktop or Web**
 2. Go to **Home** → **Get Add-ins** (or **Insert** → **Get Add-ins** depending on your version)
 3. Search for **MailLighter** in the Store
 4. Click **Add** to install
@@ -29,13 +29,13 @@ The add-in appears in your ribbon immediately. No restart required.
 
 ## Verify Installation
 
-Once installed, you should see a **MailLighter** group in the ribbon when composing or reading an email. The group contains a dropdown menu with 5 commands:
+Once installed, you should see a **MailLighter** dropdown in the ribbon when composing an email; the MailLighter dropdown may be located under "Apps". The dropdown menu contains the following 5 features:
 
-1. Remove images
-2. Remove attachments
-3. Keep 2 replies
-4. Keep selection only
-5. Full cleanup
+- Keep selection only
+- Remove images
+- Remove attachments
+- Keep 2 replies
+- Full cleanup
 
 If you don't see the ribbon group, check the [Troubleshooting](/docs/troubleshooting) guide.
 
@@ -66,5 +66,5 @@ npm start
 
 ## Next Steps
 
-- Learn about each command in the [Commands](/docs/commands) guide
+- Learn about each feature in the [Features](/docs/commands) guide
 - Understand [How It Works](/docs/how-it-works) under the hood

@@ -12,25 +12,37 @@ Encuentra respuestas a las preguntas más comunes sobre MailLighter.
 
 ### ¿Qué es MailLighter?
 
-MailLighter es un complemento gratuito y de código abierto para Outlook que limpia los correos antes de reenviarlos o responder. Elimina imágenes, archivos adjuntos y cadenas de respuesta innecesarias.
+MailLighter es un plugin de Outlook que limpia tus correos en un clic. Elimina los archivos adjuntos innecesarios, las imágenes incrustadas y las antiguas cadenas de respuestas para aligerar tus correos y reducir tu huella digital.
 
 ### ¿Es gratuito MailLighter?
 
 Sí, completamente gratuito. Sin suscripción, sin plan premium, sin compras integradas. MailLighter es de código abierto bajo licencia MIT.
 
+### ¿Para quién es MailLighter?
+
+MailLighter está diseñado para cualquier persona u organización que desee reducir el impacto medioambiental de sus correos: particulares, empresas privadas, organizaciones públicas, departamentos IT, equipos RSC o cualquier otro actor comprometido con el digital responsable.
+
 ### ¿Qué idiomas están soportados?
 
 MailLighter está disponible en inglés, francés y español. El idioma se detecta automáticamente desde la configuración de Outlook.
 
-## Compatibilidad
+## Instalación y compatibilidad
+
+### ¿Cómo instalo MailLighter?
+
+MailLighter está disponible en la Microsoft Marketplace. Consulta la [guía de instalación](/es/docs/installation) para las instrucciones detalladas.
 
 ### ¿Qué versiones de Outlook son compatibles?
 
-MailLighter funciona con **Outlook Desktop** en Windows y macOS, y también con **Outlook en la Web**. Requiere una cuenta Microsoft 365 o Exchange.
+MailLighter es compatible con entornos Microsoft 365, incluyendo Outlook de escritorio y Outlook en la Web, en Windows o macOS.
 
-### ¿Funciona con Outlook en la Web?
+### ¿Puedo desplegar MailLighter en toda mi organización?
 
-Sí. MailLighter está disponible en Outlook Desktop y Outlook en la Web.
+Sí. MailLighter puede desplegarse a escala a través del centro de administración de Microsoft 365, facilitando la distribución a todos los usuarios de la organización.
+
+### ¿Requiere MailLighter alguna configuración especial?
+
+No. MailLighter funciona de inmediato sin ninguna configuración. Cada usuario simplemente hace clic en las funcionalidades de MailLighter en la cinta de Outlook para limpiar sus correos.
 
 ### ¿Funciona con Outlook Mobile?
 
@@ -40,37 +52,43 @@ No actualmente. Outlook Mobile no soporta las funciones de complemento que MailL
 
 No. MailLighter está construido sobre Office.js, que es específico de Microsoft Outlook.
 
-## Privacidad y seguridad
+## Funcionalidades
 
-### ¿MailLighter lee mis correos?
+### ¿Qué elimina MailLighter de los correos?
 
-MailLighter accede únicamente al correo que estás viendo o editando, mediante el permiso `ReadWriteItem`. Nunca accede a tu buzón ni a otros correos.
+MailLighter puede eliminar archivos adjuntos innecesarios, imágenes incrustadas (logotipos, banners, imágenes de firma) y antiguas cadenas de respuestas, conservando solo los mensajes más recientes del hilo. También puede eliminar todo lo que no haya sido seleccionado por el usuario, permitiéndole conservar únicamente lo esencial del correo original.
 
-### ¿Se envían mis datos a algún servidor?
+### ¿Modifica MailLighter el correo original?
 
-No. MailLighter procesa los correos 100 % localmente en tu dispositivo. No hay servidor — el complemento no realiza ninguna solicitud de red tras la instalación.
-
-### ¿Es MailLighter conforme al RGPD?
-
-Sí. Como no se recopilan, almacenan ni transmiten datos, MailLighter es conforme al RGPD por diseño. Consulta la página de [Privacidad y seguridad](/es/docs/privacy-security) para más detalles.
-
-## Uso
+MailLighter limpia el contenido del correo de respuesta o reenvío durante su redacción y antes de enviarlo. El correo original recibido permanece sin cambios en tu buzón.
 
 ### ¿Puedo deshacer una limpieza?
 
 MailLighter modifica el borrador del correo. Si aún no has enviado el correo, puedes usar la función de deshacer de Outlook (Ctrl+Z) para revertir los cambios.
 
-### ¿«Eliminar imágenes» también elimina archivos adjuntos?
+## Seguridad y privacidad
 
-No. Las imágenes y los archivos adjuntos se tratan por separado. «Eliminar imágenes» solo retira las imágenes integradas en el cuerpo del correo. Usa «Eliminar archivos adjuntos» para los archivos.
+### ¿Están seguros mis datos con MailLighter?
 
-### ¿Qué hace exactamente «Mantener 2 respuestas»?
+Sí. MailLighter procesa los correos localmente dentro de tu entorno. Ningún contenido de correo se envía a servidores externos.
 
-Reduce la conversación conservando solo las 2 respuestas más recientes, eliminando las partes más antiguas del hilo. Es útil para largas cadenas de correo.
+### ¿Es MailLighter conforme al RGPD?
 
-### ¿Puedo personalizar el número de respuestas a conservar?
+Sí. MailLighter cumple plenamente con el RGPD. No recopila, almacena ni transmite ningún dato personal o contenido de correo. Consulta la página de [Privacidad y seguridad](/es/docs/privacy-security) para más detalles.
 
-No por el momento. El comando «Mantener 2 respuestas» siempre conserva las 2 últimas. Opciones personalizables podrían añadirse en una versión futura.
+### ¿Afecta MailLighter a la seguridad de mi organización?
+
+No. MailLighter opera dentro del marco de seguridad estándar de Microsoft 365 y no requiere permisos adicionales más allá de los necesarios para procesar el contenido del correo.
+
+## Impacto y RSC
+
+### ¿Cómo ayuda MailLighter con los informes RSC?
+
+MailLighter proporciona una acción concreta para las organizaciones que trabajan en RSC/ESG. Al reducir el peso de los correos en tu organización, demuestras un compromiso operativo con la sobriedad digital.
+
+### ¿Cuál es el impacto medioambiental de los correos más ligeros?
+
+Cada correo más ligero significa menos datos almacenados y replicados en los servidores, menos ancho de banda consumido, y menos energía y materias primas utilizadas. El impacto individual es modesto, pero se vuelve significativo si todo el mundo lo practica.
 
 ## Solución de problemas
 
@@ -80,4 +98,4 @@ Consulta la guía de [Solución de problemas](/es/docs/troubleshooting) para sol
 
 ### Un comando no eliminó todo el contenido esperado
 
-Algunos clientes de correo generan HTML complejo que puede no ser completamente analizado. Si encuentras este problema, por favor [reporta el problema](https://github.com/MailLighter/MailLighter/issues) describiendo el formato del correo.
+Algunos clientes de correo generan HTML complejo que puede no ser completamente analizado. Si encuentras este problema, por favor repórtalo mediante el [formulario de contacto](/es/contact).

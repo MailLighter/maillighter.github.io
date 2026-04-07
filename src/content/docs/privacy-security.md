@@ -48,22 +48,15 @@ MailLighter is GDPR compliant by design:
 
 MailLighter uses a single Office.js permission:
 
-- **ReadWriteItem** — Allows reading and modifying the currently open email item
+- **ReadWriteItem** : Allows reading and modifying the currently open email item
 
 This is the most restrictive permission level that still allows the add-in to function. It provides access only to the email you are currently viewing or editing, not your entire mailbox.
-
-## Open-Source Transparency
-
-MailLighter is fully open-source under the MIT license. You can:
-- **Audit the code** on [GitHub](https://github.com/MailLighter/MailLighter)
-- **Verify** that no data leaves your device
-- **Build from source** to ensure the installed version matches the public code
 
 ## Security Best Practices
 
 MailLighter follows security best practices:
 
-- **No inline scripts** — All JavaScript is bundled and served from local files
-- **Content Security Policy** — Enforced via the add-in manifest
-- **No third-party dependencies at runtime** — Only Office.js (provided by Microsoft)
+- **No inline scripts** : All JavaScript is bundled and served from local files
+- **Content Security Policy** : Enforced via the add-in manifest
+- **No third-party dependencies at runtime** : Only Office.js (provided by Microsoft)
 - **No eval() or dynamic code execution**

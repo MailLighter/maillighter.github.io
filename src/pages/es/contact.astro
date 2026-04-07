@@ -1,26 +1,8 @@
 ---
 import MarketingLayout from '@/layouts/MarketingLayout.astro';
 import ContactForm from '@forms/ContactForm.astro';
-import { siteConfig } from '@/config';
+import { siteConfig, contactFAQsEs as contactFAQs } from '@/config';
 import { Icon } from 'astro-icon/components';
-
-const contactFAQs = [
-  {
-    question: '¿Cómo instalo MailLighter?',
-    answer:
-      'MailLighter está disponible en Microsoft Marketplace. Instálelo directamente desde allí en su entorno de Outlook.',
-  },
-  {
-    question: '¿Es MailLighter compatible con mi versión de Outlook?',
-    answer:
-      'MailLighter funciona con entornos Microsoft 365 (Outlook de escritorio y Outlook Web) en Windows & macOS.',
-  },
-  {
-    question: '¿Están seguros mis datos con MailLighter?',
-    answer:
-      'Sí. MailLighter procesa los correos localmente y cumple plenamente con el RGPD. Ningún dato abandona su entorno de trabajo.',
-  },
-];
 ---
 
 <MarketingLayout

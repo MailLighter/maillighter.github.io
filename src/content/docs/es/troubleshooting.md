@@ -25,12 +25,12 @@ El complemento puede no estar cargado, o el grupo de la cinta puede estar minimi
 
 ### Causa
 
-Los comandos de MailLighter solo están disponibles cuando tienes un correo abierto en modo lectura o redacción.
+Las funcionalidades de MailLighter solo están disponibles al redactar un correo (responder, reenviar o crear un mensaje nuevo).
 
 ### Soluciones
 
-1. **Abre un correo**: Haz clic en un correo para abrirlo en el panel de lectura o en una ventana nueva
-2. **Verifica el modo de redacción**: Al responder o reenviar, la cinta debería estar activa
+1. **Empieza a redactar**: Responde, reenvía o crea un nuevo correo
+2. **Verifica el modo de redacción**: El menú desplegable MailLighter solo aparece en modo redacción
 3. **Reinicia Outlook**: Si el problema persiste, reinicia Outlook
 
 ## El contenido no se elimina completamente
@@ -43,7 +43,7 @@ Algunos clientes de correo generan HTML no estándar que puede no ser completame
 
 1. **Prueba la limpieza completa**: Usa el comando «Limpieza completa» que aplica todas las operaciones
 2. **Verifica el formato del correo**: MailLighter funciona mejor con correos HTML. Los correos en texto plano tienen poco formato para procesar
-3. **Reporta el problema**: Si un formato de correo específico falla consistentemente, [repórtalo en GitHub](https://github.com/MailLighter/MailLighter/issues)
+3. **Reporta el problema**: Si un formato de correo específico falla consistentemente, [repórtalo en GitHub](https://github.com/MailLighter/MailLighter/issues) o [contáctanos](/es/contact)
 
 ## Problemas de sideloading (Desarrolladores)
 

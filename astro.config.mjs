@@ -5,7 +5,7 @@ import icon from 'astro-icon';
 import tailwindcss from '@tailwindcss/vite';
 import { siteConfig } from './src/config';
 
-const siteUrl = process.env.SITE_URL || 'http://localhost:4321';
+const siteUrl = process.env.SITE_URL || 'https://maillighter.com';
 
 export default defineConfig({
   site: siteUrl,
@@ -25,6 +25,7 @@ export default defineConfig({
     sitemap({
       filter: (page) => {
         if (!siteConfig.features.docs && page.includes('/docs')) return false;
+        if (/\/(403|404|500)(\/|$)/.test(page)) return false;
         return true;
       },
     }),

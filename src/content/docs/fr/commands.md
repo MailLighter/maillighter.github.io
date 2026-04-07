@@ -1,12 +1,12 @@
 ---
-title: "Commandes"
-description: "Découvrez les 5 commandes de MailLighter : supprimer les images, supprimer les pièces jointes, garder 2 réponses, garder la sélection, et nettoyage complet."
+title: "Fonctionnalités"
+description: "Découvrez les 5 fonctionnalités de MailLighter : supprimer les images, supprimer les pièces jointes, conserver 2 réponses, ne garder que la sélection, et nettoyage complet."
 section: "Utilisation"
 order: 3
 draft: false
 ---
 
-MailLighter propose 5 commandes, toutes accessibles depuis un menu déroulant dans le ruban d'Outlook. Chaque commande cible un type spécifique d'encombrement.
+MailLighter propose 5 fonctionnalités, toutes accessibles depuis un menu déroulant dans le ruban d'Outlook. Chaque fonctionnalité cible un type spécifique d'encombrement.
 
 ## Supprimer les images
 
@@ -22,18 +22,23 @@ Retire toutes les images intégrées (balises `<img>`) du corps de l'e-mail. Uti
 - Les pièces jointes (utilisez « Supprimer les pièces jointes » pour celles-ci)
 - La mise en forme de l'e-mail
 
+ℹ️ **Confirmation :** Une confirmation affiche le nombre d'images supprimées et l'espace libéré.
+
 ## Supprimer les pièces jointes
 
-Supprime toutes les pièces jointes de l'e-mail. Idéal pour transférer uniquement le contenu du message sans les fichiers joints.
+Supprime toutes les pièces jointes de l'e-mail, à l'exception des images intégrées dans le corps du message. Idéal pour transférer uniquement le contenu du message sans les fichiers joints.
 
 **Ce qui est supprimé :**
-- Toutes les pièces jointes (PDF, Word, Excel, images, etc.)
+- Toutes les pièces jointes (PDF, Word, Excel, etc.)
 
 **Ce qui est conservé :**
 - Le corps complet de l'e-mail (texte + images intégrées)
+- Les images intégrées (dans le corps HTML)
 - La chaîne de réponse
 
-## Garder 2 réponses
+ℹ️ **Confirmation :** Une confirmation affiche le nombre de pièces jointes supprimées et l'espace libéré.
+
+## Conserver 2 réponses
 
 Réduit la conversation en ne conservant que les **2 dernières réponses**. Parfait pour les longues chaînes d'e-mails où seuls les échanges récents comptent.
 
@@ -45,14 +50,16 @@ Réduit la conversation en ne conservant que les **2 dernières réponses**. Par
 - La réponse précédente
 - Tout le contenu de ces 2 messages (images, mise en forme)
 
-## Garder la sélection
+ℹ️ **Confirmation :** Une confirmation affiche le nombre de réponses détectées et l'espace libéré.
+
+## Ne garder que la sélection
 
 Ne conserve que le texte que vous avez **sélectionné manuellement** dans l'e-mail, en supprimant tout le reste. Vous gardez un contrôle total sur le contenu à conserver.
 
 **Comment l'utiliser :**
 1. Ouvrez ou répondez à un e-mail
-2. Sélectionnez le texte que vous souhaitez conserver
-3. Cliquez sur **Garder la sélection** dans le menu MailLighter
+2. Sélectionnez le texte que vous souhaitez conserver (il peut contenir des images)
+3. Cliquez sur **Ne garder que la sélection** dans le menu MailLighter
 
 **Ce qui est supprimé :**
 - Tout ce qui est en dehors de votre sélection
@@ -67,14 +74,22 @@ Applique toutes les opérations de nettoyage en une fois : supprime les images, 
 **Équivalent à exécuter :**
 1. Supprimer les images
 2. Supprimer les pièces jointes
-3. Garder 2 réponses
+3. Conserver 2 réponses
 
-## Résumé des commandes
+**Résumé détaillé :** Après le nettoyage, une notification affiche un rapport détaillé :
+
+```
+✅ Nettoyage complet terminé — Images : 3 (150 Ko) | Pièces jointes : 3 (252,4 Ko) | Réponses : 2 | Total économisé : 402,4 Ko
+```
+
+Chaque catégorie indique le nombre d'éléments traités et l'espace libéré, le cas échéant. Pour les réponses, la réduction est affichée (ex. : 5 → 2).
+
+## Résumé des fonctionnalités
 
 | Commande | Images | Pièces jointes | Chaîne de réponse |
 |----------|--------|----------------|-------------------|
 | Supprimer les images | ✅ Supprimées | Conservées | Conservée |
 | Supprimer les pièces jointes | Conservées | ✅ Supprimées | Conservée |
-| Garder 2 réponses | Conservées | Conservées | ✅ Réduite |
-| Garder la sélection | Selon sélection | Conservées | Selon sélection |
+| Conserver 2 réponses | Conservées | Conservées | ✅ Réduite |
+| Ne garder que la sélection | Selon sélection | Conservées | Selon sélection |
 | Nettoyage complet | ✅ Supprimées | ✅ Supprimées | ✅ Réduite |

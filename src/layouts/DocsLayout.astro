@@ -123,10 +123,9 @@ const currentSlug = Astro.url.pathname.replace(`${basePath}/`, '').replace(/\/$/
       <!-- Main content -->
       <main class="flex-1 min-w-0">
         <article>
-          <header class="mb-8 pb-6 border-b border-border">
-            <p class="text-sm text-primary font-medium mb-2">{section}</p>
-            <h1 class="text-3xl font-bold text-text">{title}</h1>
-            <p class="mt-2 text-text-muted">{description}</p>
+          <header class="docs-hero mb-8 pb-6 border-b border-border">
+            <span class="docs-eyebrow">{section}</span>
+            <h1 class="docs-title">{title}</h1>
           </header>
 
           <div class="prose prose-lg max-w-none dark:prose-invert">
@@ -146,3 +145,25 @@ const currentSlug = Astro.url.pathname.replace(`${basePath}/`, '').replace(/\/$/
     sidebar?.classList.toggle('hidden');
   });
 </script>
+
+<style>
+  .docs-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--ml-blue-pale);
+    color: var(--ml-blue);
+    font-size: 0.72rem;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 6px;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+  .docs-title {
+    font-size: clamp(1.6rem, 3vw, 2.2rem);
+    font-weight: 800;
+    line-height: 1.1;
+  }
+</style>

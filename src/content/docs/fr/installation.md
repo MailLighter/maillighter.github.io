@@ -14,13 +14,13 @@ Avant d'installer, vérifiez que vous disposez de :
 
 - **Outlook Desktop** sous Windows ou macOS, ou **Outlook sur le Web**
 - Un compte **Microsoft 365** ou **Exchange**
-- Une connexion internet (pour l'installation uniquement — le complément fonctionne hors ligne ensuite)
+- Une connexion internet (pour l'installation uniquement, le complément fonctionne hors ligne ensuite)
 
 > MailLighter n'est pas encore disponible pour Outlook Mobile.
 
-## Installer depuis Marketplace
+## Installer depuis la Marketplace Microsoft
 
-1. Ouvrez **Outlook Desktop**
+1. Ouvrez **Outlook Desktop ou Web**
 2. Allez dans **Accueil** → **Obtenir des compléments** (ou **Insertion** → **Obtenir des compléments** selon votre version)
 3. Recherchez **MailLighter** dans le Store
 4. Cliquez sur **Ajouter** pour installer
@@ -29,13 +29,13 @@ Le complément apparaît immédiatement dans votre ruban. Aucun redémarrage n'e
 
 ## Vérifier l'installation
 
-Une fois installé, vous devriez voir un groupe **MailLighter** dans le ruban lors de la lecture ou de la rédaction d'un e-mail. Ce groupe contient un menu déroulant avec 5 commandes :
+Une fois installé, vous devriez voir un menu déroulant **MailLighter** dans le ruban lors de la rédaction d'un e-mail ; le menu déroulant MailLighter peut se trouver dans "Applications". Ce menu contient les 5 fonctionnalités suivantes :
 
-1. Supprimer les images
-2. Supprimer les pièces jointes
-3. Garder 2 réponses
-4. Garder la sélection
-5. Nettoyage complet
+- Ne garder que la sélection
+- Supprimer les images
+- Supprimer les pièces jointes
+- Conserver 2 réponses
+- Nettoyage complet
 
 Si vous ne voyez pas le groupe dans le ruban, consultez le guide de [Dépannage](/fr/docs/troubleshooting).
 
@@ -66,5 +66,5 @@ npm start
 
 ## Étapes suivantes
 
-- Découvrez chaque commande dans le guide des [Commandes](/fr/docs/commands)
+- Découvrez chaque fonctionnalité dans le guide des [Fonctionnalités](/fr/docs/commands)
 - Comprenez le [fonctionnement technique](/fr/docs/how-it-works)
