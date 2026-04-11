@@ -71,7 +71,8 @@ const lang = pathname.startsWith('/fr') ? 'fr' : pathname.startsWith('/es') ? 'e
         const path = window.location.pathname;
         if (path === '/' || path === '') {
           const savedLang = localStorage.getItem('preferred-lang');
-          if (savedLang && savedLang !== 'en') {
+          const allowedLangs = ['fr', 'es'];
+          if (savedLang && allowedLangs.includes(savedLang)) {
             window.location.replace('/' + savedLang + '/');
           } else if (!savedLang) {
             const browserLang = (navigator.language || '').toLowerCase().split('-')[0];

@@ -46,7 +46,7 @@ import { Icon } from 'astro-icon/components';
     <div class="contact-form-wrap">
       <div class="form-title">Envoyez-nous un message</div>
       <div class="form-sub">Remplissez le formulaire et nous vous répondrons dès que possible.</div>
-      <ContactForm accessKey="490a3f5f-4387-4922-bba3-147f540ce414" lang="fr" />
+      <ContactForm accessKey={import.meta.env.PUBLIC_WEB3FORMS_KEY} lang="fr" />
     </div>
   </div>
 </MarketingLayout>
