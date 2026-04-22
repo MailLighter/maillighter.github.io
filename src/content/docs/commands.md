@@ -1,12 +1,12 @@
 ---
 title: "Features"
-description: "Discover MailLighter's 5 features: remove images, remove attachments, keep 2 replies, keep selection only, and full cleanup."
+description: "Discover MailLighter's 6 features: remove images, remove attachments, keep 2 replies, keep selection only, full cleanup, and settings."
 section: "Usage"
 order: 3
 draft: false
 ---
 
-MailLighter provides 5 features, all accessible from a dropdown menu in Outlook's ribbon. Each feature targets a specific type of email clutter.
+MailLighter provides 6 features, all accessible from a dropdown menu in Outlook's ribbon. Each feature targets a specific type of email clutter.
 
 ## Remove Images
 
@@ -84,6 +84,22 @@ Applies all cleanup operations at once: removes images, removes attachments, and
 
 Each category shows the count of items processed and the space saved when applicable. For replies, the reduction is displayed (e.g. 5 → 2).
 
+## Settings
+
+Opens the MailLighter preferences panel. Two settings are available:
+
+**Eco message**  
+Adds a short ecological footer to your outgoing emails. You can enable or disable it, and customize the message text. A live preview is shown before saving.
+
+**My savings**  
+Tracks the cumulative data removed across all your cleanup sessions:
+- Images removed
+- Attachments removed
+- Reply chains trimmed
+- Total saved
+
+Savings are stored locally on your device and persist across sessions.
+
 ## Command Summary
 
 | Command | Images | Attachments | Reply chain |
@@ -93,3 +109,5 @@ Each category shows the count of items processed and the space saved when applic
 | Keep 2 replies | Kept | Kept | ✅ Trimmed |
 | Keep selection only | Per selection | Kept | Per selection |
 | Full cleanup | ✅ Removed | ✅ Removed | ✅ Trimmed |
+
+ℹ️ Settings opens the preferences panel — it does not act on email content.

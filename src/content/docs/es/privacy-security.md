@@ -31,6 +31,13 @@ MailLighter no recopila, almacena ni transmite:
 
 Después de la instalación, MailLighter realiza **cero solicitudes de red**. El complemento funciona completamente sin conexión. Puedes verificarlo monitorizando el tráfico de red durante su uso.
 
+### Almacenamiento local (registro de ahorros)
+
+El panel de Configuración almacena tres valores numéricos en el localStorage de tu navegador para registrar tus ahorros acumulados de limpieza (bytes eliminados por categoría). Estos datos:
+- nunca salen de tu dispositivo
+- no contienen ningún contenido de correo ni información personal
+- se pueden borrar en cualquier momento vaciando los datos del sitio en tu navegador
+
 ## Conformidad RGPD
 
 MailLighter es conforme al RGPD por diseño:
@@ -39,7 +46,7 @@ MailLighter es conforme al RGPD por diseño:
 |-----------------|-------------|
 | Minimización de datos | Ningún dato recopilado |
 | Limitación de finalidad | Sin procesamiento más allá de la limpieza |
-| Limitación de almacenamiento | Ningún dato almacenado |
+| Limitación de almacenamiento | Ningún dato personal almacenado — solo estadísticas agregadas de ahorros en localStorage |
 | Derecho de supresión | Nada que borrar |
 | Portabilidad de datos | Ningún dato que exportar |
 | Protección desde el diseño | Arquitectura solo local |

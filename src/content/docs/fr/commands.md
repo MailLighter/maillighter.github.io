@@ -1,12 +1,12 @@
 ---
 title: "Fonctionnalités"
-description: "Découvrez les 5 fonctionnalités de MailLighter : supprimer les images, supprimer les pièces jointes, conserver 2 réponses, ne garder que la sélection, et nettoyage complet."
+description: "Découvrez les 6 fonctionnalités de MailLighter : supprimer les images, supprimer les pièces jointes, conserver 2 réponses, ne garder que la sélection, nettoyage complet et paramètres."
 section: "Utilisation"
 order: 3
 draft: false
 ---
 
-MailLighter propose 5 fonctionnalités, toutes accessibles depuis un menu déroulant dans le ruban d'Outlook. Chaque fonctionnalité cible un type spécifique d'encombrement.
+MailLighter propose 6 fonctionnalités, toutes accessibles depuis un menu déroulant dans le ruban d'Outlook. Chaque fonctionnalité cible un type spécifique d'encombrement.
 
 ## Supprimer les images
 
@@ -84,6 +84,22 @@ Applique toutes les opérations de nettoyage en une fois : supprime les images, 
 
 Chaque catégorie indique le nombre d'éléments traités et l'espace libéré, le cas échéant. Pour les réponses, la réduction est affichée (ex. : 5 → 2).
 
+## Paramètres
+
+Ouvre le panneau de préférences de MailLighter. Deux réglages sont disponibles :
+
+**Message écologique**  
+Ajoute un court pied-de-page écologique à vos e-mails envoyés. Vous pouvez l'activer ou le désactiver, et personnaliser le texte. Un aperçu en direct est affiché avant d'enregistrer.
+
+**Mes économies**  
+Suit le cumul des données supprimées sur toutes vos sessions de nettoyage :
+- Images supprimées
+- Pièces jointes supprimées
+- Chaînes de réponses réduites
+- Total économisé
+
+Les économies sont stockées localement sur votre appareil et persistent entre les sessions.
+
 ## Résumé des fonctionnalités
 
 | Commande | Images | Pièces jointes | Chaîne de réponse |
@@ -93,3 +109,5 @@ Chaque catégorie indique le nombre d'éléments traités et l'espace libéré, 
 | Conserver 2 réponses | Conservées | Conservées | ✅ Réduite |
 | Ne garder que la sélection | Selon sélection | Conservées | Selon sélection |
 | Nettoyage complet | ✅ Supprimées | ✅ Supprimées | ✅ Réduite |
+
+ℹ️ Paramètres ouvre le panneau de préférences — cette option n'agit pas sur le contenu de l'e-mail.
