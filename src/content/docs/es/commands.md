@@ -1,12 +1,12 @@
 ---
 title: "Funcionalidades"
-description: "Descubre las 5 funcionalidades de MailLighter: eliminar imágenes, eliminar archivos adjuntos, conservar 2 respuestas, conservar solo la selección y limpieza completa."
+description: "Descubre las 6 funcionalidades de MailLighter: eliminar imágenes, eliminar archivos adjuntos, conservar 2 respuestas, conservar solo la selección, limpieza completa y configuración."
 section: "Uso"
 order: 3
 draft: false
 ---
 
-MailLighter ofrece 5 funcionalidades, todas accesibles desde un menú desplegable en la cinta de Outlook. Cada funcionalidad se dirige a un tipo específico de contenido innecesario.
+MailLighter ofrece 6 funcionalidades, todas accesibles desde un menú desplegable en la cinta de Outlook. Cada funcionalidad se dirige a un tipo específico de contenido innecesario.
 
 ## Eliminar imágenes
 
@@ -84,6 +84,22 @@ Aplica todas las operaciones de limpieza a la vez: elimina imágenes, elimina ar
 
 Cada categoría muestra el número de elementos procesados y el espacio liberado, cuando corresponda. Para las respuestas, se muestra la reducción (ej.: 5 → 2).
 
+## Configuración
+
+Abre el panel de preferencias de MailLighter. Hay dos ajustes disponibles:
+
+**Mensaje ecológico**  
+Añade un breve pie de página ecológico a tus correos enviados. Puedes activarlo o desactivarlo, y personalizar el texto del mensaje. Se muestra una vista previa en tiempo real antes de guardar.
+
+**Mis ahorros**  
+Realiza un seguimiento acumulado de los datos eliminados en todas tus sesiones de limpieza:
+- Imágenes eliminadas
+- Archivos adjuntos eliminados
+- Cadenas de respuesta reducidas
+- Total ahorrado
+
+Los ahorros se almacenan localmente en tu dispositivo y persisten entre sesiones.
+
 ## Resumen de funcionalidades
 
 | Comando | Imágenes | Archivos adjuntos | Cadena de respuesta |
@@ -93,3 +109,5 @@ Cada categoría muestra el número de elementos procesados y el espacio liberado
 | Conservar 2 respuestas | Conservadas | Conservados | ✅ Reducida |
 | Conservar solo la selección | Según selección | Conservados | Según selección |
 | Limpieza completa | ✅ Eliminadas | ✅ Eliminados | ✅ Reducida |
+
+ℹ️ Configuración abre el panel de preferencias — no actúa sobre el contenido del correo.

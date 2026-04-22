@@ -31,6 +31,13 @@ MailLighter ne collecte, ne stocke et ne transmet :
 
 Après l'installation, MailLighter n'effectue **aucune requête réseau**. Le complément fonctionne entièrement hors ligne. Vous pouvez le vérifier en surveillant le trafic réseau pendant son utilisation.
 
+### Stockage local (suivi des économies)
+
+Le panneau Paramètres stocke trois valeurs numériques dans le localStorage de votre navigateur pour suivre le cumul de vos économies de nettoyage (octets supprimés par catégorie). Ces données :
+- ne quittent jamais votre appareil
+- ne contiennent ni contenu d'e-mail ni information personnelle
+- peuvent être effacées à tout moment en vidant les données du site dans votre navigateur
+
 ## Conformité RGPD
 
 MailLighter est conforme au RGPD par conception :
@@ -39,7 +46,7 @@ MailLighter est conforme au RGPD par conception :
 |----------------|-------------|
 | Minimisation des données | Aucune donnée collectée |
 | Limitation des finalités | Aucun traitement au-delà du nettoyage |
-| Limitation de stockage | Aucune donnée stockée |
+| Limitation de stockage | Aucune donnée personnelle stockée — uniquement des statistiques agrégées d'économies en localStorage |
 | Droit à l'effacement | Rien à effacer |
 | Portabilité des données | Aucune donnée à exporter |
 | Protection dès la conception | Architecture locale uniquement |

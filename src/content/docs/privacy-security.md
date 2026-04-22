@@ -31,6 +31,13 @@ MailLighter does not collect, store, or transmit:
 
 After installation, MailLighter makes **zero network requests**. The add-in operates entirely offline. You can verify this by monitoring network traffic while using it.
 
+### Local Storage (savings tracker)
+
+The Settings panel stores three numeric values in your browser's localStorage to track your cumulative cleanup savings (bytes removed by category). This data:
+- never leaves your device
+- contains no email content or personal information
+- can be cleared at any time by clearing your browser's site data
+
 ## GDPR Compliance
 
 MailLighter is GDPR compliant by design:
@@ -39,7 +46,7 @@ MailLighter is GDPR compliant by design:
 |-------------------|-------------|
 | Data minimization | No data collected |
 | Purpose limitation | No processing beyond email cleanup |
-| Storage limitation | No data stored |
+| Storage limitation | No personal data stored — only aggregate savings stats in localStorage |
 | Right to erasure | Nothing to erase |
 | Data portability | No data to export |
 | Privacy by design | Local-only architecture |

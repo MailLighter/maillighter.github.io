@@ -21,6 +21,7 @@ Primera versión pública de MailLighter.
 - **Conservar 2 respuestas** : reduce la conversación a las 2 últimas respuestas, con notificación del número de respuestas detectadas
 - **Conservar solo la selección** : reemplaza el contenido del correo por el texto seleccionado únicamente (puede contener imágenes)
 - **Limpieza completa** : ejecuta todas las operaciones de una sola vez con un resumen detallado (imágenes, adjuntos, respuestas, total ahorrado)
+- **Configuración** : panel de preferencias accesible desde el menú desplegable, con mensaje ecológico (pie de página ecológico personalizable para los correos enviados) y registro de ahorros (datos acumulados eliminados en todas las sesiones, almacenados localmente)
 - Soporte multilingüe: inglés, francés, español — las etiquetas de la cinta y las notificaciones se adaptan al idioma de visualización de Outlook
 - Procesamiento 100 % local — sin servidor externo, ningún dato sale de tu dispositivo
 - Compatible con Outlook Desktop (Windows, macOS) y Outlook en la Web

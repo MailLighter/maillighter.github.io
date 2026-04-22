@@ -21,6 +21,7 @@ Initial public release of MailLighter.
 - **Keep 2 replies** : trims the conversation to the last 2 replies, with reply count notification
 - **Keep selection only** : replaces the email body with only the selected text (can include images)
 - **Full cleanup** : runs all cleanup operations at once with a detailed summary (images, attachments, replies, total saved)
+- **Settings** : preferences panel accessible from the dropdown menu, with eco message (customizable ecological footer for outgoing emails) and savings tracker (cumulative data removed across all sessions, stored locally)
 - Multilingual support : English, French, Spanish — ribbon labels and notifications adapt to the Outlook display language
 - 100 % local processing — no external server, no data leaves your device
 - Compatible with Outlook Desktop (Windows, macOS) and Outlook on the Web
