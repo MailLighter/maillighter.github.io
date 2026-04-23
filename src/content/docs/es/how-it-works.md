@@ -12,7 +12,7 @@ MailLighter está construido sobre Office.js, la API oficial de Microsoft para c
 
 ```
 ┌─────────────────────────────────────────┐
-│              Outlook Desktop            │
+│                 Outlook                 │
 │  ┌───────────────────────────────────┐  │
 │  │     Complemento MailLighter       │  │
 │  │  ┌─────────┐  ┌───────────────┐  │  │

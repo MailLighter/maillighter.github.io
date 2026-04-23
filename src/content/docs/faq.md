@@ -50,7 +50,7 @@ Not currently. Outlook Mobile does not support the add-in features MailLighter r
 
 ### Does it work with Gmail or other email clients?
 
-No. MailLighter is built on Office.js, which is specific to Microsoft Outlook.
+No. MailLighter is built on Office.js, which is specific to Microsoft Outlook. If you would like to see MailLighter's features available on Gmail, let us know through our [contact form](/contact).
 
 ## Features
 
@@ -84,7 +84,7 @@ No. MailLighter operates within the standard Microsoft 365 security framework an
 
 ### How does MailLighter help with CSR reporting?
 
-MailLighter provides a concrete action for organizations working on CSR/ESG. By reducing email weight across your organization, you demonstrate operational commitment to digital sobriety.
+MailLighter provides a concrete action for organizations working on CSR/ESG. By reducing email weight across your organization, you demonstrate operational commitment to digital sobriety. If you wish to obtain a CSR report of all the savings achieved within your organization, a paid version of MailLighter is required; you can request it via our [contact form](/contact).
 
 ### What is the environmental impact of lighter emails?
 
