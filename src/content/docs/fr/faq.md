@@ -50,7 +50,7 @@ Non. Outlook Mobile ne prend pas en charge les fonctionnalités de compléments 
 
 ### Fonctionne-t-il avec Gmail ou d'autres clients de messagerie ?
 
-Non. MailLighter est construit sur Office.js, qui est spécifique à Microsoft Outlook.
+Non. MailLighter est construit sur Office.js, qui est spécifique à Microsoft Outlook. Si vous souhaitez retrouver les fonctionnalités de MailLighter sur Gmail, faites-le nous savoir à l'aide de notre [formulaire de contact](/fr/contact).
 
 ## Fonctionnalités
 
@@ -84,7 +84,7 @@ Non. MailLighter fonctionne dans le cadre de sécurité standard de Microsoft 36
 
 ### Comment MailLighter aide-t-il pour le reporting RSE ?
 
-MailLighter fournit une action concrète pour les organisations qui agissent sur la RSE / ESG. En réduisant le poids des e-mails dans votre organisation, vous démontrez un engagement opérationnel en faveur de la sobriété numérique.
+MailLighter fournit une action concrète pour les organisations qui agissent sur la RSE / ESG. En réduisant le poids des e-mails dans votre organisation, vous démontrez un engagement opérationnel en faveur de la sobriété numérique. Si vous souhaitez obtenir un rapport RSE de toutes les économies réalisées au sein de votre organisation, une version payante de MailLighter est nécessaire ; vous pouvez en faire la demande via notre [formulaire de contact](/fr/contact).
 
 ### Quel est l'impact environnemental d'e-mails plus légers ?
 

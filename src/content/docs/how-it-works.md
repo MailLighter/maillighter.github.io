@@ -12,7 +12,7 @@ MailLighter is built on Office.js, Microsoft's official API for Outlook add-ins.
 
 ```
 ┌─────────────────────────────────────────┐
-│              Outlook Desktop            │
+│                 Outlook                 │
 │  ┌───────────────────────────────────┐  │
 │  │         MailLighter Add-in        │  │
 │  │  ┌─────────┐  ┌───────────────┐  │  │

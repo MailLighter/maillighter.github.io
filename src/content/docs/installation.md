@@ -29,13 +29,14 @@ The add-in appears in your ribbon immediately. No restart required.
 
 ## Verify Installation
 
-Once installed, you should see a **MailLighter** dropdown in the ribbon when composing an email; the MailLighter dropdown may be located under "Apps". The dropdown menu contains the following 5 features:
+Once installed, you should see a **MailLighter** dropdown in the ribbon when composing an email; the MailLighter dropdown may be located under "Apps". The dropdown menu contains the following 6 features:
 
 - Keep selection only
 - Remove images
 - Remove attachments
 - Keep 2 replies
 - Full cleanup
+- Settings
 
 If you don't see the ribbon group, check the [Troubleshooting](/docs/troubleshooting) guide.
 

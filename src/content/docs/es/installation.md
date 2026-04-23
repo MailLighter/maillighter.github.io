@@ -29,13 +29,14 @@ El complemento aparece en la cinta inmediatamente. No es necesario reiniciar.
 
 ## Verificar la instalación
 
-Una vez instalado, deberías ver un menú desplegable **MailLighter** en la cinta al redactar un correo; el menú desplegable MailLighter puede encontrarse en "Aplicaciones". El menú contiene las 5 funcionalidades siguientes:
+Una vez instalado, deberías ver un menú desplegable **MailLighter** en la cinta al redactar un correo; el menú desplegable MailLighter puede encontrarse en "Aplicaciones". El menú contiene las 6 funcionalidades siguientes:
 
 - Conservar solo la selección
 - Eliminar imágenes
 - Eliminar archivos adjuntos
 - Conservar 2 respuestas
 - Limpieza completa
+- Configuración
 
 Si no ves el grupo en la cinta, consulta la guía de [Solución de problemas](/es/docs/troubleshooting).
 
