@@ -15,10 +15,10 @@ Every day, emails accumulate inline images (especially signatures), heavy attach
 MailLighter solves this with **5 targeted features** accessible from Outlook's ribbon menu:
 
 - <img src="/images/icon-remove-images-80.png" alt="" width="24" height="24" style="display:inline;vertical-align:middle;margin-right:6px;"> **Remove images** : Strip all inline images from the email body
-- <img src="/images/icon-remove-attachments-80.png" alt="" width="24" height="24" style="display:inline;vertical-align:middle;margin-right:6px;"> **Remove attachments** : Delete all file attachments
 - <img src="/images/icon-keep-replies-80.png" alt="" width="24" height="24" style="display:inline;vertical-align:middle;margin-right:6px;"> **Keep 2 replies** : Trim the conversation to the last 2 replies only
-- <img src="/images/icon-keep-selection-80.png" alt="" width="24" height="24" style="display:inline;vertical-align:middle;margin-right:6px;"> **Keep selection only** : Keep only the text you've selected, remove everything else
+- <img src="/images/icon-remove-attachments-80.png" alt="" width="24" height="24" style="display:inline;vertical-align:middle;margin-right:6px;"> **Remove attachments** : Delete all file attachments
 - <img src="/images/icon-clean-all-80.png" alt="" width="24" height="24" style="display:inline;vertical-align:middle;margin-right:6px;"> **Full cleanup** : Apply all of the above in a single action
+- <img src="/images/icon-keep-selection-80.png" alt="" width="24" height="24" style="display:inline;vertical-align:middle;margin-right:6px;"> **Keep selection only** : Keep only the text you've selected, remove everything else
 
 ## Key Benefits
 
