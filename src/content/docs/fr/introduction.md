@@ -15,10 +15,10 @@ Chaque jour, les e-mails accumulent des images intégrées (notamment des signat
 MailLighter résout ce problème avec **5 fonctionnalités ciblées** accessibles depuis le ruban d'Outlook :
 
 - <img src="/images/icon-remove-images-80.png" alt="" width="24" height="24" style="display:inline;vertical-align:middle;margin-right:6px;"> **Supprimer les images** : Retire toutes les images intégrées au corps de l'e-mail
-- <img src="/images/icon-remove-attachments-80.png" alt="" width="24" height="24" style="display:inline;vertical-align:middle;margin-right:6px;"> **Supprimer les pièces jointes** : Supprime toutes les pièces jointes
 - <img src="/images/icon-keep-replies-80.png" alt="" width="24" height="24" style="display:inline;vertical-align:middle;margin-right:6px;"> **Conserver 2 réponses** : Ne conserve que les 2 dernières réponses de la conversation
-- <img src="/images/icon-keep-selection-80.png" alt="" width="24" height="24" style="display:inline;vertical-align:middle;margin-right:6px;"> **Ne garder que la sélection** : Ne conserve que le texte que vous avez sélectionné
+- <img src="/images/icon-remove-attachments-80.png" alt="" width="24" height="24" style="display:inline;vertical-align:middle;margin-right:6px;"> **Supprimer les pièces jointes** : Supprime toutes les pièces jointes
 - <img src="/images/icon-clean-all-80.png" alt="" width="24" height="24" style="display:inline;vertical-align:middle;margin-right:6px;"> **Nettoyage complet** : Applique toutes les opérations en une seule action
+- <img src="/images/icon-keep-selection-80.png" alt="" width="24" height="24" style="display:inline;vertical-align:middle;margin-right:6px;"> **Ne garder que la sélection** : Ne conserve que le texte que vous avez sélectionné
 
 ## Avantages clés
 

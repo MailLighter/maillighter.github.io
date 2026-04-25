@@ -15,10 +15,10 @@ Cada día, los correos electrónicos acumulan imágenes integradas (especialment
 MailLighter resuelve esto con **5 funcionalidades específicas** accesibles desde la cinta de Outlook:
 
 - <img src="/images/icon-remove-images-80.png" alt="" width="24" height="24" style="display:inline;vertical-align:middle;margin-right:6px;"> **Eliminar imágenes** : Retira todas las imágenes integradas del cuerpo del correo
-- <img src="/images/icon-remove-attachments-80.png" alt="" width="24" height="24" style="display:inline;vertical-align:middle;margin-right:6px;"> **Eliminar archivos adjuntos** : Suprime todos los archivos adjuntos
 - <img src="/images/icon-keep-replies-80.png" alt="" width="24" height="24" style="display:inline;vertical-align:middle;margin-right:6px;"> **Conservar 2 respuestas** : Conserva solo las 2 últimas respuestas de la conversación
-- <img src="/images/icon-keep-selection-80.png" alt="" width="24" height="24" style="display:inline;vertical-align:middle;margin-right:6px;"> **Conservar solo la selección** : Conserva solo el texto que has seleccionado
+- <img src="/images/icon-remove-attachments-80.png" alt="" width="24" height="24" style="display:inline;vertical-align:middle;margin-right:6px;"> **Eliminar archivos adjuntos** : Suprime todos los archivos adjuntos
 - <img src="/images/icon-clean-all-80.png" alt="" width="24" height="24" style="display:inline;vertical-align:middle;margin-right:6px;"> **Limpieza completa** : Aplica todas las operaciones en una sola acción
+- <img src="/images/icon-keep-selection-80.png" alt="" width="24" height="24" style="display:inline;vertical-align:middle;margin-right:6px;"> **Conservar solo la selección** : Conserva solo el texto que has seleccionado
 
 ## Ventajas clave
 

@@ -31,11 +31,11 @@ Le complément apparaît immédiatement dans votre ruban. Aucun redémarrage n'e
 
 Une fois installé, vous devriez voir un menu déroulant **MailLighter** dans le ruban lors de la rédaction d'un e-mail ; le menu déroulant MailLighter peut se trouver dans "Applications". Ce menu contient les 6 fonctionnalités suivantes :
 
-- Ne garder que la sélection
 - Supprimer les images
-- Supprimer les pièces jointes
 - Conserver 2 réponses
+- Supprimer les pièces jointes
 - Nettoyage complet
+- Ne garder que la sélection
 - Paramètres
 
 Si vous ne voyez pas le groupe dans le ruban, consultez le guide de [Dépannage](/fr/docs/troubleshooting).

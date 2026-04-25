@@ -1,6 +1,6 @@
 ---
 title: "Fonctionnalités"
-description: "Découvrez les 6 fonctionnalités de MailLighter : supprimer les images, supprimer les pièces jointes, conserver 2 réponses, ne garder que la sélection, nettoyage complet et paramètres."
+description: "Découvrez les 6 fonctionnalités de MailLighter : supprimer les images, conserver 2 réponses, supprimer les pièces jointes, nettoyage complet, ne garder que la sélection et paramètres."
 section: "Utilisation"
 order: 3
 draft: false
@@ -24,6 +24,20 @@ Retire toutes les images intégrées (balises `<img>`) du corps de l'e-mail. Uti
 
 ℹ️ **Confirmation :** Une confirmation affiche le nombre d'images supprimées et l'espace libéré.
 
+## Conserver 2 réponses
+
+Réduit la conversation en ne conservant que les **2 dernières réponses**. Parfait pour les longues chaînes d'e-mails où seuls les échanges récents comptent.
+
+**Ce qui est supprimé :**
+- Toutes les réponses au-delà des 2 plus récentes
+
+**Ce qui est conservé :**
+- Le message actuel
+- La réponse précédente
+- Tout le contenu de ces 2 messages (images, mise en forme)
+
+ℹ️ **Confirmation :** Une confirmation affiche le nombre de réponses détectées et l'espace libéré.
+
 ## Supprimer les pièces jointes
 
 Supprime toutes les pièces jointes de l'e-mail, à l'exception des images intégrées dans le corps du message. Idéal pour transférer uniquement le contenu du message sans les fichiers joints.
@@ -38,19 +52,22 @@ Supprime toutes les pièces jointes de l'e-mail, à l'exception des images inté
 
 ℹ️ **Confirmation :** Une confirmation affiche le nombre de pièces jointes supprimées et l'espace libéré.
 
-## Conserver 2 réponses
+## Nettoyage complet
 
-Réduit la conversation en ne conservant que les **2 dernières réponses**. Parfait pour les longues chaînes d'e-mails où seuls les échanges récents comptent.
+Applique toutes les opérations de nettoyage en une fois : supprime les images, supprime les pièces jointes et ne garde que les 2 dernières réponses. C'est le moyen le plus rapide de nettoyer un e-mail avant de le transférer.
 
-**Ce qui est supprimé :**
-- Toutes les réponses au-delà des 2 plus récentes
+**Équivalent à exécuter :**
+1. Supprimer les images
+2. Conserver 2 réponses
+3. Supprimer les pièces jointes
 
-**Ce qui est conservé :**
-- Le message actuel
-- La réponse précédente
-- Tout le contenu de ces 2 messages (images, mise en forme)
+**Résumé détaillé :** Après le nettoyage, une notification affiche un rapport détaillé :
 
-ℹ️ **Confirmation :** Une confirmation affiche le nombre de réponses détectées et l'espace libéré.
+```
+✅ Nettoyage complet terminé — Images : 3 (150 Ko) | Pièces jointes : 3 (252,4 Ko) | Réponses : 2 | Total économisé : 402,4 Ko
+```
+
+Chaque catégorie indique le nombre d'éléments traités et l'espace libéré, le cas échéant. Pour les réponses, la réduction est affichée (ex. : 5 → 2).
 
 ## Ne garder que la sélection
 
@@ -66,23 +83,6 @@ Ne conserve que le texte que vous avez **sélectionné manuellement** dans l'e-m
 
 **Ce qui est conservé :**
 - Votre texte sélectionné, avec la mise en forme préservée
-
-## Nettoyage complet
-
-Applique toutes les opérations de nettoyage en une fois : supprime les images, supprime les pièces jointes et ne garde que les 2 dernières réponses. C'est le moyen le plus rapide de nettoyer un e-mail avant de le transférer.
-
-**Équivalent à exécuter :**
-1. Supprimer les images
-2. Supprimer les pièces jointes
-3. Conserver 2 réponses
-
-**Résumé détaillé :** Après le nettoyage, une notification affiche un rapport détaillé :
-
-```
-✅ Nettoyage complet terminé — Images : 3 (150 Ko) | Pièces jointes : 3 (252,4 Ko) | Réponses : 2 | Total économisé : 402,4 Ko
-```
-
-Chaque catégorie indique le nombre d'éléments traités et l'espace libéré, le cas échéant. Pour les réponses, la réduction est affichée (ex. : 5 → 2).
 
 ## Paramètres
 
@@ -105,9 +105,9 @@ Les économies sont stockées localement sur votre appareil et persistent entre 
 | Commande | Images | Pièces jointes | Chaîne de réponse |
 |----------|--------|----------------|-------------------|
 | Supprimer les images | ✅ Supprimées | Conservées | Conservée |
-| Supprimer les pièces jointes | Conservées | ✅ Supprimées | Conservée |
 | Conserver 2 réponses | Conservées | Conservées | ✅ Réduite |
-| Ne garder que la sélection | Selon sélection | Conservées | Selon sélection |
+| Supprimer les pièces jointes | Conservées | ✅ Supprimées | Conservée |
 | Nettoyage complet | ✅ Supprimées | ✅ Supprimées | ✅ Réduite |
+| Ne garder que la sélection | Selon sélection | Conservées | Selon sélection |
 
 ℹ️ Paramètres ouvre le panneau de préférences — cette option n'agit pas sur le contenu de l'e-mail.

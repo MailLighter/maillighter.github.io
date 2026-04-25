@@ -1,6 +1,6 @@
 ---
 title: "Features"
-description: "Discover MailLighter's 6 features: remove images, remove attachments, keep 2 replies, keep selection only, full cleanup, and settings."
+description: "Discover MailLighter's 6 features: remove images, keep 2 replies, remove attachments, full cleanup, keep selection only, and settings."
 section: "Usage"
 order: 3
 draft: false
@@ -24,6 +24,20 @@ Strips all inline images (`<img>` tags) from the email body. Useful when forward
 
 ℹ️ **Confirmation:** A confirmation shows the number of images removed and the space saved.
 
+## Keep 2 Replies
+
+Trims the email conversation to keep only the **last 2 replies**. This is perfect for long email threads where only the recent exchanges matter.
+
+**What it removes:**
+- All replies beyond the 2 most recent ones
+
+**What it keeps:**
+- The current message
+- The previous reply
+- All content within those 2 messages (images, formatting)
+
+ℹ️ **Confirmation:** A confirmation shows the number of replies detected and the space saved.
+
 ## Remove Attachments
 
 Removes all attached files from the email, excluding inline images embedded in the body. Ideal when you need to forward just the message content without the attached files.
@@ -38,19 +52,22 @@ Removes all attached files from the email, excluding inline images embedded in t
 
 ℹ️ **Confirmation:** A confirmation shows the number of attachments removed and the space saved.
 
-## Keep 2 Replies
+## Full Cleanup
 
-Trims the email conversation to keep only the **last 2 replies**. This is perfect for long email threads where only the recent exchanges matter.
+Applies all cleanup operations at once: removes images, removes attachments, and keeps only the last 2 replies. This is the quickest way to fully clean an email before forwarding.
 
-**What it removes:**
-- All replies beyond the 2 most recent ones
+**Equivalent to running:**
+1. Remove images
+2. Keep 2 replies
+3. Remove attachments
 
-**What it keeps:**
-- The current message
-- The previous reply
-- All content within those 2 messages (images, formatting)
+**Detailed summary:** After cleanup, a notification displays a detailed report:
 
-ℹ️ **Confirmation:** A confirmation shows the number of replies detected and the space saved.
+```
+✅ Full cleanup completed — Images: 3 (150 KB) | Attachments: 3 (252.4 KB) | Replies: 2 | Total saved: 402.4 KB
+```
+
+Each category shows the count of items processed and the space saved when applicable. For replies, the reduction is displayed (e.g. 5 → 2).
 
 ## Keep Selection Only
 
@@ -66,23 +83,6 @@ Keeps only the text you have **manually selected** in the email, removing everyt
 
 **What it keeps:**
 - Your selected text, with formatting preserved
-
-## Full Cleanup
-
-Applies all cleanup operations at once: removes images, removes attachments, and keeps only the last 2 replies. This is the quickest way to fully clean an email before forwarding.
-
-**Equivalent to running:**
-1. Remove images
-2. Remove attachments
-3. Keep 2 replies
-
-**Detailed summary:** After cleanup, a notification displays a detailed report:
-
-```
-✅ Full cleanup completed — Images: 3 (150 KB) | Attachments: 3 (252.4 KB) | Replies: 2 | Total saved: 402.4 KB
-```
-
-Each category shows the count of items processed and the space saved when applicable. For replies, the reduction is displayed (e.g. 5 → 2).
 
 ## Settings
 
@@ -105,9 +105,9 @@ Savings are stored locally on your device and persist across sessions.
 | Command | Images | Attachments | Reply chain |
 |---------|--------|-------------|-------------|
 | Remove images | ✅ Removed | Kept | Kept |
-| Remove attachments | Kept | ✅ Removed | Kept |
 | Keep 2 replies | Kept | Kept | ✅ Trimmed |
-| Keep selection only | Per selection | Kept | Per selection |
+| Remove attachments | Kept | ✅ Removed | Kept |
 | Full cleanup | ✅ Removed | ✅ Removed | ✅ Trimmed |
+| Keep selection only | Per selection | Kept | Per selection |
 
 ℹ️ Settings opens the preferences panel — it does not act on email content.
