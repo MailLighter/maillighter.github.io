@@ -23,6 +23,8 @@ export type {
   Navigation,
   SocialLinks,
   ContactInfo,
+  SupportInfo,
+  EnterpriseInfo,
   ContactFAQ,
   LegalConfig,
   FeatureFlags,
@@ -32,8 +34,7 @@ export type {
 
 // Import individual configs to build merged object
 import { name, description, url, author, logo, ogImage, social, legal } from './site';
-import { contact } from './contact';
-import { navigation } from './navigation';
+import { contact, support, enterprise } from './contact';
 import { features } from './features';
 import { announcement } from './content';
 
@@ -55,8 +56,9 @@ export const siteConfig: SiteConfig = {
   ogImage,
   social,
   contact,
+  support,
+  enterprise,
   legal,
-  navigation,
   features,
   announcement,
 };

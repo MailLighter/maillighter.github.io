@@ -11,6 +11,8 @@ export interface NavigationItem {
   href: string;
   /** Feature flag key - item only shows if this feature is enabled */
   feature?: keyof FeatureFlags;
+  /** Small pill rendered next to the label (e.g. "Coming Q3 2026"). */
+  badge?: string;
 }
 
 export interface NavigationCTA {
@@ -79,6 +81,14 @@ export interface AnnouncementConfig {
   dismissible: boolean;
 }
 
+export interface SupportInfo {
+  email: string;
+}
+
+export interface EnterpriseInfo {
+  email: string;
+}
+
 export interface SiteConfig {
   name: string;
   description: string;
@@ -87,9 +97,10 @@ export interface SiteConfig {
   logo: string;
   ogImage: string;
   contact: ContactInfo;
+  support: SupportInfo;
+  enterprise: EnterpriseInfo;
   legal: LegalConfig;
   social: SocialLinks;
-  navigation: Navigation;
   features: FeatureFlags;
   announcement: AnnouncementConfig;
 }
