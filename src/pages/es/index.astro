@@ -49,11 +49,11 @@ import { siteConfig } from '@/config';
             <div class="ribbon-ml">
               <div class="rbtn blue"><img src="/images/icon-80.png" alt="" class="rbtn-icon"> MailLighter <span class="rbtn-chevron">▾</span></div>
               <div class="ml-dropdown">
-                <div class="ml-dropdown-item"><img src="/images/icon-keep-selection-80.png" alt=""> Conservar solo selección</div>
                 <div class="ml-dropdown-item"><img src="/images/icon-remove-images-80.png" alt=""> Eliminar imágenes</div>
-                <div class="ml-dropdown-item"><img src="/images/icon-remove-attachments-80.png" alt=""> Eliminar adjuntos</div>
                 <div class="ml-dropdown-item"><img src="/images/icon-keep-replies-80.png" alt=""> Conservar últimas 2 respuestas</div>
+                <div class="ml-dropdown-item"><img src="/images/icon-remove-attachments-80.png" alt=""> Eliminar adjuntos</div>
                 <div class="ml-dropdown-item"><img src="/images/icon-clean-all-80.png" alt=""> Limpieza completa</div>
+                <div class="ml-dropdown-item"><img src="/images/icon-keep-selection-80.png" alt=""> Conservar solo selección</div>
                 <div class="ml-dropdown-item"><img src="/images/icon-settings-80.png" alt=""> Configuración</div>
               </div>
             </div>
@@ -93,9 +93,9 @@ import { siteConfig } from '@/config';
         <span class="stat-badge">impacto GEI</span>
       </div>
       <div class="stat-item">
-        <div class="stat-num">~<span class="stat-unit">200×</span></div>
-        <div class="stat-label">menos datos en tránsito tras una limpieza de MailLighter</div>
-        <span class="stat-badge">ahorro</span>
+        <div class="stat-num">~<span class="stat-unit">40 %</span></div>
+        <div class="stat-label">más ligero — reducción media de tamaño por email limpiado</div>
+        <span class="stat-badge">ahorro medio</span>
       </div>
     </div>
   </section>
@@ -105,26 +105,56 @@ import { siteConfig } from '@/config';
     <div class="ba-header">
       <span class="section-eyebrow green">Impacto real</span>
       <h2 class="section-title">Un clic. Una diferencia medible.</h2>
-      <p class="section-sub">La transformación concreta en un correo real.</p>
+      <p class="section-sub">La transformación concreta sobre un correo clásico.</p>
     </div>
-    <div class="ba-cards">
-      <div class="ba-card">
-        <div class="ba-label">📧 Antes</div>
-        <div class="ba-size red">2.8 MB</div>
-        <div class="ba-details">8 imágenes incrustadas<br>2 adjuntos olvidados<br>4 semanas de historial</div>
-        <span class="ba-chip bad">🌡️ ≈ 8 g CO₂</span>
+    <div class="ba-scenarios">
+      <div class="ba-scenario">
+        <div class="ba-scenario-title">Limpieza de hilo cargado <span class="ba-scenario-tag">caso extremo real</span></div>
+        <div class="ba-cards">
+          <div class="ba-card">
+            <div class="ba-label">📧 Antes</div>
+            <div class="ba-size red">2,8 MB</div>
+            <div class="ba-details">8 imágenes integradas<br>2 adjuntos olvidados<br>4 semanas de historial</div>
+            <span class="ba-chip bad">🌡️ ≈ 7,6 g CO₂ evitados por envío</span>
+          </div>
+          <div class="ba-divider">
+            <div class="ba-arrow-circle">→</div>
+            <div class="ba-ratio">150×<br>más ligero</div>
+          </div>
+          <div class="ba-card after">
+            <div class="ba-label green">✉️ Después de MailLighter</div>
+            <div class="ba-size green">18 KB</div>
+            <div class="ba-details">Solo texto<br>2 respuestas recientes conservadas<br>Nada superfluo</div>
+            <span class="ba-chip good">🌿 5 destinatarios · almacenamiento 24 meses</span>
+          </div>
+        </div>
       </div>
-      <div class="ba-divider">
-        <div class="ba-arrow-circle">→</div>
-        <div class="ba-ratio">150×<br>más ligero</div>
-      </div>
-      <div class="ba-card after">
-        <div class="ba-label green">✉️ Después de MailLighter</div>
-        <div class="ba-size green">18 KB</div>
-        <div class="ba-details">Solo texto<br>2 respuestas recientes conservadas<br>Nada superfluo</div>
-        <span class="ba-chip good">🌿 ≈ 0.05 g CO₂</span>
+
+      <div class="ba-scenario">
+        <div class="ba-scenario-title">Limpieza típica <span class="ba-scenario-tag">caso cotidiano</span></div>
+        <div class="ba-cards">
+          <div class="ba-card">
+            <div class="ba-label">📧 Antes</div>
+            <div class="ba-size red">~210 KB</div>
+            <div class="ba-details">Logos y banners de firma<br>5 respuestas en el hilo<br>Un pequeño adjunto</div>
+            <span class="ba-chip bad">🌡️ ≈ 0,3 g CO₂ evitados por envío</span>
+          </div>
+          <div class="ba-divider">
+            <div class="ba-arrow-circle">→</div>
+            <div class="ba-ratio">~40 %<br>más ligero</div>
+          </div>
+          <div class="ba-card after">
+            <div class="ba-label green">✉️ Después de MailLighter</div>
+            <div class="ba-size green">~120 KB</div>
+            <div class="ba-details">Firma limpia<br>2 respuestas recientes conservadas<br>Huella reducida, mismo mensaje</div>
+            <span class="ba-chip good">🌿 5 destinatarios · almacenamiento 24 meses</span>
+          </div>
+        </div>
       </div>
     </div>
+    <p class="ba-methodology-note">
+      Todas las cifras se basan en hipótesis conservadoras y en la <a href="/es/methodology">metodología carbono pública MailLighter v1.1</a> — alineada con el GHG Protocol y la ADEME Base Empreinte 2025.
+    </p>
   </section>
 
   <!-- ════ FEATURES ════ -->
@@ -162,7 +192,7 @@ import { siteConfig } from '@/config';
         <div class="fcard">
           <div class="fcard-icon"><svg viewBox="0 0 20 20"><rect x="3" y="11" width="14" height="8" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/><circle cx="10" cy="15" r="1" fill="#93c5fd"/></svg></div>
           <div class="fcard-name">100 % local</div>
-          <div class="fcard-desc">Funciona completamente dentro de Outlook vía Office.js. Ningún dato sale de su dispositivo.</div>
+          <div class="fcard-desc">Por defecto, MailLighter funciona completamente dentro de Outlook. El contenido de sus emails nunca sale de su dispositivo. Las organizaciones con plan Enterprise pueden activar el envío de métricas de impacto anonimizadas para el reporting CSRD. <a href="/es/enterprise" class="fcard-link">Saber más →</a></div>
         </div>
       </div>
     </div>
@@ -416,12 +446,19 @@ import { siteConfig } from '@/config';
   .section-sub { font-size: 1rem; color: var(--ml-ink-soft); line-height: 1.7; max-width: 520px; margin-bottom: 48px; }
 
   /* ── BEFORE / AFTER ── */
-  .ba-section { padding: 100px 52px; max-width: 1100px; margin: 0 auto; }
+  .ba-section { padding: 100px 52px; max-width: 1200px; margin: 0 auto; }
   .ba-header { text-align: center; }
   .ba-header .section-sub { margin: 0 auto 48px; }
-  .ba-cards { display: grid; grid-template-columns: 1fr 56px 1fr; align-items: center; }
+  .ba-scenarios { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+  .ba-scenario { display: flex; flex-direction: column; gap: 18px; }
+  .ba-scenario-title { font-size: 0.95rem; font-weight: 700; color: var(--ml-ink); text-align: center; display: flex; align-items: center; justify-content: center; gap: 8px; flex-wrap: wrap; }
+  .ba-scenario-tag { font-size: 0.7rem; font-weight: 600; color: var(--ml-ink-mute); background: var(--color-surface); border: 1px solid var(--color-border); padding: 2px 8px; border-radius: 999px; font-style: italic; }
+  .ba-methodology-note { margin: 36px auto 0; max-width: 760px; text-align: center; font-size: 0.82rem; font-style: italic; color: var(--ml-ink-mute); line-height: 1.6; }
+  .ba-methodology-note a { color: var(--ml-blue); text-decoration: underline; }
+  .ba-methodology-note a:hover { color: var(--ml-blue-dark); }
+  .ba-cards { display: grid; grid-template-columns: 1fr 56px 1fr; align-items: stretch; flex: 1; }
   .ba-card {
-    background: var(--color-surface); border-radius: 16px; padding: 36px 32px;
+    background: var(--color-surface); border-radius: 16px; padding: 28px 24px;
     border: 1px solid var(--color-border); box-shadow: 0 4px 24px var(--ml-shadow);
     transition: transform 0.3s;
   }
@@ -434,7 +471,7 @@ import { siteConfig } from '@/config';
   }
   .ba-label.green { color: var(--ml-green-dark); }
   :global(.dark) .ba-label.green { color: var(--ml-green); }
-  .ba-size { font-size: 3.2rem; line-height: 1; font-weight: 800; }
+  .ba-size { font-size: 2.4rem; line-height: 1; font-weight: 800; }
   .ba-size.red { color: #dc2626; }
   .ba-size.green { color: var(--ml-green); }
   .ba-details { font-size: 0.82rem; color: var(--ml-ink-soft); line-height: 2; margin: 14px 0; }
@@ -469,6 +506,7 @@ import { siteConfig } from '@/config';
   }
   .fcard:hover { background: rgba(255,255,255,0.09); border-color: rgba(74,162,81,0.4); transform: translateY(-3px); }
   .fcard.featured { border-color: rgba(74,162,81,0.5); background: rgba(74,162,81,0.08); grid-column: span 2; }
+  .features-grid .fcard:last-child { grid-column: 1 / -1; }
   .fcard-icon { width: 42px; height: 42px; background: rgba(21,100,192,0.25); border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-bottom: 14px; }
   .fcard-icon svg { width: 20px; height: 20px; stroke: #93c5fd; fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
   .fcard-icon img { width: 28px; height: 28px; border-radius: 4px; }
@@ -478,6 +516,8 @@ import { siteConfig } from '@/config';
   .fcard-tag.green { background: rgba(74,162,81,0.2); color: #86efac; }
   .fcard-name { font-size: 1.15rem; font-weight: 700; color: white; margin-bottom: 6px; }
   .fcard-desc { font-size: 0.83rem; color: rgba(255,255,255,0.55); line-height: 1.65; }
+  .fcard-link { color: #93c5fd; text-decoration: none; font-weight: 600; }
+  .fcard-link:hover { color: white; text-decoration: underline; }
 
   /* ── SOCIAL PROOF ── */
   .social-section { padding: 100px 52px; max-width: 1100px; margin: 0 auto; text-align: center; }
@@ -544,6 +584,9 @@ import { siteConfig } from '@/config';
   .cpill-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--ml-green); }
 
   /* ── RESPONSIVE ── */
+  @media (max-width: 1024px) {
+    .ba-scenarios { grid-template-columns: 1fr; gap: 36px; }
+  }
   @media (max-width: 768px) {
     .landing-hero { padding: 100px 20px 60px; }
     .hero-grid { grid-template-columns: 1fr; gap: 40px; }
@@ -551,6 +594,7 @@ import { siteConfig } from '@/config';
     .stats-inner { flex-direction: column; gap: 32px; }
     .stat-item:not(:last-child)::after { display: none; }
     .ba-section { padding: 60px 20px; }
+    .ba-scenarios { grid-template-columns: 1fr; gap: 36px; }
     .ba-cards { grid-template-columns: 1fr; gap: 20px; }
     .ba-divider { flex-direction: row; }
     .features-section { padding: 60px 20px; }

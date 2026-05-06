@@ -1,0 +1,197 @@
+---
+import MarketingLayout from '@/layouts/MarketingLayout.astro';
+import { siteConfig } from '@/config';
+
+const accessKey = import.meta.env.PUBLIC_WEB3FORMS_KEY || '';
+---
+
+<MarketingLayout
+  title={`Support — ${siteConfig.name}`}
+  description="Need help with MailLighter? Common questions, contact form, and response-time commitment."
+>
+  <div class="sup-wrap">
+    <!-- LEFT -->
+    <div class="sup-left">
+      <span class="page-eyebrow">Support</span>
+      <h1 class="sup-title">Need help?</h1>
+      <p class="sup-sub">You're in the right place. Browse common questions or send us a message.</p>
+
+      <div class="sup-faq">
+        <h2 class="sup-faq-title">Common questions</h2>
+        <div class="sup-faq-list">
+          <div class="sup-faq-item">
+            <h3 class="sup-faq-q">The MailLighter button doesn't appear in my Outlook ribbon</h3>
+            <p class="sup-faq-a">Try restarting Outlook. If it doesn't help, check your add-in is enabled in <em>File → Options → Add-ins</em> or <em>Home → More apps → Get Add-ins</em>.</p>
+          </div>
+          <div class="sup-faq-item">
+            <h3 class="sup-faq-q">The Full cleanup is removing things I want to keep</h3>
+            <p class="sup-faq-a">MailLighter preserves the 2 most recent replies by default. Use the <strong>Keep selection only</strong> feature to choose what to keep manually.</p>
+          </div>
+          <div class="sup-faq-item">
+            <h3 class="sup-faq-q">I deployed MailLighter via M365 Admin Center but users don't see it</h3>
+            <p class="sup-faq-a">Centralized deployment can take up to 24 hours to propagate. Users may need to restart Outlook once.</p>
+          </div>
+          <div class="sup-faq-item">
+            <h3 class="sup-faq-q">I want to give feedback or request a feature</h3>
+            <p class="sup-faq-a">Use the form on the right or email <a href={`mailto:${siteConfig.support.email}`}>{siteConfig.support.email}</a>.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="sup-meta">
+        <p><strong>Response time:</strong> We respond within 2 business days. Every message is read personally.</p>
+        <p>
+          <a href="/docs">Documentation</a> — installation, deployment, troubleshooting.<br />
+          <a href="/faq">FAQ</a> — privacy, features, and rollout.
+        </p>
+      </div>
+    </div>
+
+    <!-- FORM -->
+    <div class="sup-form-wrap">
+      <div class="form-title">Contact us</div>
+      <div class="form-sub">Fill in the form and we'll get back to you as soon as possible.</div>
+
+      <form
+        action="https://api.web3forms.com/submit"
+        method="POST"
+        class="sup-form"
+        data-has-access-key={accessKey ? 'true' : 'false'}
+      >
+        <input type="hidden" name="access_key" value={accessKey} />
+        <input type="hidden" name="from_name" value="MailLighter Support Form" />
+        <input type="hidden" name="subject" value="New support request" />
+        <div class="hidden" aria-hidden="true">
+          <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" />
+        </div>
+
+        <div class="sup-form-grid">
+          <div class="field-group">
+            <label for="lastName">Last name <span class="req">*</span></label>
+            <input type="text" id="lastName" name="lastName" required minlength="2" placeholder="Doe" />
+          </div>
+          <div class="field-group">
+            <label for="email">Email <span class="req">*</span></label>
+            <input type="email" id="email" name="email" required placeholder="jane@company.com" />
+          </div>
+          <div class="field-group">
+            <label for="requestType">Request type <span class="req">*</span></label>
+            <select id="requestType" name="requestType" required>
+              <option value="">— Select —</option>
+              <option>Bug</option>
+              <option>Feature request</option>
+              <option>Question</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="field-group">
+            <label for="platform">Outlook platform <span class="req">*</span></label>
+            <select id="platform" name="platform" required>
+              <option value="">— Select —</option>
+              <option>Outlook Desktop Windows</option>
+              <option>Outlook Desktop Mac</option>
+              <option>Outlook Web</option>
+            </select>
+          </div>
+          <div class="field-group full">
+            <label for="message">Description <span class="req">*</span></label>
+            <textarea id="message" name="message" rows="5" required minlength="10" placeholder="Describe what you observed and what you expected."></textarea>
+          </div>
+        </div>
+
+        <button type="submit" class="btn-submit">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M14 2L2 6l4 4 4 4 4-12zM6 10l2-2"/></svg>
+          Send request
+        </button>
+        <p class="form-privacy">🔒 Your data is never shared with third parties.</p>
+      </form>
+    </div>
+  </div>
+</MarketingLayout>
+
+<style>
+  .sup-wrap {
+    max-width: 1100px; margin: 0 auto; padding: 120px 52px 100px;
+    display: grid; grid-template-columns: 1fr 1.4fr; gap: 80px; align-items: start;
+  }
+  .page-eyebrow {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: var(--ml-blue-pale); color: var(--ml-blue);
+    font-size: 0.72rem; font-weight: 700; padding: 4px 12px; border-radius: 6px;
+    letter-spacing: 0.07em; text-transform: uppercase; margin-bottom: 16px;
+  }
+  .sup-title {
+    font-size: clamp(2rem, 3.5vw, 2.8rem); font-weight: 800;
+    color: var(--ml-ink); line-height: 1.1; margin-bottom: 16px;
+  }
+  .sup-sub { font-size: 1rem; color: var(--ml-ink-soft); line-height: 1.75; margin-bottom: 40px; }
+
+  .sup-faq { margin-bottom: 32px; }
+  .sup-faq-title { font-size: 1.15rem; font-weight: 700; color: var(--ml-ink); margin-bottom: 18px; }
+  .sup-faq-list { display: flex; flex-direction: column; gap: 16px; }
+  .sup-faq-item {
+    background: var(--color-surface); border: 1px solid var(--color-border);
+    border-radius: 12px; padding: 18px 20px;
+    transition: border-color 0.2s, transform 0.2s;
+  }
+  .sup-faq-item:hover { border-color: var(--ml-blue-light); transform: translateX(4px); }
+  .sup-faq-q { font-size: 0.9rem; font-weight: 600; color: var(--ml-ink); margin-bottom: 4px; }
+  .sup-faq-a { font-size: 0.82rem; color: var(--ml-ink-soft); line-height: 1.6; }
+  .sup-faq-a a { color: var(--ml-blue); text-decoration: none; font-weight: 500; }
+  .sup-faq-a a:hover { text-decoration: underline; }
+
+  .sup-meta { font-size: 0.88rem; color: var(--ml-ink-soft); line-height: 1.75; }
+  .sup-meta p { margin-bottom: 10px; }
+  .sup-meta a { color: var(--ml-blue); text-decoration: none; font-weight: 500; }
+  .sup-meta a:hover { text-decoration: underline; }
+
+  .sup-form-wrap {
+    background: var(--color-surface); border: 1px solid var(--color-border);
+    border-radius: 20px; padding: 40px;
+    box-shadow: 0 8px 40px var(--ml-shadow);
+  }
+  .form-title { font-size: 1.5rem; font-weight: 800; color: var(--ml-ink); margin-bottom: 6px; }
+  .form-sub { font-size: 0.87rem; color: var(--ml-ink-soft); margin-bottom: 28px; }
+
+  .sup-form { display: flex; flex-direction: column; gap: 16px; }
+  .sup-form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .field-group { display: flex; flex-direction: column; gap: 6px; }
+  .field-group.full { grid-column: 1 / -1; }
+  .field-group label { font-size: 0.85rem; font-weight: 600; color: var(--ml-ink); }
+  .req { color: #ef4444; }
+
+  .sup-form input, .sup-form select, .sup-form textarea {
+    width: 100%; padding: 10px 14px; border: 1px solid var(--color-border);
+    border-radius: 8px; background: white; color: var(--ml-ink);
+    font-size: 0.92rem; font-family: inherit;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+  .sup-form input::placeholder, .sup-form textarea::placeholder { color: #b0b8c5; }
+  .sup-form textarea { resize: vertical; }
+  .sup-form input:focus, .sup-form select:focus, .sup-form textarea:focus {
+    outline: none; border-color: var(--ml-blue); box-shadow: 0 0 0 3px rgba(21,100,192,0.15);
+  }
+  :global(.dark) .sup-form input,
+  :global(.dark) .sup-form select,
+  :global(.dark) .sup-form textarea { background: var(--color-bg); }
+
+  .btn-submit {
+    width: 100%; display: flex; align-items: center; justify-content: center; gap: 8px;
+    background: var(--ml-blue); color: white;
+    padding: 13px 26px; border-radius: 8px; font-weight: 600; font-size: 0.95rem;
+    border: 0; cursor: pointer; box-shadow: 0 4px 16px rgba(21,100,192,0.3);
+    transition: background 0.22s, transform 0.22s, box-shadow 0.22s;
+  }
+  .btn-submit:hover { background: var(--ml-blue-dark); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(21,100,192,0.35); }
+
+  .form-privacy { font-size: 0.78rem; color: var(--ml-ink-mute); text-align: center; margin-top: -4px; }
+
+  .hidden { display: none; }
+
+  @media (max-width: 768px) {
+    .sup-wrap { grid-template-columns: 1fr; gap: 40px; padding: 100px 20px 60px; }
+  }
+  @media (max-width: 640px) {
+    .sup-form-grid { grid-template-columns: 1fr; }
+  }
+</style>

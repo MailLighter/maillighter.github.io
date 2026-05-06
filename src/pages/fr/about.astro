@@ -1,0 +1,125 @@
+---
+import MarketingLayout from '@/layouts/MarketingLayout.astro';
+import { siteConfig } from '@/config';
+---
+
+<MarketingLayout
+  title={`À propos — ${siteConfig.name}`}
+  description="Mission, approche et mentions légales de MailLighter."
+>
+  <section class="doc-hero">
+    <div class="doc-hero-inner">
+      <span class="doc-eyebrow">À propos</span>
+      <h1 class="doc-title">À propos de <span class="ml-title-mail">Mail</span><span class="ml-title-lighter">Lighter</span></h1>
+      <p class="doc-sub">Mission, approche et mentions légales.</p>
+    </div>
+  </section>
+
+  <section class="doc-body">
+    <div class="doc-section">
+      <h2>Mission</h2>
+      <p>MailLighter a été créé pour faciliter le nettoyage des mails sortants. Il permet de rendre la sobriété numérique concrète, mesurable et accessible. Nous construisons l'outil le plus simple possible, focalisé sur un levier précis : diminuer le poids des emails et rendre les économies réalisées exploitables.</p>
+    </div>
+
+    <div class="doc-section">
+      <h2>Approche</h2>
+      <ul class="doc-list">
+        <li><strong>Ouvert par défaut.</strong> Code source sur GitHub sous licence MIT. Méthodologie publiée ouvertement.</li>
+        <li><strong>Vie privée d'abord.</strong> Aucun contenu d'email transmis, dans aucune version, dans aucun mode.</li>
+        <li><strong>Durabilité sérieuse.</strong> Méthodologie alignée GHG Protocol, ADEME, ESRS E1. Revue par les pairs indépendante prévue pour T2 2026.</li>
+      </ul>
+    </div>
+
+    <div class="doc-section">
+      <h2>Mentions légales</h2>
+      <h3 class="doc-sub-h">Éditeur</h3>
+      <p>
+        MailLighter<br>
+        Directeur de la publication : Alexandre Allouche
+      </p>
+
+      <h3 class="doc-sub-h">Hébergement</h3>
+      <p>
+        GitHub Pages<br>
+        37 quai du président Roosevelt<br>
+        92130 Issy-les-Moulineaux
+      </p>
+
+      <h3 class="doc-sub-h">Contact</h3>
+      <p><a href={`mailto:${siteConfig.contact.email}`}>{siteConfig.contact.email}</a></p>
+    </div>
+  </section>
+</MarketingLayout>
+
+<style>
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+
+  .doc-hero { position: relative; padding: 100px 52px 56px; text-align: center; overflow: hidden; }
+  .doc-hero::before {
+    content: ''; position: absolute; inset: 0; pointer-events: none; z-index: 0;
+    background:
+      radial-gradient(ellipse 60% 50% at 30% 0%, rgba(21,100,192,0.08), transparent 60%),
+      radial-gradient(ellipse 50% 50% at 80% 20%, rgba(74,162,81,0.05), transparent 60%);
+  }
+  :global(.dark) .doc-hero::before {
+    background:
+      radial-gradient(ellipse 60% 50% at 30% 0%, rgba(21,100,192,0.16), transparent 60%),
+      radial-gradient(ellipse 50% 50% at 80% 20%, rgba(74,162,81,0.10), transparent 60%);
+  }
+  .doc-hero-inner { position: relative; z-index: 1; max-width: 800px; margin: 0 auto; }
+  .doc-eyebrow {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: var(--ml-blue-pale); color: var(--ml-blue);
+    font-size: 0.72rem; font-weight: 700; padding: 4px 12px; border-radius: 999px;
+    letter-spacing: 0.07em; text-transform: uppercase; margin-bottom: 16px;
+    animation: fadeUp 0.6s ease-out both;
+  }
+  .doc-title { font-size: clamp(2rem, 3.5vw, 2.8rem); font-weight: 800; line-height: 1.1; margin-bottom: 16px; animation: fadeUp 0.6s ease-out 0.1s both; }
+  .ml-title-mail { color: var(--ml-blue); font-weight: 800; }
+  .ml-title-lighter { color: var(--ml-green); font-weight: 400; }
+  .doc-sub { font-size: 1rem; color: var(--ml-ink-soft); line-height: 1.75; max-width: 560px; margin: 0 auto; animation: fadeUp 0.6s ease-out 0.2s both; }
+
+  .doc-body { max-width: 760px; margin: 0 auto; padding: 0 52px 100px; }
+  .doc-section { margin-bottom: 48px; }
+  .doc-section h2 {
+    position: relative;
+    font-size: 1.25rem; font-weight: 700; margin-bottom: 14px;
+    padding-bottom: 10px; padding-left: 14px;
+    border-bottom: 1px solid var(--color-border);
+  }
+  .doc-section h2::before {
+    content: ''; position: absolute; left: 0; top: 4px; bottom: 14px;
+    width: 3px; border-radius: 2px;
+    background: linear-gradient(180deg, var(--ml-blue), var(--ml-green));
+  }
+  .doc-section h3.doc-sub-h { font-size: 1rem; font-weight: 700; margin: 20px 0 6px; color: var(--ml-ink); }
+  .doc-section p { font-size: 0.92rem; color: var(--ml-ink-soft); line-height: 1.75; margin-bottom: 12px; }
+  .doc-section a { color: var(--ml-blue); text-decoration: none; font-weight: 500; }
+  .doc-section a:hover { text-decoration: underline; }
+
+  .doc-list { list-style: none; padding: 0; margin: 0 0 12px; }
+  .doc-list li {
+    position: relative; padding-left: 26px; font-size: 0.92rem;
+    color: var(--ml-ink-soft); line-height: 1.75; margin-bottom: 8px;
+  }
+  .doc-list li::before {
+    content: ''; position: absolute; left: 2px; top: 9px;
+    width: 12px; height: 12px; border-radius: 50%;
+    background: var(--ml-green-pale);
+    border: 1.5px solid var(--ml-green);
+  }
+  .doc-list li::after {
+    content: ''; position: absolute; left: 6px; top: 12px;
+    width: 4px; height: 7px;
+    border-right: 1.5px solid var(--ml-green-dark);
+    border-bottom: 1.5px solid var(--ml-green-dark);
+    transform: rotate(45deg);
+  }
+  :global(.dark) .doc-list li::after { border-color: var(--ml-green); }
+  .doc-list strong { color: var(--ml-ink); }
+
+  @media (max-width: 640px) {
+    .doc-hero { padding: 80px 24px 40px; }
+    .doc-body { padding: 0 24px 60px; }
+  }
+</style>

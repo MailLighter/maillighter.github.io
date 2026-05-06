@@ -60,9 +60,10 @@ const langLabels: Record<Lang, string> = { en: 'English', fr: 'Français', es: '
           mainNavItems.map((item) => (
             <a
               href={item.href}
-              class="text-text-muted hover:text-primary transition-colors text-sm font-medium rounded-md px-2 py-1 focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background focus:outline-none"
+              class="inline-flex items-center gap-1.5 text-text-muted hover:text-primary transition-colors text-sm font-medium rounded-md px-2 py-1 focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background focus:outline-none"
             >
               {item.label}
+              {item.badge && <span class="nav-badge">{item.badge}</span>}
             </a>
           ))
         }
@@ -150,9 +151,10 @@ const langLabels: Record<Lang, string> = { en: 'English', fr: 'Français', es: '
         mainNavItems.map((item) => (
           <a
             href={item.href}
-            class="block px-3 py-3 rounded-md text-primary hover:text-primary-dark hover:bg-background transition-colors text-base font-medium focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-inset"
+            class="flex items-center gap-2 px-3 py-3 rounded-md text-primary hover:text-primary-dark hover:bg-background transition-colors text-base font-medium focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-inset"
           >
             {item.label}
+            {item.badge && <span class="nav-badge">{item.badge}</span>}
           </a>
         ))
       }
@@ -266,7 +268,18 @@ const langLabels: Record<Lang, string> = { en: 'English', fr: 'Français', es: '
         : pathWithoutLang;
 
     // Only these routes (or prefixes) are localized today.
-    const localizedRoutes = new Set(['/', '/faq', '/contact', '/privacy']);
+    const localizedRoutes = new Set([
+      '/',
+      '/faq',
+      '/contact',
+      '/privacy',
+      '/enterprise',
+      '/enterprise/thank-you',
+      '/eula',
+      '/support',
+      '/methodology',
+      '/about',
+    ]);
     const isLocalized = localizedRoutes.has(normalizedPath) || normalizedPath.startsWith('/docs');
     if (!isLocalized) {
       return `${url.pathname}${url.search}${url.hash}`;
@@ -294,3 +307,25 @@ const langLabels: Record<Lang, string> = { en: 'English', fr: 'Français', es: '
   // Always sync on page show (covers bfcache back/forward navigation)
   window.addEventListener('pageshow', syncLangSelects);
 </script>
+
+<style>
+  .nav-badge {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 1;
+    padding: 2px 6px;
+    border-radius: 4px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: #15803d;
+    background: rgba(22, 163, 74, 0.12);
+    border: 1px solid rgba(22, 163, 74, 0.35);
+    white-space: nowrap;
+  }
+  :global(.dark) .nav-badge {
+    color: #4ade80;
+    background: rgba(22, 163, 74, 0.18);
+    border-color: rgba(22, 163, 74, 0.4);
+  }
+</style>

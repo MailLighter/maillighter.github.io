@@ -2,10 +2,18 @@
  * Contact Page Configuration
  */
 
-import type { ContactInfo, ContactFAQ } from '../lib/types';
+import type { ContactInfo, ContactFAQ, SupportInfo, EnterpriseInfo } from '../lib/types';
 
 export const contact: ContactInfo = {
   email: 'contact@maillighter.com',
+};
+
+export const support: SupportInfo = {
+  email: 'support@maillighter.com',
+};
+
+export const enterprise: EnterpriseInfo = {
+  email: 'enterprise@maillighter.com',
 };
 
 export const contactFAQs: ContactFAQ[] = [

@@ -1,0 +1,156 @@
+---
+import MarketingLayout from '@/layouts/MarketingLayout.astro';
+import { siteConfig } from '@/config';
+---
+
+<MarketingLayout
+  title={`Conditions générales d'utilisation — ${siteConfig.name}`}
+  description={`Conditions générales d'utilisation régissant l'usage de l'add-in Outlook ${siteConfig.name} et du site web.`}
+>
+  <section class="doc-hero">
+    <div class="doc-hero-inner">
+      <span class="doc-eyebrow">Légal</span>
+      <h1 class="doc-title">Conditions générales d'utilisation</h1>
+      <p class="doc-sub">Les conditions régissant votre utilisation de MailLighter. Dernière mise à jour : mai 2026</p>
+    </div>
+  </section>
+
+  <section class="doc-body">
+    <div class="doc-section">
+      <h2>1. À propos de ces conditions</h2>
+      <p>Les présentes Conditions générales d'utilisation (« CGU ») régissent l'utilisation de l'add-in Outlook MailLighter (l'« Add-in ») et du site maillighter.com. En installant l'Add-in ou en utilisant le site, vous acceptez ces CGU.</p>
+    </div>
+
+    <div class="doc-section">
+      <h2>2. L'éditeur</h2>
+      <p>L'Add-in et le site sont édités par MailLighter. Contact : <a href="mailto:contact@maillighter.com">contact@maillighter.com</a>.</p>
+    </div>
+
+    <div class="doc-section">
+      <h2>3. Licence d'utilisation de l'Add-in</h2>
+      <p>L'Add-in est fourni gratuitement sous licence MIT pour la partie open source publiée sur <a href="https://github.com/MailLighter/MailLighter" target="_blank" rel="noopener noreferrer">github.com/MailLighter/MailLighter</a>. Un droit non exclusif et mondial vous est accordé pour installer, utiliser, et (pour la partie open source) modifier et redistribuer l'Add-in.</p>
+      <p>Vous n'avez pas le droit de :</p>
+      <ul class="doc-list">
+        <li>Présenter MailLighter comme votre propre produit</li>
+        <li>Supprimer les mentions de copyright du code source</li>
+        <li>Utiliser le nom ou le logo MailLighter à des fins commerciales sans autorisation écrite préalable</li>
+      </ul>
+    </div>
+
+    <div class="doc-section">
+      <h2>4. Utilisation acceptable</h2>
+      <p>L'Add-in est destiné à nettoyer les emails avant envoi. Vous vous engagez à ne pas :</p>
+      <ul class="doc-list">
+        <li>Utiliser l'Add-in à des fins illicites</li>
+        <li>Tenter de procéder à de l'ingénierie inverse, de décompiler ou de désassembler l'Add-in au-delà de ce que la licence open source autorise</li>
+        <li>Utiliser l'Add-in pour violer la vie privée ou les droits d'autrui</li>
+      </ul>
+    </div>
+
+    <div class="doc-section">
+      <h2>5. Aucune garantie</h2>
+      <p>L'Add-in est fourni « tel quel », sans garantie d'aucune sorte. Dans les limites autorisées par la loi, MailLighter décline toute garantie, expresse ou implicite. L'utilisation de l'Add-in se fait à vos propres risques.</p>
+    </div>
+
+    <div class="doc-section">
+      <h2>6. Limitation de responsabilité</h2>
+      <p>Dans les limites autorisées par la loi applicable, MailLighter ne saurait être tenu responsable de tout dommage indirect, accessoire, consécutif ou punitif, ni d'aucune perte de données, de profits ou d'opportunités commerciales découlant de l'utilisation ou de l'impossibilité d'utiliser l'Add-in.</p>
+    </div>
+
+    <div class="doc-section">
+      <h2>7. Confidentialité</h2>
+      <p>Votre vie privée nous importe. Consultez notre <a href="/fr/privacy">Politique de confidentialité</a> pour plus de détails sur le traitement des données.</p>
+    </div>
+
+    <div class="doc-section">
+      <h2>8. Modifications</h2>
+      <p>Nous pouvons mettre à jour ces CGU de temps à autre. Les modifications substantielles seront signalées sur cette page avec une date mise à jour. Votre utilisation continue de l'Add-in après ces modifications vaut acceptation.</p>
+    </div>
+
+    <div class="doc-section">
+      <h2>9. Droit applicable</h2>
+      <p>Les présentes CGU sont régies par le droit français. Tout litige relatif aux présentes sera soumis à la compétence exclusive des tribunaux français compétents.</p>
+    </div>
+
+    <div class="doc-section">
+      <h2>10. MailLighter Enterprise (à venir)</h2>
+      <p>MailLighter Enterprise, prévu pour le T4 2026, sera régi par des conditions commerciales spécifiques accessibles au moment de la souscription. Les présentes CGU s'appliquent uniquement à l'Add-in gratuit distribué via Microsoft Marketplace.</p>
+    </div>
+
+    <div class="doc-section">
+      <h2>11. Contact</h2>
+      <p>Questions sur ces CGU ? Contactez-nous à <a href="mailto:contact@maillighter.com">contact@maillighter.com</a>.</p>
+    </div>
+  </section>
+</MarketingLayout>
+
+<style>
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+
+  .doc-hero { position: relative; padding: 100px 52px 56px; text-align: center; overflow: hidden; }
+  .doc-hero::before {
+    content: ''; position: absolute; inset: 0; pointer-events: none; z-index: 0;
+    background:
+      radial-gradient(ellipse 60% 50% at 30% 0%, rgba(21,100,192,0.08), transparent 60%),
+      radial-gradient(ellipse 50% 50% at 80% 20%, rgba(74,162,81,0.05), transparent 60%);
+  }
+  :global(.dark) .doc-hero::before {
+    background:
+      radial-gradient(ellipse 60% 50% at 30% 0%, rgba(21,100,192,0.16), transparent 60%),
+      radial-gradient(ellipse 50% 50% at 80% 20%, rgba(74,162,81,0.10), transparent 60%);
+  }
+  .doc-hero-inner { position: relative; z-index: 1; max-width: 800px; margin: 0 auto; }
+  .doc-eyebrow {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: var(--ml-blue-pale); color: var(--ml-blue);
+    font-size: 0.72rem; font-weight: 700; padding: 4px 12px; border-radius: 999px;
+    letter-spacing: 0.07em; text-transform: uppercase; margin-bottom: 16px;
+    animation: fadeUp 0.6s ease-out both;
+  }
+  .doc-title { font-size: clamp(2rem, 3.5vw, 2.8rem); font-weight: 800; line-height: 1.15; margin-bottom: 16px; animation: fadeUp 0.6s ease-out 0.1s both; }
+  .doc-sub { font-size: 1rem; color: var(--ml-ink-soft); line-height: 1.75; max-width: 560px; margin: 0 auto; animation: fadeUp 0.6s ease-out 0.2s both; }
+
+  .doc-body { max-width: 760px; margin: 0 auto; padding: 0 52px 100px; }
+  .doc-section { margin-bottom: 40px; }
+  .doc-section h2 {
+    position: relative;
+    font-size: 1.2rem; font-weight: 700; margin-bottom: 14px;
+    padding-bottom: 10px; padding-left: 14px;
+    border-bottom: 1px solid var(--color-border);
+  }
+  .doc-section h2::before {
+    content: ''; position: absolute; left: 0; top: 4px; bottom: 14px;
+    width: 3px; border-radius: 2px;
+    background: linear-gradient(180deg, var(--ml-blue), var(--ml-green));
+  }
+  .doc-section p { font-size: 0.92rem; color: var(--ml-ink-soft); line-height: 1.75; margin-bottom: 12px; }
+  .doc-section a { color: var(--ml-blue); text-decoration: none; font-weight: 500; }
+  .doc-section a:hover { text-decoration: underline; }
+
+  .doc-list { list-style: none; padding: 0; margin: 0 0 12px; }
+  .doc-list li {
+    position: relative; padding-left: 26px; font-size: 0.92rem;
+    color: var(--ml-ink-soft); line-height: 1.75; margin-bottom: 8px;
+  }
+  .doc-list li::before {
+    content: ''; position: absolute; left: 2px; top: 9px;
+    width: 12px; height: 12px; border-radius: 50%;
+    background: var(--ml-green-pale);
+    border: 1.5px solid var(--ml-green);
+  }
+  .doc-list li::after {
+    content: ''; position: absolute; left: 6px; top: 12px;
+    width: 4px; height: 7px;
+    border-right: 1.5px solid var(--ml-green-dark);
+    border-bottom: 1.5px solid var(--ml-green-dark);
+    transform: rotate(45deg);
+  }
+  :global(.dark) .doc-list li::after {
+    border-color: var(--ml-green);
+  }
+
+  @media (max-width: 640px) {
+    .doc-hero { padding: 80px 24px 40px; }
+    .doc-body { padding: 0 24px 60px; }
+  }
+</style>

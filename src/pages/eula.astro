@@ -1,0 +1,156 @@
+---
+import MarketingLayout from '@/layouts/MarketingLayout.astro';
+import { siteConfig } from '@/config';
+---
+
+<MarketingLayout
+  title={`Terms of Service — ${siteConfig.name}`}
+  description={`Terms of Service governing your use of the ${siteConfig.name} Outlook add-in and website.`}
+>
+  <section class="doc-hero">
+    <div class="doc-hero-inner">
+      <span class="doc-eyebrow">Legal</span>
+      <h1 class="doc-title">Terms of Service</h1>
+      <p class="doc-sub">The terms governing your use of MailLighter. Last updated: May 2026</p>
+    </div>
+  </section>
+
+  <section class="doc-body">
+    <div class="doc-section">
+      <h2>1. About these terms</h2>
+      <p>These Terms of Service ("Terms") govern your use of the MailLighter Outlook add-in (the "Add-in") and the maillighter.com website. By installing the Add-in or using the website, you agree to these Terms.</p>
+    </div>
+
+    <div class="doc-section">
+      <h2>2. The publisher</h2>
+      <p>The Add-in and website are published by MailLighter. Contact: <a href="mailto:contact@maillighter.com">contact@maillighter.com</a>.</p>
+    </div>
+
+    <div class="doc-section">
+      <h2>3. License to use the Add-in</h2>
+      <p>The Add-in is provided free of charge under the MIT License for the open-source portion published at <a href="https://github.com/MailLighter/MailLighter" target="_blank" rel="noopener noreferrer">github.com/MailLighter/MailLighter</a>. You are granted a non-exclusive, worldwide right to install, use, and (for the open-source portion) modify and redistribute the Add-in.</p>
+      <p>You may not:</p>
+      <ul class="doc-list">
+        <li>Misrepresent MailLighter as your own product</li>
+        <li>Remove copyright notices from the source code</li>
+        <li>Use the MailLighter name or logo for commercial purposes without prior written authorization</li>
+      </ul>
+    </div>
+
+    <div class="doc-section">
+      <h2>4. Acceptable use</h2>
+      <p>The Add-in is intended to clean emails before sending. You agree not to:</p>
+      <ul class="doc-list">
+        <li>Use the Add-in for any unlawful purpose</li>
+        <li>Attempt to reverse-engineer, decompile, or disassemble the Add-in beyond what is permitted by the open-source license</li>
+        <li>Use the Add-in to violate the privacy or rights of others</li>
+      </ul>
+    </div>
+
+    <div class="doc-section">
+      <h2>5. No warranty</h2>
+      <p>The Add-in is provided "as is" without warranty of any kind. To the maximum extent permitted by law, MailLighter disclaims all warranties, express or implied. The use of the Add-in is at your own risk.</p>
+    </div>
+
+    <div class="doc-section">
+      <h2>6. Limitation of liability</h2>
+      <p>To the maximum extent permitted by applicable law, MailLighter shall not be liable for any indirect, incidental, consequential, or punitive damages, or any loss of data, profits, or business opportunities, arising from the use or inability to use the Add-in.</p>
+    </div>
+
+    <div class="doc-section">
+      <h2>7. Privacy</h2>
+      <p>Your privacy matters. Please refer to our <a href="/privacy">Privacy Policy</a> for details on how we handle data.</p>
+    </div>
+
+    <div class="doc-section">
+      <h2>8. Changes</h2>
+      <p>We may update these Terms occasionally. Significant changes will be highlighted on this page with an updated date. Continued use of the Add-in after such changes constitutes your acceptance.</p>
+    </div>
+
+    <div class="doc-section">
+      <h2>9. Governing law</h2>
+      <p>These Terms are governed by French law. Any dispute relating to these Terms shall be subject to the exclusive jurisdiction of the competent French courts.</p>
+    </div>
+
+    <div class="doc-section">
+      <h2>10. MailLighter Enterprise (upcoming)</h2>
+      <p>MailLighter Enterprise, planned for Q4 2026, will be subject to specific commercial terms accessible at the time of subscription. The current Terms apply only to the free Add-in distributed via Microsoft Marketplace.</p>
+    </div>
+
+    <div class="doc-section">
+      <h2>11. Contact</h2>
+      <p>Questions about these Terms? Contact us at <a href="mailto:contact@maillighter.com">contact@maillighter.com</a>.</p>
+    </div>
+  </section>
+</MarketingLayout>
+
+<style>
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+
+  .doc-hero { position: relative; padding: 100px 52px 56px; text-align: center; overflow: hidden; }
+  .doc-hero::before {
+    content: ''; position: absolute; inset: 0; pointer-events: none; z-index: 0;
+    background:
+      radial-gradient(ellipse 60% 50% at 30% 0%, rgba(21,100,192,0.08), transparent 60%),
+      radial-gradient(ellipse 50% 50% at 80% 20%, rgba(74,162,81,0.05), transparent 60%);
+  }
+  :global(.dark) .doc-hero::before {
+    background:
+      radial-gradient(ellipse 60% 50% at 30% 0%, rgba(21,100,192,0.16), transparent 60%),
+      radial-gradient(ellipse 50% 50% at 80% 20%, rgba(74,162,81,0.10), transparent 60%);
+  }
+  .doc-hero-inner { position: relative; z-index: 1; max-width: 800px; margin: 0 auto; }
+  .doc-eyebrow {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: var(--ml-blue-pale); color: var(--ml-blue);
+    font-size: 0.72rem; font-weight: 700; padding: 4px 12px; border-radius: 999px;
+    letter-spacing: 0.07em; text-transform: uppercase; margin-bottom: 16px;
+    animation: fadeUp 0.6s ease-out both;
+  }
+  .doc-title { font-size: clamp(2rem, 3.5vw, 2.8rem); font-weight: 800; line-height: 1.15; margin-bottom: 16px; animation: fadeUp 0.6s ease-out 0.1s both; }
+  .doc-sub { font-size: 1rem; color: var(--ml-ink-soft); line-height: 1.75; max-width: 560px; margin: 0 auto; animation: fadeUp 0.6s ease-out 0.2s both; }
+
+  .doc-body { max-width: 760px; margin: 0 auto; padding: 0 52px 100px; }
+  .doc-section { margin-bottom: 40px; }
+  .doc-section h2 {
+    position: relative;
+    font-size: 1.2rem; font-weight: 700; margin-bottom: 14px;
+    padding-bottom: 10px; padding-left: 14px;
+    border-bottom: 1px solid var(--color-border);
+  }
+  .doc-section h2::before {
+    content: ''; position: absolute; left: 0; top: 4px; bottom: 14px;
+    width: 3px; border-radius: 2px;
+    background: linear-gradient(180deg, var(--ml-blue), var(--ml-green));
+  }
+  .doc-section p { font-size: 0.92rem; color: var(--ml-ink-soft); line-height: 1.75; margin-bottom: 12px; }
+  .doc-section a { color: var(--ml-blue); text-decoration: none; font-weight: 500; }
+  .doc-section a:hover { text-decoration: underline; }
+
+  .doc-list { list-style: none; padding: 0; margin: 0 0 12px; }
+  .doc-list li {
+    position: relative; padding-left: 26px; font-size: 0.92rem;
+    color: var(--ml-ink-soft); line-height: 1.75; margin-bottom: 8px;
+  }
+  .doc-list li::before {
+    content: ''; position: absolute; left: 2px; top: 9px;
+    width: 12px; height: 12px; border-radius: 50%;
+    background: var(--ml-green-pale);
+    border: 1.5px solid var(--ml-green);
+  }
+  .doc-list li::after {
+    content: ''; position: absolute; left: 6px; top: 12px;
+    width: 4px; height: 7px;
+    border-right: 1.5px solid var(--ml-green-dark);
+    border-bottom: 1.5px solid var(--ml-green-dark);
+    transform: rotate(45deg);
+  }
+  :global(.dark) .doc-list li::after {
+    border-color: var(--ml-green);
+  }
+
+  @media (max-width: 640px) {
+    .doc-hero { padding: 80px 24px 40px; }
+    .doc-body { padding: 0 24px 60px; }
+  }
+</style>

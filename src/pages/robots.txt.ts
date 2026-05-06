@@ -12,6 +12,11 @@ Allow: /
 Disallow: /api/
 Disallow: /_astro/
 
+# Enterprise thank-you confirmation pages (no SEO value)
+Disallow: /enterprise/thank-you
+Disallow: /fr/enterprise/thank-you
+Disallow: /es/enterprise/thank-you
+
 # Sitemap location
 Sitemap: ${siteConfig.url}/sitemap-index.xml
 `;
