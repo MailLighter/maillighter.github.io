@@ -12,7 +12,6 @@ export const navigationByLang: Record<Lang, Navigation> = {
       main: [
         { label: 'Features', href: '/#features' },
         { label: 'FAQ', href: '/faq' },
-        { label: 'Enterprise', href: '/enterprise', badge: 'Q4 2026' },
         { label: 'Contact', href: '/contact' },
         { label: 'Documentation', href: '/docs', feature: 'docs' },
       ],
@@ -24,12 +23,10 @@ export const navigationByLang: Record<Lang, Navigation> = {
       product: [
         { label: 'Features', href: '/#features' },
         { label: 'FAQ', href: '/faq' },
-        { label: 'Enterprise', href: '/enterprise', badge: 'Coming Q4 2026' },
       ],
 
       resources: [
         { label: 'Documentation', href: '/docs', feature: 'docs' },
-        { label: 'Methodology', href: '/methodology' },
         { label: 'Support', href: '/support' },
       ],
       company: [
@@ -48,7 +45,6 @@ export const navigationByLang: Record<Lang, Navigation> = {
       main: [
         { label: 'Fonctionnalités', href: '/fr/#features' },
         { label: 'FAQ', href: '/fr/faq' },
-        { label: 'Enterprise', href: '/fr/enterprise', badge: 'T4 2026' },
         { label: 'Contact', href: '/fr/contact' },
         { label: 'Documentation', href: '/fr/docs', feature: 'docs' },
       ],
@@ -60,12 +56,10 @@ export const navigationByLang: Record<Lang, Navigation> = {
       product: [
         { label: 'Fonctionnalités', href: '/fr/#features' },
         { label: 'FAQ', href: '/fr/faq' },
-        { label: 'Enterprise', href: '/fr/enterprise', badge: 'Bientôt T4 2026' },
       ],
 
       resources: [
         { label: 'Documentation', href: '/fr/docs', feature: 'docs' },
-        { label: 'Méthodologie', href: '/fr/methodology' },
         { label: 'Support', href: '/fr/support' },
       ],
       company: [
@@ -84,7 +78,6 @@ export const navigationByLang: Record<Lang, Navigation> = {
       main: [
         { label: 'Características', href: '/es/#features' },
         { label: 'Preguntas frecuentes', href: '/es/faq' },
-        { label: 'Enterprise', href: '/es/enterprise', badge: 'T4 2026' },
         { label: 'Contacto', href: '/es/contact' },
         { label: 'Documentación', href: '/es/docs', feature: 'docs' },
       ],
@@ -96,12 +89,10 @@ export const navigationByLang: Record<Lang, Navigation> = {
       product: [
         { label: 'Características', href: '/es/#features' },
         { label: 'Preguntas frecuentes', href: '/es/faq' },
-        { label: 'Enterprise', href: '/es/enterprise', badge: 'Pronto T4 2026' },
       ],
 
       resources: [
         { label: 'Documentación', href: '/es/docs', feature: 'docs' },
-        { label: 'Metodología', href: '/es/methodology' },
         { label: 'Soporte', href: '/es/support' },
       ],
       company: [

@@ -34,8 +34,8 @@ const { legal } = siteConfig;
       <h2>Ce que nous collectons</h2>
       <p>MailLighter collecte très peu de données. Voici ce qui peut être collecté :</p>
       <div class="privacy-card">
-        <h3>Formulaires présents sur le site web</h3>
-        <p>Si vous soumettez un formulaire sur notre site web, nous collectons votre prénom, nom, adresse e-mail, rôle, nom et taille d'entreprise, contexte CSRD et message.Ces données sont traitées par <a href="https://web3forms.com/privacy" target="_blank" rel="noopener noreferrer">Web3Forms</a> et nous sont transmises par e-mail. Elles ne sont jamais partagées à un tier.</p>
+        <h3>Formulaire de contact</h3>
+        <p>Si vous nous contactez via notre site web, nous collectons votre prénom, nom, adresse e-mail et message. Ces données sont traitées par <a href="https://web3forms.com/privacy" target="_blank" rel="noopener noreferrer">Web3Forms</a> et nous sont transmises par e-mail. Elles ne sont jamais partagées à un tier.</p>
       </div>
       <div class="privacy-card">
         <h3>Complément Outlook</h3>
@@ -57,7 +57,7 @@ const { legal } = siteConfig;
 
     <div class="privacy-section">
       <h2>Comment nous utilisons vos informations</h2>
-      <p>Les seules données personnelles que nous pouvons recevoir, via les formulaires du site web, sont utilisées uniquement pour répondre à vos demandes. Nous ne les utilisons pas à des fins de marketing ou de profilage.</p>
+      <p>Les seules données personnelles que nous pouvons recevoir, via le formulaire de contact, sont utilisées uniquement pour répondre à votre demande. Nous ne les utilisons pas à des fins de marketing ou de profilage.</p>
     </div>
 
     <div class="privacy-section">
@@ -91,22 +91,6 @@ const { legal } = siteConfig;
       <p>
         Nous pouvons mettre à jour cette politique de confidentialité de temps à autre. Les modifications seront publiées sur cette page avec une date de mise à jour. Dans la mesure où nous ne collectons pas d'adresses e-mail à des fins de notification, nous vous encourageons à consulter cette page régulièrement.
       </p>
-    </div>
-
-    <div class="privacy-section">
-      <h2>MailLighter Enterprise (à venir)</h2>
-      <p>MailLighter Enterprise (prévu pour le T4 2026) introduira une télémétrie optionnelle anonymisée pour les organisations souscrivantes. Lors de la sortie de cette version, la présente politique de confidentialité sera mise à jour au moins 30 jours avant son activation.</p>
-      <p>La télémétrie Enterprise collectera, par action de nettoyage, uniquement :</p>
-      <ul class="privacy-list">
-        <li>Le volume d'octets supprimés (entier)</li>
-        <li>Le type d'élément (image, pièce jointe, réponse)</li>
-        <li>Le nombre de destinataires de l'email (entier, recalculé au moment de l'envoi)</li>
-        <li>Un horodatage UTC</li>
-        <li>Un hash SHA-256 de l'identifiant de tenant Microsoft 365 de l'organisation (irréversible)</li>
-      </ul>
-      <p>Aucun contenu d'email, aucune identité d'expéditeur ou de destinataire, aucun objet d'email, aucun nom de fichier ne sera jamais collecté, dans aucune version, dans aucun mode.</p>
-      <p><strong>La télémétrie est enregistrée localement au moment du nettoyage et transmise uniquement lorsque l'email est effectivement envoyé.</strong> Si l'utilisateur abandonne l'email après un nettoyage (fenêtre de composition fermée, brouillon restauré), aucune donnée n'est transmise à MailLighter. Cela garantit que les chiffres remontés correspondent à des emails ayant effectivement quitté le poste de l'utilisateur.</p>
-      <p>Jusqu'à la sortie de la version Enterprise, <strong>aucune de ces télémétries n'est active</strong>, et l'add-in Outlook distribué via Microsoft Marketplace fonctionne entièrement en local sur le poste utilisateur.</p>
     </div>
 
     <div class="privacy-section">
