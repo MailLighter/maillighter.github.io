@@ -8,6 +8,13 @@ draft: false
 
 MailLighter provides 6 features, all accessible from a dropdown menu in Outlook's ribbon. Each feature targets a specific type of email clutter.
 
+<figure style="margin:1.75em auto;max-width:200px;background:#f8f9fb;border:1px solid #e4e7ec;border-radius:8px;overflow:hidden;">
+  <div style="background:#fff;padding:1rem;border-bottom:1px solid #e4e7ec;display:flex;align-items:center;justify-content:center;">
+    <img src="/images/ribbon-button.png" alt="MailLighter button in the Outlook ribbon" style="max-width:100%;height:auto;display:block;" />
+  </div>
+  <figcaption style="padding:0.75rem 1rem;font-size:0.9em;color:#475467;line-height:1.4;text-align:center;">The MailLighter button in the Outlook ribbon</figcaption>
+</figure>
+
 ## Remove Images
 
 Strips all inline images (`<img>` tags) from the email body. Useful when forwarding emails that contain logos, banners, signatures with images, or embedded screenshots.
@@ -16,6 +23,7 @@ Strips all inline images (`<img>` tags) from the email body. Useful when forward
 - Inline images (embedded in the HTML body)
 - Image signatures
 - Marketing banners
+- Tracking pixels
 
 **What it keeps:**
 - All text content
@@ -84,6 +92,23 @@ Keeps only the text you have **manually selected** in the email, removing everyt
 **What it keeps:**
 - Your selected text, with formatting preserved
 
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.25rem;margin:1.75em 0;">
+  <figure style="margin:0;background:#f8f9fb;border:1px solid #e4e7ec;border-radius:8px;overflow:hidden;display:flex;flex-direction:column;">
+    <div style="position:relative;background:#fff;height:260px;display:flex;align-items:center;justify-content:center;padding:0.75rem;border-bottom:1px solid #e4e7ec;">
+      <span style="position:absolute;top:0.6rem;left:0.6rem;background:#3b82f6;color:#fff;font-size:0.7rem;font-weight:600;letter-spacing:0.05em;text-transform:uppercase;padding:0.2rem 0.55rem;border-radius:4px;">Before</span>
+      <img src="/images/keep-selection-before.png" alt="Email before cleanup with the pricing block outlined in red to show the selection" style="max-height:100%;max-width:100%;width:auto;height:auto;object-fit:contain;" />
+    </div>
+    <figcaption style="padding:0.75rem 1rem;font-size:0.9em;color:#475467;line-height:1.4;">The full email, with the selected area</figcaption>
+  </figure>
+  <figure style="margin:0;background:#f8f9fb;border:1px solid #e4e7ec;border-radius:8px;overflow:hidden;display:flex;flex-direction:column;">
+    <div style="position:relative;background:#fff;height:260px;display:flex;align-items:center;justify-content:center;padding:0.75rem;border-bottom:1px solid #e4e7ec;">
+      <span style="position:absolute;top:0.6rem;left:0.6rem;background:#10b981;color:#fff;font-size:0.7rem;font-weight:600;letter-spacing:0.05em;text-transform:uppercase;padding:0.2rem 0.55rem;border-radius:4px;">After</span>
+      <img src="/images/keep-selection-after.png" alt="Email after cleanup, containing only the selected pricing block" style="max-height:100%;max-width:100%;width:auto;height:auto;object-fit:contain;" />
+    </div>
+    <figcaption style="padding:0.75rem 1rem;font-size:0.9em;color:#475467;line-height:1.4;">Only the selection remains, with formatting preserved</figcaption>
+  </figure>
+</div>
+
 ## Settings
 
 Opens the MailLighter preferences panel. Two settings are available:
@@ -97,6 +122,13 @@ Tracks the cumulative data removed across all your cleanup sessions:
 - Attachments removed
 - Reply chains trimmed
 - Total saved
+
+<figure style="margin:1.75em auto;max-width:380px;background:#f8f9fb;border:1px solid #e4e7ec;border-radius:8px;overflow:hidden;">
+  <div style="background:#fff;padding:1rem;border-bottom:1px solid #e4e7ec;display:flex;align-items:center;justify-content:center;">
+    <img src="/images/settings-panel.png" alt="MailLighter Settings panel showing the eco message and the My savings section" style="max-width:100%;height:auto;display:block;" />
+  </div>
+  <figcaption style="padding:0.75rem 1rem;font-size:0.9em;color:#475467;line-height:1.4;text-align:center;">The Settings panel: eco message and savings tracker</figcaption>
+</figure>
 
 Savings are stored locally on your device and persist across sessions.
 

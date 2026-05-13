@@ -8,6 +8,13 @@ draft: false
 
 MailLighter propose 6 fonctionnalités, toutes accessibles depuis un menu déroulant dans le ruban d'Outlook. Chaque fonctionnalité cible un type spécifique d'encombrement.
 
+<figure style="margin:1.75em auto;max-width:200px;background:#f8f9fb;border:1px solid #e4e7ec;border-radius:8px;overflow:hidden;">
+  <div style="background:#fff;padding:1rem;border-bottom:1px solid #e4e7ec;display:flex;align-items:center;justify-content:center;">
+    <img src="/images/ribbon-button.png" alt="Bouton MailLighter dans le ruban d'Outlook" style="max-width:100%;height:auto;display:block;" />
+  </div>
+  <figcaption style="padding:0.75rem 1rem;font-size:0.9em;color:#475467;line-height:1.4;text-align:center;">Le bouton MailLighter dans le ruban d'Outlook</figcaption>
+</figure>
+
 ## Supprimer les images
 
 Retire toutes les images intégrées (balises `<img>`) du corps de l'e-mail. Utile pour transférer des e-mails contenant des logos, bannières, signatures avec images ou captures d'écran.
@@ -16,6 +23,7 @@ Retire toutes les images intégrées (balises `<img>`) du corps de l'e-mail. Uti
 - Images intégrées (dans le corps HTML)
 - Signatures avec images
 - Bannières marketing
+- Pixel espion
 
 **Ce qui est conservé :**
 - Tout le contenu texte
@@ -84,6 +92,23 @@ Ne conserve que le texte que vous avez **sélectionné manuellement** dans l'e-m
 **Ce qui est conservé :**
 - Votre texte sélectionné, avec la mise en forme préservée
 
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.25rem;margin:1.75em 0;">
+  <figure style="margin:0;background:#f8f9fb;border:1px solid #e4e7ec;border-radius:8px;overflow:hidden;display:flex;flex-direction:column;">
+    <div style="position:relative;background:#fff;height:260px;display:flex;align-items:center;justify-content:center;padding:0.75rem;border-bottom:1px solid #e4e7ec;">
+      <span style="position:absolute;top:0.6rem;left:0.6rem;background:#3b82f6;color:#fff;font-size:0.7rem;font-weight:600;letter-spacing:0.05em;text-transform:uppercase;padding:0.2rem 0.55rem;border-radius:4px;">Avant</span>
+      <img src="/images/keep-selection-before.png" alt="E-mail avant nettoyage avec le bloc tarifaire encadré en rouge pour montrer la sélection" style="max-height:100%;max-width:100%;width:auto;height:auto;object-fit:contain;" />
+    </div>
+    <figcaption style="padding:0.75rem 1rem;font-size:0.9em;color:#475467;line-height:1.4;">L'e-mail complet, avec la zone sélectionnée</figcaption>
+  </figure>
+  <figure style="margin:0;background:#f8f9fb;border:1px solid #e4e7ec;border-radius:8px;overflow:hidden;display:flex;flex-direction:column;">
+    <div style="position:relative;background:#fff;height:260px;display:flex;align-items:center;justify-content:center;padding:0.75rem;border-bottom:1px solid #e4e7ec;">
+      <span style="position:absolute;top:0.6rem;left:0.6rem;background:#10b981;color:#fff;font-size:0.7rem;font-weight:600;letter-spacing:0.05em;text-transform:uppercase;padding:0.2rem 0.55rem;border-radius:4px;">Après</span>
+      <img src="/images/keep-selection-after.png" alt="E-mail après nettoyage, ne contenant plus que le bloc tarifaire sélectionné" style="max-height:100%;max-width:100%;width:auto;height:auto;object-fit:contain;" />
+    </div>
+    <figcaption style="padding:0.75rem 1rem;font-size:0.9em;color:#475467;line-height:1.4;">Seule la sélection est conservée, mise en forme préservée</figcaption>
+  </figure>
+</div>
+
 ## Paramètres
 
 Ouvre le panneau de préférences de MailLighter. Deux réglages sont disponibles :
@@ -97,6 +122,13 @@ Suit le cumul des données supprimées sur toutes vos sessions de nettoyage :
 - Pièces jointes supprimées
 - Chaînes de réponses réduites
 - Total économisé
+
+<figure style="margin:1.75em auto;max-width:380px;background:#f8f9fb;border:1px solid #e4e7ec;border-radius:8px;overflow:hidden;">
+  <div style="background:#fff;padding:1rem;border-bottom:1px solid #e4e7ec;display:flex;align-items:center;justify-content:center;">
+    <img src="/images/settings-panel.png" alt="Panneau Paramètres de MailLighter avec le message écologique et la section Mes économies" style="max-width:100%;height:auto;display:block;" />
+  </div>
+  <figcaption style="padding:0.75rem 1rem;font-size:0.9em;color:#475467;line-height:1.4;text-align:center;">Le panneau Paramètres : message écologique et suivi des économies</figcaption>
+</figure>
 
 Les économies sont stockées localement sur votre appareil et persistent entre les sessions.
 

@@ -8,6 +8,13 @@ draft: false
 
 MailLighter ofrece 6 funcionalidades, todas accesibles desde un menú desplegable en la cinta de Outlook. Cada funcionalidad se dirige a un tipo específico de contenido innecesario.
 
+<figure style="margin:1.75em auto;max-width:200px;background:#f8f9fb;border:1px solid #e4e7ec;border-radius:8px;overflow:hidden;">
+  <div style="background:#fff;padding:1rem;border-bottom:1px solid #e4e7ec;display:flex;align-items:center;justify-content:center;">
+    <img src="/images/ribbon-button.png" alt="Botón de MailLighter en la cinta de Outlook" style="max-width:100%;height:auto;display:block;" />
+  </div>
+  <figcaption style="padding:0.75rem 1rem;font-size:0.9em;color:#475467;line-height:1.4;text-align:center;">El botón de MailLighter en la cinta de Outlook</figcaption>
+</figure>
+
 ## Eliminar imágenes
 
 Retira todas las imágenes integradas (etiquetas `<img>`) del cuerpo del correo. Útil al reenviar correos con logos, banners, firmas con imágenes o capturas de pantalla.
@@ -16,6 +23,7 @@ Retira todas las imágenes integradas (etiquetas `<img>`) del cuerpo del correo.
 - Imágenes integradas (en el cuerpo HTML)
 - Firmas con imágenes
 - Banners de marketing
+- Píxeles de seguimiento
 
 **Lo que conserva:**
 - Todo el contenido de texto
@@ -84,6 +92,23 @@ Conserva solo el texto que has **seleccionado manualmente** en el correo, elimin
 **Lo que conserva:**
 - El texto seleccionado, con el formato preservado
 
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.25rem;margin:1.75em 0;">
+  <figure style="margin:0;background:#f8f9fb;border:1px solid #e4e7ec;border-radius:8px;overflow:hidden;display:flex;flex-direction:column;">
+    <div style="position:relative;background:#fff;height:260px;display:flex;align-items:center;justify-content:center;padding:0.75rem;border-bottom:1px solid #e4e7ec;">
+      <span style="position:absolute;top:0.6rem;left:0.6rem;background:#3b82f6;color:#fff;font-size:0.7rem;font-weight:600;letter-spacing:0.05em;text-transform:uppercase;padding:0.2rem 0.55rem;border-radius:4px;">Antes</span>
+      <img src="/images/keep-selection-before.png" alt="Correo antes de la limpieza con el bloque de precios resaltado en rojo para mostrar la selección" style="max-height:100%;max-width:100%;width:auto;height:auto;object-fit:contain;" />
+    </div>
+    <figcaption style="padding:0.75rem 1rem;font-size:0.9em;color:#475467;line-height:1.4;">El correo completo, con la zona seleccionada</figcaption>
+  </figure>
+  <figure style="margin:0;background:#f8f9fb;border:1px solid #e4e7ec;border-radius:8px;overflow:hidden;display:flex;flex-direction:column;">
+    <div style="position:relative;background:#fff;height:260px;display:flex;align-items:center;justify-content:center;padding:0.75rem;border-bottom:1px solid #e4e7ec;">
+      <span style="position:absolute;top:0.6rem;left:0.6rem;background:#10b981;color:#fff;font-size:0.7rem;font-weight:600;letter-spacing:0.05em;text-transform:uppercase;padding:0.2rem 0.55rem;border-radius:4px;">Después</span>
+      <img src="/images/keep-selection-after.png" alt="Correo después de la limpieza, conteniendo solo el bloque de precios seleccionado" style="max-height:100%;max-width:100%;width:auto;height:auto;object-fit:contain;" />
+    </div>
+    <figcaption style="padding:0.75rem 1rem;font-size:0.9em;color:#475467;line-height:1.4;">Solo se conserva la selección, con el formato preservado</figcaption>
+  </figure>
+</div>
+
 ## Configuración
 
 Abre el panel de preferencias de MailLighter. Hay dos ajustes disponibles:
@@ -97,6 +122,13 @@ Realiza un seguimiento acumulado de los datos eliminados en todas tus sesiones d
 - Archivos adjuntos eliminados
 - Cadenas de respuesta reducidas
 - Total ahorrado
+
+<figure style="margin:1.75em auto;max-width:380px;background:#f8f9fb;border:1px solid #e4e7ec;border-radius:8px;overflow:hidden;">
+  <div style="background:#fff;padding:1rem;border-bottom:1px solid #e4e7ec;display:flex;align-items:center;justify-content:center;">
+    <img src="/images/settings-panel.png" alt="Panel de Configuración de MailLighter con el mensaje ecológico y la sección Mis ahorros" style="max-width:100%;height:auto;display:block;" />
+  </div>
+  <figcaption style="padding:0.75rem 1rem;font-size:0.9em;color:#475467;line-height:1.4;text-align:center;">El panel Configuración: mensaje ecológico y seguimiento de ahorros</figcaption>
+</figure>
 
 Los ahorros se almacenan localmente en tu dispositivo y persisten entre sesiones.
 

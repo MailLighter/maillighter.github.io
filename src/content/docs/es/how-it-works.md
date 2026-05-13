@@ -6,28 +6,7 @@ order: 5
 draft: false
 ---
 
-MailLighter está construido sobre Office.js, la API oficial de Microsoft para complementos de Outlook. Esta página explica la arquitectura técnica y cómo se procesan tus correos.
-
-## Visión general
-
-```
-┌─────────────────────────────────────────┐
-│                 Outlook                 │
-│  ┌───────────────────────────────────┐  │
-│  │     Complemento MailLighter       │  │
-│  │  ┌─────────┐  ┌───────────────┐  │  │
-│  │  │Comandos  │  │   Office.js   │  │  │
-│  │  │ (JS/ES6) │  │     API       │  │  │
-│  │  └────┬─────┘  └───────┬───────┘  │  │
-│  │       │ Lectura/Escritura│          │  │
-│  │       └────────┬────────┘          │  │
-│  └────────────────┼──────────────────┘  │
-│                   ▼                     │
-│         Contenido del correo            │
-│        (permanece en Outlook)           │
-└─────────────────────────────────────────┘
-          Sin servidor externo
-```
+MailLighter está construido sobre Office.js, la API oficial de Microsoft para complementos de Outlook. Esta página detalla el flujo de procesamiento, la stack tecnológica, los permisos solicitados y las garantías de privacidad que acompañan a cada comando.
 
 ## Flujo de procesamiento
 
