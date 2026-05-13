@@ -1,63 +1,84 @@
 # MailLighter Website
 
-Site officiel de MailLighter, le complément Outlook gratuit et open-source qui allège vos e-mails avant de les transférer ou d'y répondre.
+Official website of [MailLighter](https://maillighter.com), the free and open-source Outlook add-in that lightens your emails before you forward or reply.
 
 [![Built with Astro](https://astro.badg.es/v2/built-with-astro/tiny.svg)](https://astro.build)
+[![Deploy to GitHub Pages](https://github.com/MailLighter/maillighter.github.io/actions/workflows/deploy.yml/badge.svg)](https://github.com/MailLighter/maillighter.github.io/actions)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
-- Site web : https://maillighter.com
-- GitHub du projet MailLighter : https://github.com/MailLighter/MailLighter
+- 🌐 Website: https://maillighter.com
+- 🧩 Outlook add-in: https://github.com/MailLighter/MailLighter
 
 ---
 
-## MailLighter en bref
+## About
 
-MailLighter est un complément Outlook léger, gratuit et open-source qui supprime le contenu superflu de vos e-mails : images intégrées, pièces jointes, longues chaînes de réponse. Résultat : des messages plus légers, moins de bande passante consommée et moins de ressources pour stocker ces données.
+MailLighter is a lightweight, free and open-source Outlook add-in that strips unnecessary content from your emails: inline images, tracking pixels, attachments and long reply chains. The result: lighter messages, less bandwidth consumed and a smaller storage footprint.
 
-Ce dépôt contient le site public du projet :
-- Présentation produit
-- Documentation (introduction, installation, fonctionnalités, fonctionnement, confidentialité, FAQ, dépannage, versions)
-- Page de contact
-- Page de confidentialité
-- Pages d'erreur (403, 404, 500)
-- Version multilingue (EN / FR / ES)
+This repository contains **the public website** (Astro) — product overview, documentation, FAQ, contact, legal pages, available in **EN / FR / ES**.
 
-Le site est développé avec Astro pour offrir de bonnes performances, une base maintenable et une navigation fluide.
+The site is automatically deployed to GitHub Pages on every push to `main`.
 
 ---
 
 ## Stack
 
-- Astro
+- [Astro](https://astro.build) v5 + MDX
 - TypeScript
 - Tailwind CSS v4
+- [astro-icon](https://www.astroicon.dev/) for icons
 
 ---
 
-## Lancer le site en local
+## Quick start
 
 ```bash
 npm install
 npm run dev
 ```
 
-Le site est ensuite accessible sur : http://localhost:4321
+The site is then available at http://localhost:4321.
 
 ---
 
-## Scripts utiles
+## Scripts
 
-```bash
-npm run dev       # Serveur de développement
-npm run build     # Build de production
-npm run preview   # Prévisualisation du build
-npm run check     # Vérification Astro
+| Command           | Description                                |
+|-------------------|--------------------------------------------|
+| `npm run dev`     | Development server with hot reload         |
+| `npm run build`   | Production build into `dist/`              |
+| `npm run preview` | Preview the production build               |
+| `npm run check`   | Astro type & content checks                |
+
+---
+
+## Project structure
+
+```
+src/
+├── content/docs/        # Markdown documentation (en, fr/, es/)
+├── pages/               # Site routes (en at root, fr/, es/)
+├── components/          # Reusable Astro components
+├── layouts/             # Global layouts
+└── config/              # Navigation and shared content
+
+public/                  # Files served as-is
+└── images/              # Screenshots and illustrations
 ```
 
+Documentation lives in `src/content/docs/` and is translated into 3 languages: the EN version sits at the root, FR under `fr/` and ES under `es/`.
+
 ---
 
-## Liens projet
+## Useful links
 
-- Site : https://maillighter.com
-- Documentation : https://maillighter.com/docs
-- GitHub MailLighter : https://github.com/MailLighter/MailLighter
+- 🌐 Website: https://maillighter.com
+- 📚 Documentation: https://maillighter.com/docs
+- 🧩 Outlook add-in (source): https://github.com/MailLighter/MailLighter
+- 🐛 Issues: https://github.com/MailLighter/maillighter.github.io/issues
 
+---
+
+## License
+
+Website source code released under the [MIT](LICENSE) license.
